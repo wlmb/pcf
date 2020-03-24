@@ -6,6 +6,7 @@
 %\usepackage{pstricks}
 \decimalpoint
 \pointname{\ puntos}
+\cfoot[]{\thepage}
 \begin{document}
 \begin{center}
 \bf\large Tarea 2\\
@@ -22,7 +23,7 @@ desarrollar el temario.
 \begin{questions}
   \question Usando la ley de Gauss demuestra que el potencial
   $\phi(\bm r)$ obedece la ecuación de Poisson $\nabla^2\phi(\bm
-  r)0-4\pi\rho(\bm r)$
+  r)=-4\pi\rho(\bm r)$
 
   \question Demuestra el teorema de Gauss: Para {\em todo} (con un
   granito de sal) campo vectorial $\bm F(\bm r)$ y volumen $V$
@@ -37,7 +38,8 @@ desarrollar el temario.
   \item $d\bm a$ es el elemento de área, es un vector cuyo tamaño es
     el área de un pedacito de superficie y cuya dirección es el de la
     normal $\hat {\bm n}$ a
-    la superficie. De forma equivalente, $da_x$ es el área de la proyección del elemento de
+    la superficie que sale del volumen. De forma equivalente, $da_x$
+    es el área de la proyección del elemento de
     superficie sobre el plano $yz$, $da_y$ corresponde a la proyección
     sobre el plano $zx$ y $da_z$ sobre el plano $xy$. El signo de
     $da_x$ es el de $\hat{\bm  y}\times\hat{\bm z}\cdot\hat{\bm  n}$,
@@ -51,16 +53,17 @@ desarrollar el temario.
   \item Lo más fácil, aunque no lo más formal, es dividir el volumen
     V en prismas rectangulares {\em infinitesimales}. Argumenta por qué
     demostrar el teorema para un pequeño prisma implica que se cumple
-    para un volumen finito.
+    para un volumen finito de forma arbitraria.
   \item   Una demostración un poco más convincente es dividir al volumen en
     pequeños tetrahedros y demostrarlo para un tetrahedro, caracterizado
     por un vértice y tres vectores que describan los lados que inciden
     en dicho vértice.
   \item   Otra demostración más consiste en dividir el volumen en regiones
-    convexas, proyectarlas sobre el plano $yz$, cuadricular dicha
-    proyección y como para cada cuadrito que $\Delta a_x
-    F_x(x1,y,z)+\Delta a_x F_x(x0,y,z)=\Delta y\Delta
-    z(F_x(x1,y,z)-F_x(x0,y,z))=\Delta y\Delta z\int_{x_0}^{x_1} dx\,
+    convexas, proyectarlas sobre el plano $yz$ y cuadricular dicha
+    proyección. Cada línea con $y$ y $z$ dadas intersecta a la
+    superficie en dos puntos, digamos $x_0$ y $x_1$. Luego, $\Delta a_x
+    F_x(x_1,y,z)+\Delta a_x F_x(x_0,y,z)=\Delta y\Delta
+    z(F_x(x_1,y,z)-F_x(x_0,y,z))=\Delta y\Delta z\int_{x_0}^{x_1} dx\,
     \partial F_x(x,y,z)/\partial x$ ($\Delta a_x=\pm\Delta y
     \Delta z$ es la componente $x$ de un elemento de área en $(x_1,y,z)$ y
     $(x_0,y,z)$; nota los signos), entonces $\int_{\partial
@@ -152,7 +155,6 @@ desarrollar el temario.
     $$
     U=\frac{1}{8\pi}\int_V d^3r\, |\bm E(\bm r)|^2.
     $$
-    Pista:
     \part ¿Qué suposiciones hiciste sobre $\rho$, $\phi$ y/o $\bm E$
     en la superficie $\partial V$. ¿Qué volumen $V$ se debe/puede escoger?
   \end{parts}
@@ -193,9 +195,9 @@ desarrollar el temario.
     \part $\nabla\cdot(\bm F(\bm r)\times\bm G(\bm r))=\bm G(\bm
     r)\cdot(\nabla\times \bm F(\bm r))-\bm F(\bm r)\cdot(\nabla\times\bm
     G(\bm r))$
-    \part \label{7e}$\nabla\times(\bm F(\bm r)\times \bm G(\bm r))=\bm F
-    \nabla\cdot\bm G(\bm r)-\bm F(\bm r)\cdot\nabla\bm G(\bm r))-(\bm G(\bm
-    r)\nabla\cdot\bm F(\bm r)-\bm G(\bm r)\cdot\nabla\bm F(\bm r))$,
+    \part \label{7e}$\nabla\times(\bm F(\bm r)\times \bm G(\bm r))=[\bm F
+    \nabla\cdot\bm G(\bm r)-\bm F(\bm r)\cdot\nabla\bm G(\bm r)]-[\bm G(\bm
+    r)\nabla\cdot\bm F(\bm r)-\bm G(\bm r)\cdot\nabla\bm F(\bm r)]$,
   \end{parts}
   donde $f(\bm r)$ y $g(\bm r)$ son campos escalares y $\bm F(\bm r)$
   y $\bm G(\bm r)$ son campos vectoriales.
