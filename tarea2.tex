@@ -1,0 +1,317 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\begin{document}
+\begin{center}
+\bf\large Tarea 2\\
+Propedéutico Electrodinámica\\
+\date{2020-03-10}
+\today\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el martes 2020-03-31.
+
+Como no tenemos clases presenciales, entonces propongo problemas para
+desarrollar el temario.
+
+\begin{questions}
+  \question Usando la ley de Gauss demuestra que el potencial
+  $\phi(\bm r)$ obedece la ecuación de Poisson $\nabla^2\phi(\bm
+  r)0-4\pi\rho(\bm r)$
+
+  \question Demuestra el teorema de Gauss: Para {\em todo} (con un
+  granito de sal) campo vectorial $\bm F(\bm r)$ y volumen $V$
+  con frontera $\partial V$,
+  $$
+  \int_{\partial V}d\bm a\cdot\bm F(\bm r)=\int_V d^3 r\, \nabla\cdot\bm
+  F(\bm r).
+  $$
+  Notas:
+  \begin{itemize}
+  \item La superficie $\partial V$ es cerrada y orientable.
+  \item $d\bm a$ es el elemento de área, es un vector cuyo tamaño es
+    el área de un pedacito de superficie y cuya dirección es el de la
+    normal $\hat {\bm n}$ a
+    la superficie. De forma equivalente, $da_x$ es el área de la proyección del elemento de
+    superficie sobre el plano $yz$, $da_y$ corresponde a la proyección
+    sobre el plano $zx$ y $da_z$ sobre el plano $xy$. El signo de
+    $da_x$ es el de $\hat{\bm  y}\times\hat{\bm z}\cdot\hat{\bm  n}$,
+    el de $da_y$ es el de $\hat{\bm  z}\times\hat {\bm x}\cdot\hat{\bm
+      n}$,
+    y el de $da_z$ es el de $\hat{\bm  x}\times\hat{\bm  y}\cdot\hat{\bm n}$.
+  \end{itemize}
+
+  Pistas:
+  \begin{itemize}
+  \item Lo más fácil, aunque no lo más formal, es dividir el volumen
+    V en prismas rectangulares {\em infinitesimales}. Argumenta por qué
+    demostrar el teorema para un pequeño prisma implica que se cumple
+    para un volumen finito.
+  \item   Una demostración un poco más convincente es dividir al volumen en
+    pequeños tetrahedros y demostrarlo para un tetrahedro, caracterizado
+    por un vértice y tres vectores que describan los lados que inciden
+    en dicho vértice.
+  \item   Otra demostración más consiste en dividir el volumen en regiones
+    convexas, proyectarlas sobre el plano $yz$, cuadricular dicha
+    proyección y como para cada cuadrito que $\Delta a_x
+    F_x(x1,y,z)+\Delta a_x F_x(x0,y,z)=\Delta y\Delta
+    z(F_x(x1,y,z)-F_x(x0,y,z))=\Delta y\Delta z\int_{x_0}^{x_1} dx\,
+    \partial F_x(x,y,z)/\partial x$ ($\Delta a_x=\pm\Delta y
+    \Delta z$ es la componente $x$ de un elemento de área en $(x_1,y,z)$ y
+    $(x_0,y,z)$; nota los signos), entonces $\int_{\partial
+      V} da_x F_x(\bm r)=\int_V d^3r\, F_x(\bm r)$. Luego, repetir para
+    las coordenadas $y$ y $z$.
+  \end{itemize}
+  \question Demuestra el teorema de Stokes: Para todo campo vectorial
+  $\bm F(\bm r)$ y superficie orientable $A$ con frontera $\partial
+  A$,
+  $$
+  \int_{\partial A}d\bm \ell\cdot\bm F(\bm r)=\int_A d\bm
+  a\cdot\nabla\times\bm F(\bm r).
+  $$
+  Notas:
+  \begin{itemize}
+  \item $\nabla\times \bm F$ es el rotacional con componentes cartesianas
+    $(\partial_yF_z-\partial_zF_y$, $\partial_z F_x-\partial_x F_z,
+    \partial_x F_y-\partial_y F_x)$ y usé la notación para flojos
+    $\partial_i\equiv\partial/\partial r_i$
+  \item Por ser orientable, se puede asignar una normal $\hat
+    {\bm n}(\bm r)$ en todo punto $\bm r$ de la superficie $A$.
+  \item $\partial A$ es una curva cerrada que recorre la frontera de
+    la superficie $A$ siguiendo una dirección consistente con la {\em
+      regla de la mano derecha}, i.e. si la palma de la mano derecha
+    toca dicha frontera y el pulgar apunta hacia la normal, los dedos de
+    la mano apuntan en la dirección en que se recorre la curva.
+  \item $d\bm \ell$ es el {\em elemento} de longitud a lo largo de la
+    curva.
+  \item $d\bm a$ es el elemento de área.
+  \end{itemize}
+  Pistas:
+  \begin{itemize}
+  \item La forma más sencilla, aunque menos formal y no del todo general, es demostrarlo
+    para rectángulos {\em infinitesimales} alineados a los ejes
+    cartesianos, por ejemplo, uno de lados $\Delta x$ y $\Delta y$ y
+    con elemento de área $\Delta \bm a=\Delta
+    x\Delta y\hat{\bm z}$. El problema es que no es fácil generalizar de rectángulos a
+    superficies arbitrarias.
+  \item Una con algo de talacha pero fácil también es demostrarlo para
+    un triángulo {\em infinitesimal} caracterizado por un vértice $\bm
+    r_0$ y dos lados pequeños $\bm a$ y $\bm b$. Hay que demostrar que
+    la integral de $\bm r_0\to\bm r_0+\bm a\to\bm r_0+\bm b\to\bm r_0$
+    es igual a $\nabla\times\bm F(\bm r_0)\cdot\bm a\times\bm b/2$,
+    interpretar este resultado y argumentar que toda superficie se
+    puede triangular.
+  \item En 2D, el teorema de Stokes es idéntico al de
+    Gauss, salvo por una rotación. Si describimos una superficie $A$ (o una
+    parte de la superficie) como un mapa $\bm r(u,v)$ de una región en el plano
+    $u-v$, el teorema de Stokes en 3D se puede deducir del teorema de
+    Stokes en 2D haciendo cambios de variable, usando regla de la
+    cadena, calculando jacobianos, etc.
+  \end{itemize}
+  \question Demuestra los teoremas {\em generalizados} de Gauss y de Stokes:
+  \begin{parts}
+    \part $\int_{\partial V} d\bm a\, f(\bm r)=\int_V d^3r\, \nabla f(\bm
+    r)$,
+    \part $\int_{\partial V} d\bm a \times \bm F(\bm r)=\int_V d^3r\,
+    \nabla \times \bm F(\bm r)$,
+    \part $\int_{\partial A}d\bm \ell\cdot\bm F(\bm r)=\int_A (d\bm a
+    \times  \nabla)\cdot\bm F(\bm r)$,
+    \part $\int_{\partial A}d\bm \ell f(\bm r)=\int_A (d\bm a
+    \times  \nabla) f(\bm r)$,
+    \part $\int_{\partial A}d\bm \ell\times\bm F(\bm r)=\int_A (d\bm a
+    \times  \nabla)\times\bm F(\bm r)$,
+  \end{parts}
+  donde $V$ es un volumen, $\partial V$ su frontera, $A$ una
+  superficie orientable, $\partial A$ su frontera, $\bm F(\bm r)$ un campo
+  vectorial, $f(\bm r)$ un campo escalar, $d\bm ell$ un elemento de
+  longitud y $d\bm a$ un elemento de superficie.
+
+  Notas:
+  \begin{itemize}
+  \item Se pueden resumir los resultados anteriores como
+    $\int_{\partial V} d\bm a\ldots=\int_Vd^3r\nabla\ldots$ y
+    $\int_{\partial A} d\bm \ell\ldots=\int_A(d\bm
+    a\times\nabla)\ldots$.
+  \end{itemize}
+
+  \question Considera un sistema con carga distribuida {\em
+    continuamente} de acuerdo a una densidad $\rho(\bm r)$.
+  \begin{parts}
+    \part Demuestra que su energía se puede escribir como
+    $$
+    U=\frac{1}{2}\int_V d^3 r\, \rho(\bm r)\phi(\bm r).
+    $$
+    \part ¿De dónde viene el factor de 1/2?
+    \part Usando la ley de Poisson e {\em integrando por partes}
+    demuestra que también podemos escribir
+    $$
+    U=\frac{1}{8\pi}\int_V d^3r\, |\bm E(\bm r)|^2.
+    $$
+    Pista:
+    \part ¿Qué suposiciones hiciste sobre $\rho$, $\phi$ y/o $\bm E$
+    en la superficie $\partial V$. ¿Qué volumen $V$ se debe/puede escoger?
+  \end{parts}
+  Notas:
+  \begin{itemize}
+  \item Usaremos con frecuencia integrales por partes en que usamos el
+    teorema de Gauss o de Stokes para mover operadores diferenciales
+    de un lado a otro. Por ejemplo, $\int_Vd^3r\, f(\bm r)\nabla g(\bm
+    r)=\int_Vd^3r\, [\nabla(f(\bm r) g(\bm r))-(\nabla f(\bm r))g(\bm
+    r)]=\int_{\partial V} d\bm a\, f(\bm r) g(\bm r)-\int_Vd^3r\,
+    (\nabla f(\bm r))g(\bm r)$. En ocasiones podemos eliminar la
+    integral de superficie.
+  \item Podemos identificar $u(\bm r)=|\bm E(\bm r)|^2/8\pi$ como una
+    densidad de energía.
+  \end{itemize}
+  \question Considera un capacitor de placas paralelas, formado por
+  dos placas planas metálicas de lados $a$ y $b$ separadas una
+  distancia $d\ll a,b$ en las que se depositan cargas $\pm Q$.
+  \begin{parts}
+    \part Calcula el campo eléctrico $\bm E(\bm r)$ en todo el
+    espacio usando la ley de Gauss.
+    \part Calcula la energía electrostática del sistema.
+    \part Calcula el cambio de la energía del sistema si una de las
+    placas se aleja de la otra una distancia pequeña $\delta d$.
+    \part Calcula la fuerza sobre dicha placa comparando el cambio de
+    energía con el trabajo realizado.
+    \part Calcula la fuerza coulombiana sobre una de las placas.
+    \part Discute los últimos dos resultados.
+  \end{parts}
+  \question Demuestra las identidades
+  \begin{parts}
+    \part $\nabla (f(\bm r)g(\bm r))=(\nabla f(\bm r)) g(\bm r))+f(\bm r)\nabla g(\bm r),$
+    \part $\nabla\cdot(f(\bm r)\bm F(\bm r))=(\nabla f(\bm r))\cdot
+    \bm F(\bm
+    r)+f(\bm r)\nabla\cdot \bm F(\bm r),$
+    \part $\nabla\times(f(\bm r)\bm F(\bm r))=(\nabla f(\bm r))\times
+    \bm F(\bm r)+f(\bm r)\times \bm F(\bm r),$
+    \part $\nabla\cdot(\bm F(\bm r)\times\bm G(\bm r))=\bm G(\bm
+    r)\cdot(\nabla\times \bm F(\bm r))-\bm F(\bm r)\cdot(\nabla\times\bm
+    G(\bm r))$
+    \part \label{7e}$\nabla\times(\bm F(\bm r)\times \bm G(\bm r))=\bm F
+    \nabla\cdot\bm G(\bm r)-\bm F(\bm r)\cdot\nabla\bm G(\bm r))-(\bm G(\bm
+    r)\nabla\cdot\bm F(\bm r)-\bm G(\bm r)\cdot\nabla\bm F(\bm r))$,
+  \end{parts}
+  donde $f(\bm r)$ y $g(\bm r)$ son campos escalares y $\bm F(\bm r)$
+  y $\bm G(\bm r)$ son campos vectoriales.
+
+  Pistas:
+  \begin{itemize}
+  \item Una forma talachuda pero certera es calcular las componentes
+    usando notación de índices y la convención de Einstein. Así, por
+    ejemplo, el lado derecho del inciso \ref{7e} sería
+    $\epsilon_{ijk}\partial_j\epsilon_{klm} F_l G_m$ donde
+    $\epsilon_{ijk}$ es el símbolo de Levi-Civita (1 para
+    permutaciones pares de $123=xyz$, -1 para impares, 0 en otros
+    casos). Entonces, cada derivada se aplica a un simple producto. Se
+    pueden entonces usar identidades como
+    $\epsilon_{ijk}\epsilon_{klm} = \delta_{ij}^{lm} =
+    \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}$, donde
+    $\delta_{ij}^{lm}$ es la delta de cuatro índices y $\delta_{ij}$
+    es la delta de Kronecker.
+  \item Una forma formal, ingeniosa pero poco ortodoxa, es separar
+    $\nabla$  en dos símbolos, $\nabla_F$ que actúe sobre $\bm F$, sin
+    importar si quedad a la derecha o a la izquierda, y $\nabla_G$ que
+    actúe sólo sobre $\bm G$. Entonces, podemos tratar a $\nabla_F$ y
+    $\nabla_G$ como si fueran vectores ordinarios, olvidando que son
+    operadores. Luego reordenamos los términos de manera que $\nabla_F$
+    quede a la izquierda de $\bm F$ y $\nabla_G$ quede a la izquierda
+    de $\bm G$. Finalmente, eliminamos los subíndices $F$ y $G$ por
+    ser innecesarios.
+  \item Siempre puede uno recurrir a calcular cada componente del lado
+    derecho y del lado izquierdo de las ecuaciones anteriores y
+    verificar que se cumplen.
+  \end{itemize}
+\question Utiliza la ley de Gauss y el hecho de que el campo es
+conservativo para demostrar que
+\begin{parts}
+  \part La componente del campo eléctrico tangencial a una superficie
+  cualquiera es continua, $\bm E_\|(1)=\bm E_\|(2)$, o $\hat{\bm
+    n}\times(\bm E_\|(2)-\bm E_\|(1))=0$, donde los números 2 y 1
+  denotan puntos contiguos de uno y otro lado de la superficie y $\hat
+  {\bm n}$ es un vector normal a la superficie.
+  \part La componente del campo eléctrico perpendicular a una
+  superficie son contínuos en ausencia de carga superficial,
+  $E_\perp(1)=\bm E_\perp(2)$ o $\hat{\bm n}\cdot(\bm E(2)-\bm E(1))=0$.
+  \part En presencia de una carga superficial $\sigma$, hay una discontinuidad
+  del campo $4\pi\sigma$, i.e. $\hat{\bm n}\cdot(\bm E(2)-\bm E(1))=4\pi\sigma$
+  donde el vector normal va del lado 1 al lado 2 de la superficie.
+  \part El potencial es continuo $\phi(2)=\phi(1)$ (en ausencia de una
+  distribución singular de dipolos).
+\end{parts}
+Pista:
+\begin{itemize}
+\item Usa pequeños cilindros gaussianos con tapas paralelas a la superficie,
+una de cada lado, y pequeños rectángulos con dos lados normales a la
+superficie y dos a lo largo de la superficie, uno a cada lado. Usa los
+teoremas de Stokes y de Gauss.
+\item Otra alternative consiste en, sin pérdida de generalidad,
+  colocar el plano $xy$ tangente al punto de la superficie que nos
+  interesa e integrar $\nabla\cdot\bm E$ y $\nabla\times\bm E$ de
+  $z=0-\epsilon$ hasta $z=0+\epsilon$, y tomar el límite
+  $\epsilon\to0$.
+\end{itemize}
+\question
+\begin{parts}
+  \part Argumenta que en el interior de un conductor el campo
+  electrostático es nulo.
+  \part Demuestra que, por tanto, la densidad de carga es nula en el
+  interior del conductor.
+  \part Justo afuera del conductor el campo es
+  perpendicular a la superficie, $\bm E_\|=0$.
+  \part El conductor es equipotencial.
+  \part Muestra que el campo perpendicular justo afuera es $E_\perp=4\pi\sigma$, con $\sigma$
+  la densidad de carga superficial.
+\end{parts}
+\question Demuestra que dada una densidad de carga $\rho(\bm r)$
+dentro de un volumen $V$ y el potencial $\phi(\bm r)$ en la frontera
+$\partial V$ de dicho volumen, el potencial es único en todo el
+volumen $V$.
+
+Pistas:
+\begin{itemize}
+\item El potencial obedece la ecuación de Poisson.
+\item Suponiendo que hubiera dos soluciones $\phi_1(\bm r)$ y
+  $\phi_2(\bm r)$ de la ec. de Poisson, su diferencia $\Phi(\bm
+  r)\equiv\phi_2(\bm r)-\phi_1(\bm r)$ obedecería la ecuación de
+  Laplace y valdría cero en la superficie $\partial V$.
+\item Define $\bm F=-\nabla\Phi$.
+\item Demuestra que $\int_Vd^3r\, F^2=0$ integrando por
+  partes y usando las condiciones de frontera y la ecuación de
+  Laplace.
+\item Concluye que $\bm F=0$, por tanto $\Phi$ es constante.
+\item Demuestra que la constante es cero.
+\end{itemize}
+Nota: La misma demostración se puede aplicar al caso en que conocemos
+$E_\perp$, concluyendo en dicho caso que $\phi$ es única hasta una
+constante aditiva, pero $\bm E$ sería único.
+\question Se coloca una carga $q$ sobre el eje $z$ en el vacío a una distancia $d$
+arriba de una superficie metálica plana {\em aterrizada} (i.e., con potencial
+$\phi(r)=0$) que descanza en el plano $xy$.
+\begin{parts}
+  \part Demuestra que el potencial en la región $z>0$ es el mismo que
+  el potencial coulombiano que produce la carga $q$ más el que produce
+  una carga ficticia $-q$ colocada en el eje $z$ a una distancia $d$
+  abajo de la superficie.
+  \part ¿Cuánto vale el potencial en la región $z<0$?
+  \part ¿Cuánto vale la carga $\sigma(x,y)$ superficial inducida en la
+  superficie del metal?
+\end{parts}
+\question Se coloca una carga $q$ en el eje $z$ a una distancia $d$
+arriba del origen y se coloca una esfera metálica aterrizada de radio $a<d$
+centrada en el origen.
+\begin{parts}
+  \part Demuestra que el potencial en la región $r>a$ es el mismo que
+  el potencial coulombiano que produce la carga $q$ más el que produce
+  una carga ficticia $q'=-q a/d$ colocada en el eje $z$ a una distancia $d'=a^2/d$
+  arriba del origen.
+  \part ¿Cuánto vale el potencial en la región $r<a$?
+\end{questions}
+
+
+\end{document}
