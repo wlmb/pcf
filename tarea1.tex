@@ -1,0 +1,80 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\begin{document}
+\begin{center}
+\bf\large Tarea 1\\
+Propedéutico Electrodinámica\\
+\date{2020-03-10}
+\today\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el martes 2020-03-17.
+
+\begin{questions}
+  \question Una carga $Q$ se coloca en el centro de un triángulo
+  equilatero equidistante de sus tres esquinas en cada una de las
+  cuales hay una carga $-e$. La
+  fuerza sobre las cargas negativas es 0.
+  \begin{parts}
+    \part ¿Cuánto vale $Q$?
+    \part El sistema ¿está en equilibrio estable?
+  \end{parts}
+  \question Calcula la energía necesaria para ensamblar un sistema de
+  $N$ partículas con cargas $q_n$ y posiciones $\bm r_n$
+  ($n=1\ldots N$). Escríbela en términos de las posiciones de cada
+  partícula y en términos de los potenciales $\phi_n(\bm r_n)$
+  producidos por las partículas $n'\ne n$.
+  \question Calcula la energía potencial por ion de un cristal polar 1D
+  formado por cargas $\pm q$ alternadas equiespaciadas una distancia $a$
+  una de otra.\\Pista: Usa la expansión en potencias de log(1+x).
+  \question Usa la ley de Gauss y argumentos de simetría para calcular
+  el campo eléctrico $\bm E(\bm r)$ producido por una carga puntual
+  $Q$ colocada en el origen.
+  \question Considera una línea de carga infinitamente larga en la
+  cual se deposita una carga uniformemente con densidad lineal (carga
+  por unidad de longitud) $\lambda$.
+  Usa la ley de Gauss y argumentos de simetría para calcular el campo
+  eléctrico en todo punto.
+  \question Considera un cilindro de radio $a$ infinitamente largo en
+  cuya superficie se distribuye uniformemente una carga con densidad
+  superficial (carga por unidad de área) $\sigma$. Calcula el campo
+  eléctrico producido en todo el espacio (afuera y adentro del
+  cilindro). Compara tu resultado con el de la pregunta previa.
+  \question
+  \begin{parts}
+    \part Calcula la energía electrostática total de una esfera de
+    radio $a$ en cuyo volumen se distribuye uniformememte una carga
+    $Q$.
+    \part Si un electrón fuera una esfera uniformemente cargada y su
+    energía en reposo fuese su energía electrostática, ¿cuál sería su
+    radio $r_c$?
+    \part Lo mismo pero para una carga $Q$ distribuida únicamente en
+    la superficie de la esfera.
+  \end{parts}
+  \question Considera una esfera hueca de radio interior $a$ y radio
+  exterior $b>a$, en cuya pared (entre $a$ y $b$) se distribuye
+  uniformemente una carga $Q$. Calcula el potencial eléctrico
+  $\phi(\bm r)$ en todo el espacio (en las tres regiones, $r<a$,
+  $a<r<b$, $b<r$.
+  \question Considera un prisma rectangular de lados $a$, $b$ y $c$
+  alineados con los ejes cartesianos $x$, $y$ y $z$ y centrado en el
+  origen. Demuestra que en el límite $a,b,c\to 0$,
+  $$
+  \frac{1}{abc}\int_{\mathrm{prisma}} d\bm s\cdot \bm F(\bm
+  r)=\nabla\cdot \bm F(\bm 0)
+  $$
+  donde $\bm F(\bm r)$ es un campo vectorial arbitrario con
+  componentes $F_x$, $F_y$ y $F_z$, la integral
+  es sobre las paredes del prisma y $\nabla\cdot\bm F=\partial_x
+  F_x+\partial_y F_y+\partial_z F_z$ es la divergencia de $\bm F$ (y
+  economicé en la notación).
+  \question Demuestra la versión diferencial de la Ley de Gauss,
+  $\nabla\cdot \bm E(\bm r)=4\pi\rho(\bm r)$.
+\end{questions}
+\end{document}
