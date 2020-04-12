@@ -1,0 +1,438 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\begin{document}
+\begin{center}
+\bf\large Tarea 3\\
+Propedéutico Electrodinámica\\
+\date{2020-03-10}
+\today\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el viernes 2020-04-10.
+
+\begin{questions}
+  \question Demuestra que para una función escalar $f(\bm r)$ de la posición
+  $\bm r=(x,y,z)$ suficientemente suave, diferenciable, etc., y un
+  vector $\bm h=(h_x, h_y, h_z)$ suficientemente pequeño,
+  podemos hacer la expansión de {\em Taylor}
+  \begin{align*}
+    f(\bm + \bm h)=&f(\bm r)+\bm h\cdot\nabla f(\bm r)+\frac{1}{2}(\bm
+                     h\cdot\nabla)^2 f(\bm r)+\ldots\\
+    =&\sum_n \frac{1}{n!}(\bm h\cdot\nabla)^n  f(\bm r)\\
+    =& \exp(\bm h\cdot\nabla)f(\bm r).
+  \end{align*}
+
+  Pista:
+  \begin{itemize}
+  \item Considera la función $g(t)\equiv f(\bm r+t\bm h)$ escalar de
+    una variable real $t$ y haz una expansión ordinaria de Taylor
+    respecto a $t$, usando la regla de la cadena.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item Identifica en la última expresión $\exp(i\bm
+    h\cdot\hat{\bm p}/\hbar)$, con $\hat{\bm p}$ el operador ímpetu de
+    la mecánica cuántica, el {\em generador de translaciones}.
+  \end{itemize}
+  \question Considera una carga distribuida con una densidad $\rho(\bm
+  r)$ en una región de tamaño $D$ alrededor del origen. Demuestra que
+  el potencial $\phi(\bm r)$ lejos de dicha región $r\gg D$ se puede
+  escribir como
+  $$\phi(\bm r)=\frac{Q}{r} + \frac{\bm p\cdot\bm r}{r^3} +\ldots
+  $$
+  donde
+  $Q=\int d^3r\,\rho(\bm r)$ es la carga total de la distribución,
+  $\bm p=\int d^3r \rho(\bm r)\bm r$ es el momento dipolar, dado por
+  el primer {\em momento} de la distribución.
+
+  Pistas:
+  \begin{itemize}
+  \item Escribe el potencial Coulombiano y haz una expansión de Taylor
+    para el kernel $1/|\bm r-\bm r'|$ alrededor de $\bm r'=\bm 0$.
+  \end{itemize}
+
+  Notas:
+  \begin{itemize}
+  \item Generalmente, cada término es de orden $D/r$ comparado con el
+    anterior.
+  \item Si $Q\ne 0$, el primer término domina a distancias grandes.
+  \item Si $Q=0$ pero $\bm p\ne \bm 0$, entonces el segundo término
+    domina a distancias grandes.
+  \item En general, el primer término distinto de cero es el único
+    relevante a distancias suficientemente lejanas. De lejos, toda
+    distribución de carga es indistinguible de una carga puntual, a
+    menos que la carga total sea cero, en cuyo caso, todo sistema es
+    un dipolo, a menos que el momento dipolar sea cero, en cuyo caso,
+    todo sistema es un cuadrupolo\ldots
+  \item ¿Cómo escribirías la definición de $Q$ y de $\bm p$ para cargas
+    discretas?
+  \end{itemize}
+
+  \question Aplica el resultado anterior al de dos cargas $q$ y $-q$
+  separadas una distancia $a$.
+
+  \question Demuestra que el campo eléctrico producido por un dipolo
+  $\bm p$ colocado en el origen es
+  $$
+  \bm E(\bm r)=\frac{3\bm p.\bm r\bm r-\bm p r^2}{4^5}.
+  $$
+  Pista:
+  \begin{itemize}
+  \item Usa $\bm = -\nabla\phi$.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item Si el dipolo estuviera en una posición $\bm r_0$ basta cambiar
+    $\bm r$ por $\bm r-\bm r_0$ en las expresiones anteriores.
+  \end{itemize}
+
+  \question Considera un cubo de lado $L$ orientado con los planos
+  cartesianos, formado por formado por $N$ átomos, cada uno sin carga
+  ni momento dipolar incialmente. En cierto momento un electrón de
+  cada átomo se desplaza una distancia $a$ en la dirección $z$.
+  \begin{parts}
+    \part Demuestra que el número de electrones que atraviesan la cara
+    superior de abajo hacia arriba es $Q=Na/L=na/L^2$, donde $n=N/L^3$
+    es la densidad de número de los átomos.
+    \part Muestra que cada átomo adquiriría un momento dipolar $\bm
+    p=-e\bm a=-ea\hat{\bm z}$.
+    \part Muestra que el momento dipolar por unidad de volumen sería
+    $\bm P=n\bm p=\-ne\bm a$.
+    \part Muestra que la carga que atraviesa la superficie superior es
+    $Q=\bm P\cdot\hat {\bm z} L^2$.
+    \part Demuestra que la carga que atraviesa las superficies
+    laterales es nula.
+    \part Generaliza este resultado y muestra que para cualquier
+    pequeña superficie con área $da$ y normal $\hat{\bm n}$ colocada
+    en la posición $\bm r$ dentro
+    en un medio no polarizado, la carga que atraviesa la superficie en
+    la dirección de $\hat n$
+    cuando el sistema se polariza por el movimiento de algunas o todas sus
+    cargas es $dQ=\bm P(\bm r)\cdot d\bm a$, donde $d \bm a=\hat{\bm n}da$ y
+    $\bm P(\bm r)$ es el momento dipolar eléctrico por unidad de
+    volumen evaluado en la superficie.
+    \part Considera un volumen $V$ cuya frontera sea la superficie
+    orientable $\partial V$ dentro de un material neutro no
+    polarizado. Demuestra que la carga que sale del volumen a través
+    de su superficie cuando el sistema se polariza es
+    $$
+    Q_{\partial V}=\int_{\partial V} d\bm a\cdot \bm P.
+    $$
+    \part Argumenta mediante la ley de conservación de la carga y el
+    teorema de Gauss que
+    el interior del volumen queda cargado con una carga
+    $$
+    Q_V=-\int_{\partial V} d\bm a\cdot \bm P=-\int_V d^3r\,
+    \nabla\cdot\bm P.
+    $$
+    \part Argumenta que, como el volumen anterior es arbitrario, hay
+    una densidad de carga $\rho^i$ asociada a la polarización dada por
+    $$
+    \rho^i(\bm r)=-\nabla\cdot\bm P(\bm r).
+    $$
+    \part Argumenta por qué, si el material es finito, en su
+    superficie aparecerá una carga $\sigma^i$ por unidad de superficie
+    dada por
+    $$
+    \sigma^i(\bm r)=\bm P(\bm r)\cdot\hat{\bm n}(\bm r),
+    $$
+    donde $\bm r$ se halla en la frontera del material, $\bm P(\bm r)$
+    es la polarización justo adentro del material y $\hat{\bm n}(\bm
+    r)$ es una normal que apunta desde adentro hacia afuera del
+    material.
+    \part Argumenta por qué en una interface entre dos medios (1 y 2)
+    polarizados, hay una densidad de carga superficial debida a la
+    polarización $P(\bm r)$ dada opr
+    $$
+    \sigma(\bm r)=(\bm P(\bm r_1)-\bm P(\bm r_2))\cdot \hat{\bm n}(\bm r),
+    $$
+    donde $\bm r$ está en la superficie, $\bm r_1=\bm r-\delta
+    \hat{\bm n}$ es un vector pegado a $\bm r$ pero dentro del medio
+    1, $\bm r_2=\bm r+\delta \hat{\bm n}$ es un vector pegado a $\bm
+    r$ pero dentro del medio 2, tomamos el límite $\delta\to 0^+$ y
+    el vector normal a la superficie $\hat{\bm n}(\bm r)$ apunta
+    desde el medio 1 hacia el medio 2.
+  \end{parts}
+  \question Considera un cilindro circular recto de radio $R$ y altura
+  $L$ uniformemente polarizado con polarización $\bm P$ a lo largo del
+  eje. Calcula el momento dipolar total del cilindro $\bm p$
+  \begin{parts}
+    \part integrando su polarización sobre el volumen,
+    \part a partir de las cargas superficiales empleando la definición de momento dipolar.
+  \end{parts}
+  \question Utiliza la ley de Gauss para demostrar la {\em ley de
+    Gauss macroscópica}
+  $$
+  \nabla\cdot \bm D(\bm r)=4\pi\rho^e,
+  $$
+  donde $\bm D=E+4\pi P$ es el {\em desplazamiento} y
+  $\rho^e$ es la densidad de carga externa.
+
+  Pista:
+  \begin{itemize}
+  \item Escribe la densidad de carga total $\rho=\rho^e+\rho^i$ y
+    escribe la densidad de carga {\em interna} o de polarización
+    $\rho^i$ en términos de $\bm P$.
+  \end{itemize}
+
+  Nota:
+  \begin{itemize}
+  \item A veces se usan los superíndices $t$, $e$, e $i$ para denotar
+    cargas totales, externas e internas, pero muchas veces se olvidan
+    dichas anotaciones, esperando que el lector adivine por el
+    contexto a qué tipo de carga se refiere uno. Si en un texto leen
+    $\nabla\cdot \bm D=r\pi\rho$ deben entender que en este caso $\rho$
+    se refiere a las cargas internas, mentras que si leen $\nabla
+    E=4\pi\rho$, entonces deberán entender que $\rho$ se refiere a las
+    cargas totales.
+  \end{itemize}
+
+  \question Considera un volumen $V$ dentro de un material. Demuestra
+  que la cantidad de carga externa dentro del volumen está dada por
+  $$
+  Q^e_V=\int d\bm a\cdot\bm D(\bm r).
+  $$
+
+  \question Demuestra que en una superficie cualquiera que separa dos
+  regiones 1 y 2 se cumple la condición
+  $\bm D(\bm r_2)-\bm D(\bm r_1)\cdot\hat{\bm n}(\bm
+  r)=4\pi\sigma^e(\bm r)$, donde $\bm r$ es una posición en la superficie, $\bm
+  r_2$ y $\bm r_1$ son posiciones pagadas a $\bm r$ del lado 2 y del
+  lado 1 de la superficie respectivamente, y donde $\sigma^e$ es la
+  densidad superficial de carga depositada justo en la superficie.
+
+  Pista:
+  \begin{itemize}
+  \item Integra la ley de Gauss en un pequeño cilindro con tapas
+    paralelas a la superficie, una de cada lado, y toma el límite en
+    que las paredes del cilindro se colapsan.
+  \end{itemize}
+
+  Nota:
+  \begin{itemize}
+  \item En ausencia de una carga externa superficial podemos concluir
+    que la componente normal del desplazamiento es contínua $\Delta
+    D_\perp(\bm r)=E_\perp(\bm r_2)-E_\perp(\bm 1)=(\bm E(\bm r_2)-\bm
+    E(\bm 1))\cdot\hat{\bm n}(\bm r)$.
+  \item La otra condición de contorno, la continuidad de $\bm E_\|$
+    sigue sin cambio, así como las ecuaciones $\nabla\times\bm E=0$,
+    $\int_{\partial A}d \bm l\cdot\bm E=0$, $\bm E=-\nabla\phi$ y la
+    condición de continuidad de $\phi$.
+  \end{itemize}
+
+  \question Considera una placa en forma de prisma cuadrado de lado
+  $L$ y altura $h\ll L$ que descansa sobre su base en el plano $xy$ y
+  hecha de un material ferroeléctrico, i.e., que
+  tiene una transición de fase que lo hace pasar espontáneamente de un
+  estado con $\bm P=0$ a un estado con $\bm P\ne 0$. Calcula el campo
+  eléctrico $\bm E$ en todo el espacio cuando el material se polariza,
+  suponiendo que la polarización apunta en la dirección $z$ e
+  ignorando efectos de borde.
+
+  Pistas:
+  \begin{itemize}
+  \item Calcule las cargas de polarización y de ahí obtenga el campo
+    eléctrico que producen.
+  \end{itemize}
+
+  \question Considera un modelo atómico clásico (malísimo, pero no importa) en
+  que un electrón con carga $-e$ está ligado a al núcleo por un
+  resorte con constante $\kappa$. La posición de equilibrio del electrón
+  es {\em encima} del núcleo. Los demás electrones, por lo pronto,
+  supongamos que son inertes, que no se mueven.
+  \begin{parts}
+    \part Demuestra que al aplicar un campo $\bm E$ estático el átomo adquiere un
+    momento dipolar $\bm p=\alpha \bm E$, donde la polarizabilidad
+    $\alpha$ es
+    $$
+    \alpha=\frac{e^2}{m\omega_0^2},
+    $$
+    $\omega_0^2=\kappa/m$ y $m$ es la masa del electrón.
+    \part Si en cambio el campo dependiera del tiempo sinusoidalmente,
+    como $\bm E(t)=\mathrm{Re} \tilde{\bm E}(t)=\bm E_0 e^{-i\omega
+      t}$ el dipolo sería
+    $\bm p(t)=\mathrm{Re}\tilde{\bm p}(t)$, con $\tilde{\bm
+      p}(t)=alpha(\omega)\tilde{\bm E}(t)$ y la
+    polarizabilidad sería
+    $$
+    \alpha(\omega)=\frac{e^2/m}{\omega_0^2-\omega^2},
+    $$
+    \part Si además hubiera una fuerza viscosa sobre el electrón
+    proporcional a su velocidad, $\bm F_v=-\gamma \bm v$, con $\gamma$
+    una constante, la polarizabilidad sería
+    $$
+    \alpha(\omega)=\frac{e^2/m}{\omega_0^2-\omega^2-i\omega/\tau},
+    $$
+    donde $\tau=m/\gamma$ es un tiempo característico.
+  \end{parts}
+
+  Pista:
+  \begin{itemize}
+  \item Simplemente resuelve la ecuación de movimiento clásica para el
+    electrón.
+  \item Es más fácil resolver la ecuación compleja y tomar parte real
+    al final del cálculo.
+  \end{itemize}
+  Nota:
+    \begin{itemize}
+    \item Curiosamente, el modelo no es tan malo. Para un átomo o
+      molécula real, en incluso para un sólido, el resultado es una suma de términos como los
+      anteriores, uno para cada posible transición electrónica del
+      sistema de muchos electrones, con un peso fraccional conocido
+      como {\em fuerza de oscilador}.
+    \end{itemize}
+
+  \question Considera un sólido formado por $n$ moléculas por unidad
+  de volumen, cada una de ellas no polar, isotrópica y con polarizabilidad $\alpha$.
+  \begin{parts}
+    \part Argumenta por qué podemos escribir $\bm P=\chi\bm E$ bajo
+    ciertas condiciones, donde $\chi=n\alpha$ es la susceptibilidad.
+    \part Demuestra que podemos entonces escribir $\bm D=\epsilon \bm E$, donde
+    $\epsilon=1+4\pi\chi$ es conocida como permitividad, constante
+    dieléctrica o función dieléctrica (pues puede depender de $\omega$).
+  \end{parts}
+
+  \question Considera un medio isotrópico, homogéneo e infinito. En el
+  origen se coloca una carga (externa) puntual $q$. Demuestra que
+  \begin{parts}
+    \part el campo eléctrico que produce es
+    $$
+    \bm E(\bm r)=q\frac{\bm r}{\epsilon r^3}
+    $$
+    \part y el potencial electríco es
+    $$
+    \phi(\bm r)=\frac{q}{\epsilon r}.
+    $$
+  \end{parts}
+  Pista:
+  \begin{itemize}
+  \item Puedes usar la versión integral de la ley de Gauss para
+    obtener $\bm D$ y de ahí $\bm E$ y $\phi$.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item En este caso, el resultado es como si la carga $q$ se
+    reemplazara por una carga apantallada $q/\epsilon$. ¿Por qué se
+    apantalla la carga?
+  \end{itemize}
+  \question Considera un capacitor formado por dos placas metálicas planas
+  paralelas cuadradas de lado $L$ separadas una distancia $d\ll L$. Se
+  coloca una carga externa $Q$ en una placa y $-Q$ en la otra.
+  \begin{parts}
+    \part Despreciando efectos de borde, calcula el campo eléctrico
+    entre las placas y afuera de ellas.
+  \item Obten el potencial entre las placas.
+  \item Encuentra la capacitancia $C=A/4\pi d$, con $A=L^2$ el área de
+    las placas.
+  \item Repite el cálculo anterior cuando el capacitor está lleno de
+    un material con permitividad $\epsilon$.
+  \end{parts}
+  Pistas:
+  \begin{itemize}
+  \item Podrías colocar las placas paralelas al plano $xy$, sin pérdida de
+    generalidad.
+  \item Argumenta que el campo y la densidad de carga son cero en el
+    interior de los metales, i.e., la carga se distribuye en la superficie.
+  \item Las placas son equipotenciales.
+  \item Ignorando los bordes, el potencial sólo depende de $z$.
+  \item La solución de la ec. de Poisson entre las placas y afuera es
+    entonces lineal en z, y por tanto el campo es constante y apunta
+    en la dirección $z$.
+  \item Argumenta que el campo afuera de las placas es nulo y obtén el
+    campo dentro usando condiciones de contorno sobre $\bm E$.
+  \item Intégralo para obtener el potencial $\phi(z)$ y la caida de
+    potencial entre la placa positiva y la negativa.
+  \item La capacitancia es el cociente entre la carga y la caida de
+    potencial.
+  \item Repite el cálculo aplicando condiciones de contorno sobre $\bm
+    D$.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item La capacitancia se multiplica por $\epsilon$ debido al relleno
+    del capacitor.
+  \end{itemize}
+  \question Un cilindro metálico con radio exterior $a$ se coloca
+  dentro de un cilindro metálico hueco coaxial con radio interior $b>a$. Ambos
+  tienen la misma altura $h>>b$. El espacio entre ellos se llena de un
+  dieléctrico con permitividad $\epsilon$. Encuentra la capacitancia del
+  sistema.
+
+  Pista:
+  \begin{itemize}
+  \item Coloca cargas $\pm Q$ en los dos cilindros.
+  \item Las dos superficies metálicas son equipotenciales.
+  \item La carga se distribuye entonces uniformemente en sus
+    superficies.
+  \item El campo es radial, no depende ni de $z$ y su componente
+    radial no depende de $\theta$.
+  \item Usa la ley de Gauss en su forma integral para obtener la
+    comonente radial de $D$, luego de $E$, y luego intégrala para
+    obtener el potencial.
+  \item La capacitancia es la carga dividida entre la caida de
+    potencial.
+  \end{itemize}
+
+  \question Considera un dieléctrico semiinfinito con permitividad
+  $\epsilon_1$ ocupando la región $z>0$ y otro ocupando la región
+  $z<0$. Se coloca una carga puntual $q$ sobre el eje $z$ a una
+  distancia $d>0$ del origen.
+  \begin{parts}
+    \part Demuestra que el potencial que produce es
+    $$
+    \phi(\bm r)= \frac{q/\epsilon_1}{(x^2+y^2+(z-d)^2)^{1/2}}
+    +\frac{q'/\epsilon_1}{(x^2+y^2+(z+d)^2)^{1/2}}
+    $$
+    en $z>0$ y como
+    $$
+    \phi(\bm r)= \frac{q''/\epsilon_2}{(x^2+y^2+(z-d)^2)^{1/2}}
+    $$
+    en $z<0$, donde
+    $$
+    q'=\frac{\epsilon_1-\epsilon_2}{\epsilon_1+\epsilon_2}q
+    $$
+    y
+    $$
+    q''=\frac{2\epsilon_2}{\epsilon_1+\epsilon_2}q
+    $$
+  \end{parts}
+  Pistas:
+  \begin{itemize}
+  \item Usa el método de imágenes. Argumenta que añadir cargas
+    ficticias en $z<0$ no afecta las ecuaciones de campo en $z>0$ y
+    añadir cargas ficticias en $z>0$ no afecta las ecuaciones de campo
+    en $z<0$.
+  \item Propón como {\em anzatz} una solución en la región $z>0$ dada
+    por el potencial que produciría la carga original $q$ en el eje z
+    en $z=d$ y una carga ficticia, {\em la carga imágen} colocada
+    también en el eje $z$ (dónde si no) y a una distancia $d'$ hacia
+    abajo del origen, ambas en un medio ficticio homogeneo con
+    permeabilidad $\epsilon_1$. La carga y la permeabilidad de este
+    sistema ficticio coinciden con las reales en la región $z<0$,
+    aunque no en la región $z<0$.
+  \item Propón como {\em anzatz} una solución en la región $z<0$ dada
+    por el potencial que produciría una carga ficticia $q''$ colocada
+    en el eje $z$ a una distancia $d''$ arriba del origen dentro de un
+    medio homogéneo con permeabilidad $\epsilon_2$. La carga y la
+    permeabilidad coinciden con las reales en la región $z<0$, pero no
+    en la región $z>0$.
+  \item Impón condiciones de contorno sobre el potencial en la
+    interfaz $z=0$, i.e., el potencial justo arriba debe ser igual al
+    potencial justo abajo, para toda $x$ y $y$.
+  \item Impón condiciones de contorno para las comonentes normales a
+    la superficie del desplazamiento.
+  \item Demuestra que eligiendo juiciosamente $d'$ y $d''$, las
+    condiciones de contorno se cumplirían para toda $x$ y $y$ con
+    cumplirse en un solo punto.
+  \item Escribe entonces ambas ecuaciones de contorno como dos
+    ecuaciones lineales con dos incógnitas, $q'$ y $q''$ y
+    resuélvelas.
+  \end{itemize}
+\end{questions}
+\end{document}
