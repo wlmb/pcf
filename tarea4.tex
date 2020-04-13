@@ -1,0 +1,643 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\cfoot[]{\thepage}
+\begin{document}
+\begin{center}
+\bf\large Tarea 4\\
+Propedéutico Electrodinámica\\
+\date{2020-04-12}
+\today\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el viernes 2020-04-17.
+
+\begin{questions}
+\question Considera un sistema formado por $n$ partículas por unidad
+  de volumen, cada una con carga $q$ y todas moviéndose al unísono con
+  velocidad $\bm v$. Considera una pequeña superficie con área $\Delta
+  a$ y con un vector normal unitario $\hat {\bm n}$. Demuestra que en
+  un tiempo $\Delta t$ la cantidad de carga $\Delta Q$ que atraviesa
+  la superficie en la dirección de $\hat{\bm n}$  es
+  $$
+  \Delta Q=(n q \bm v\Delta t)\cdot(\Delta a \hat{\bm n})
+  $$
+
+  Pistas:
+  \begin{itemize}
+  \item Construye un cilindro oblicuo cuya {\em tapa} sea la pequeña
+    superficie dada y cuyos lados esten dados por el vector $\bm v\Delta
+    t$, de manera que $\bm v\cdot\hat{\bm n} \ge 0$.
+  \item El volumen de dicho cilindro es base por altura, $(\bm v\Delta
+    t)\cdot(\Delta a\hat{\bm n})$.
+  \item Calcula cuánta carga contiene dicho cilindro.
+  \item  Muestra que toda la carga que contenida en dicho cilindro al
+    tiempo $t$ habría atravesado la tapa el tiempo $t+\Delta t$,
+    formando un nuevo cilindro cuya {\em base} es la pequeña
+    superficie.
+  \end{itemize}
+
+  Notas:
+  \begin{itemize}
+  \item El problema así planteado es irrealista. No importa. Abajo lo arreglaremos.
+  \item Podemos definir in {\em vector} área $\Delta \bm a=\Delta
+    a\hat{\bm n}$.
+  \item Podemos definir una {\em densidad de corriente} $\bm j=n q\bm
+    v$.
+  \item Podemos escribir el resultado arriba como $\Delta Q=\bm
+    j\cdot\hat{\Delta \bm a}\Delta t$.
+  \end{itemize}
+
+  \question Considera un sistema formado por $n_\alpha$ partículas cargadas por
+    unidad de volumen, cada una con una carga $q_\alpha$ y moviéndose
+    con velocidad $\bm v_\alpha$, donde
+    $\alpha=1,2\ldots$ denota el tipo de partícula (por ejemplo,
+    electrones y diversos tipos de iones).
+    \begin{parts}
+    \part Muestra que la densidad de carga es $\rho=\sum_\alpha
+      n_\alpha q_\alpha$.
+    \part Muestra que la densidad de corriente es $\bm j=\sum_\alpha
+      n_\alpha q \bm v_\alpha$.
+    \end{parts}
+
+    Pistas:
+    \begin{itemize}
+    \item Muestra que un pequeño volumen $\Delta V$ contiene una carga
+      $\Delta Q_{\Delta V}=\rho\Delta V$.
+    \item Muestra que una carga $\Delta Q_{\Delta \bm a,\Delta t}=\bm
+      j\cdot\Delta\bm a\Delta t$ atraviesa una pequeña superficie
+      $\Delta \bm a$ en la dirección de su normal en un tiempo $\Delta t$.
+    \item Usa el resultado del problema anterior para cada tipo de cargas.
+    \end{itemize}
+
+    Notas:
+    \begin{itemize}
+    \item Cuando hay más de un tipo de cargas no es cierto que $\bm
+      j=\rho \bm v$; cada tipo de cargas contribuye de manera distinta
+      a la densidad de carga y a la densidad de corriente.
+    \item Puede haber una corriente finita en un medio neutral.
+    \item Típicamente, los metales son materiales que pueden conducir
+      corriente eléctrica $\bm j\ne \bm 0$ a pesar de ser neutros
+      $\rho=0$, i.e., tienen el mismo número de electrones de
+      conducción móviles que de protones inmovilizados en los núcleos.
+    \end{itemize}
+  \question Considera un volumen $V$ cuyas cargas se mueven dando
+    origen a una densidad local de corriente $\bm j(\bm
+    r,t)$. Demuestra que la carga que sale de dicho volumen durante un
+    pequeño tiempo $\Delta$ es
+    $$
+    \Delta Q_{\mathrm{sale}}=\int_{\partial V}d\bm a \bm j(\bm r, t) \Delta t,
+    $$
+    donde $\partial V$ denota la frontera del volumen, donde $d\bm
+    a=da\hat{\bm n}$, $da$ es un elemento de área y $\hat{\bm n}$ es
+    la normal a la superficie que apunta hacia afuera.
+
+    Pistas:
+    \begin{itemize}
+    \item Calcula la carga que atraviesa cada elemento de área
+      empleando los resultados de los problemas anteriores.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item La densidad de corriente se relaciona a la densidad y
+      movimiento de los portadores de carga como en el problema
+      anterior.
+    \item La densidad de número de los portadores y su velocidad pueden
+      depender de la posición y del tiempo, por lo cual $\bm j$
+      depende en general de $\bm r$ y de $t$.
+    \item La frontera $\partial V$ de un volumen $V$ es una superficie
+      cerrada y {\em orientable}.
+    \end{itemize}
+  \question Muestra que {\em la ley de conservación de la carga} se
+    puede expresar como
+    $$
+    \frac{d}{dt}Q_V(t)+\int_{\partial V}d\bm a\cdot\bm j(\bm r,t)=0,
+    $$
+    Notas:
+    \begin{itemize}
+    \item La carga no se crea ni se destruye. La única manera como
+      puede salirse carga del interior de un volumen es atravesando su
+      superficie.
+    \item Se pueden crear y destruir partículas cargadas, pero siempre
+      por pares, acompañadas de la creación o destrucción en el mismo
+      punto y al mismo tiempo de una partícula con la carga
+      opuesta. Se crean y destruyen pares de partículas de carga
+      opuesta.
+    \end{itemize}
+  \question La ley de conservación de la carga también se puede
+    escribir como
+    $$ \frac{\partial}{\partial t}\rho(\bm r,t)+\nabla\cdot\bm j(\bm
+    r,t)=0.$$
+    Pista:
+    \begin{itemize}
+    \item En el problema anterior escribe $Q_V(t)$ en términos de
+      $\rho(\bm r,t)$.
+    \item Usa el teorema de Gauss.
+    \item Demuestra que $\int_Vd^3r(\partial\rho+\nabla\cdot\bm j)=0$
+      {\em para todo volumen} $V$, y por tanto el integrando es nulo.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item Éstas últimas ecuaciones se conocen como {\em ecuación de
+        continuidad}.
+    \end{itemize}
+
+  \question Demuestra que en un sistema estacionario
+    \begin{parts}
+    \part $\int_{\partial V}d\bm a\cdot\bm j(\bm r)=0$ donde
+      $\partial V$ es la frontera de un volumen arbitrario $V$ fijo.
+    \part $\nabla\cdot\bm j(\bm r)=0$.
+    \end{parts}
+    Nota:
+    \begin{itemize}
+    \item Un sistema se llama {\em estático} cuando nada se mueve.
+    \item Un sistema se llama {\em estacionario} cuando ninguna
+      cantidad (macroscópica) depende del tiempo.
+    \end{itemize}
+
+  \question Considera el siguiente modelo simplificado de metal,
+    formado por $n$ iones positivos y $n$ electrones por unidad de
+    volumen. Cada ion tiene carga $e$ y cada electrón carga $-e$. Cada
+    electrón se mueve libremente durante cierto tiempo azaroso $\Delta
+    t$ hasta que choca. Inmediatamente después del choque los
+    electrones emergen moviendose en una dirección totalmente al
+    azar.
+    \begin{parts}
+    \part Demuestra que al aplicar un campo eléctrico $\bm E$ se
+      induce una densidad de corriente $\bm j=\sigma \bm E$, donde
+      $\sigma$ es la {\em conductividad} dada por
+      $$
+      \sigma=\frac{ne^2\tau}{m},
+      $$
+    \end{parts}
+    donde $\tau$ es el tiempo promedio transcurrido desde el último
+    choque hasta el momento de observación.
+
+    Pistas:
+    \begin{itemize}
+    \item Integra la ecuación de movimiento de un electrón desde que
+      emerge de su choque previo hasta el momento de observación.
+    \item Promedia el resultado sobre todas las posibles velocidades
+      con las que pudo haber emergido y sobre todos los momentos en
+      los que pudo haber sido el choque.
+    \item Argumenta por qué el promedio de la velocidad inicial
+      (pasando el choque anterior) es cero, aunque el promedio de la
+      rapidez no.
+    \item Sustituye la velocidad promedio en las expresiones
+      anteriores para la densidad de corriente.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item El modelo es malón, pero el resultado es razonablemente
+      bueno y útil.
+    \item Cada material tiene su propia conductividad. Es de las propiedades
+      que más variaciones muestra entre distintos materiales. Por
+      ejemplo, va desde $5\times 10^{17}s^{-1}$ para la plata hasta
+      $10^{-15}s^{-1}$ para el teflón.
+    \item  Demuestra que las unidades de la conductividad en el
+      sistema CGS son $s^{-1}$.
+    \end{itemize}
+  \question Considera un alambre cilíndrico conductor en el cual circula una corriente
+    eléctrica con densidad $\bm j(\bm r,t)$. Considera dos superficies
+    $\mathcal S_1$ y $\mathcal S_2$ que cortan el alambre con una
+    normal que apunta a lo largo de la dirección que lleva de
+    $1$ a $2$ a lo largo del alambre. Define
+    $I_1(t)=\int_{\mathcal S_1}d\bm a\cdot\j(\bm r,t)$ e
+    $I_2(t)=\int_{\mathcal S_s}d\bm a\cdot\j(\bm r,t)$ como las
+    corrientes totales que atraviesan las superficies 1 y 2. Demuestra
+    que en el caso estacionario $I_1=I_2$.
+
+    Pistas:
+    \begin{itemize}
+    \item Considera una superficie $\mathcal S$ en forma de cilindro,
+      quizás chueco, cuya base sea
+      $\mathcal S_1$, cuya tapa sea $\mathcal S_2$ y cuyas paredes
+      estén pegadas a las paredes del alambre pero por fuera. Dicha
+      superficie encierra totalmente a un fragmento de alambre.
+    \item Demuestra que $\int_{\mathcal S}d\bm a\cdot\bm
+      j=\int_{\mathcal S_2}d\bm a\cdot\bm j - \int_{\mathcal
+        S_1}d\bm a\cdot\bm j=I_2-I_1$.
+    \item Usa la ley de conservación de la carga en el caso estacionario.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item Como $I_1=I_2$ sin importar en qué parte del alambre hacemos
+      los cortes 2 y 1, en el caso estacionario podemos hablar de una
+      corriente $I$ que es la misma en todos los puntos del alambre.
+    \item El resultado anterior es válido aunque el alambre cambie de
+      sección transversal a su largo.
+    \item Por lo tanto, una corriente estacionaria sólo puede circular
+      en un alambre finito que se cierra sobre sí mismo o en un
+      alambre infinitamente largo.
+    \end{itemize}
+
+
+  \question Usando la ley de Biot y Savart, calcula la fuerza entre
+    dos alambres conductores $\mathcal A_1$ y $\mathcal A_2$ delgados
+    rectos paralelos de longitud $L$ y
+    separados una distancia $d\ll L$ en los que circulan corrientes
+    estacionarias $I_1$ y $I_2$.
+
+    Pistas:
+    \begin{itemize}
+    \item Coloca el alambre 1 a lo largo del eje $z$ centrado en el origen.
+    \item Coloca el alambre 2 paralelo al eje $z$ y centrado en el
+      punto $(d,0,0)$.
+    \item Calcula el campo magnético producido por el alambre 1
+      evaluado a lo largo del alambre 2 usando
+      $$\bm B_1(\bm
+      r)=\frac{I_1}{c}\int_{\mathcal A_1} d\bm l_1\times \frac{\bm r-\bm r_1}{|\bm
+        r-\bm r_1|^3}.$$
+    \item Para simplificar el cálculo anterior {\em adivina} en qué
+      dirección apuntará el resultado y sólo calcula la componente
+      relevante de $\bm B_1$. Ignora efectos de borde y aproxima el
+      resultado usando $d\ll L$.
+    \item Nota de qué variables depende realmente $\bm B_1(\bm r)$.
+    \item Calcula la fuerza usando
+      $$\bm F_{21}=\frac{I_2}{c}\int_{\mathcal A_2} d\bm l_2\times \bm B(\bm r_2).$$
+    \item Simplifica este último cálculo.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item Nota que el problema está mal planteado. Los conductores no
+      pueden ser de longitud $L$ finita y llevar una corriente
+      estacionaria.
+    \item En la ley de Biot y Savart aparecen integrales sobre
+      trayectorias cerradas,
+      $$
+      \bm F_{21}=\frac{I_2I_1}{c^2}\oint_{\mathcal
+        C_2}d\bm l_2\times\oint_{\mathcal C_1}d\bm l_1\times \frac{\bm r_2-\bm r_1}{|\bm
+        r_2-\bm r_1|^3}.
+      $$
+      En este caso se pueden cambiar las integrales por integrales
+      sobre circuitos abiertos, i.e., las partes rectas de los
+      circuitos enfrentadas. ¿Por qué?
+    \item Nota el parecido entre esta ley de Biot y Savart y la ley de
+      Coulomb
+      $$
+      \bm F_{21}=\int_1 dq_2 \int_2 dq_1 \frac{\bm r_2-\bm r_1}{|\bm r_2-\bm r_1|^3}.
+      $$
+      En el caso de líneas de carga reemplazaríamos
+      $dq_1\to\lambda_1dl_1$ y $dq_2\to\lambda_2dl_2$.
+      ¿Cuáles son las diferencias?
+    \item En analogía al caso electrostático, la fuerza resulta
+      proporcional a la longitud $L$ y a las corrientes $I_1$ e $I_2$,
+      e inversamente proporcional a la distancia $d$.
+    \item Si las corrientes son paralelas, la fuerza ¿es atractiva o
+      repulsiva?. Y ¿si las corrientes son antiparalelas?
+    \end{itemize}
+  \question Encuentra las unidades $c$ a partir de la expresión para
+    $\bm F_{21}$ arriba.
+  \question Encuentra
+    \begin{parts}
+    \part las unidades de $\bm B$ a partir de la ley de Biot-Savart y
+    \part comparalas con las unidades del campo eléctrico $\bm E$.
+    \end{parts}
+  \question Demuestra que la ley de Biot y Savart es compatible con la
+    segunda ley de Newton.
+
+    Pista:
+    \begin{itemize}
+    \item Intercambia los índices $1\leftrightarrow2$ en la ley
+      de Biot y Savart
+      $$
+      \bm F_{21}=\frac{I_2I_1}{c^2}\oint_{\mathcal
+        C_2}d\bm l_2\times\oint_{\mathcal C_1}d\bm l_1\times \frac{\bm r_2-\bm r_1}{|\bm
+        r_2-\bm r_1|^3}.
+      $$
+      para obtener $\bm F_{12}$.
+    \item Suma $\bm F_{21}+\bm F_{12}$ y usa identidades del álgebra y
+      del cálculo vectorial para demostrar que el resultado es cero.
+    \end{itemize}
+
+  \question Considera una espira circular de radio $a$ que descansa en
+    el plano $xy$ y centrada en el origen, formada por un alambre
+    conductor delgado en el que circula una corriente $I$. Utilizando
+    la ley de Biot y Savart calcula el campo magnético a lo largo del
+    eje $z$.
+
+    Pista:
+    \begin{itemize}
+    \item Identifica la única componente distinta de cero para
+      simplificar tu cálculo.
+    \end{itemize}
+    Nota:
+    \begin{itemize}
+    \item Nota que el campo es máximo en el origen.
+    \item Nota que a distancias grandes el campo decae como $1/z^3$,
+      similar al caso de un dipolo eléctrico.
+    \end{itemize}
+
+  \question Considera dos espiras de radio $a$ como las del problema
+    anterior, ambas llevando una corriente $I$ y
+    separadas una distancia $d$, descansando en los planos $z=\pm d/2$. Encuentra cuánto
+    debe valer $d$ para que el campo en el origen sea lo más constante
+    posible.
+
+    Pista:
+    \begin{itemize}
+    \item Calcula la segunda derivada $\partial^2/\partial z^2
+      B_z(0,0,z)|_{z=0}$ y encuentra para que valor de $d$ ésta vale
+      cero.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item Nota que si las espiras están muy separadas ($d$ grande) el campo tendrá
+      dos máximos, uno en cada centro, y un mínimo entre ellas.
+    \item En cambio, si están casi pegadas, el campo tendrá un máximo
+      en su centro común.
+    \item En el primer caso la segunda derivada será positiva en el
+      origen.
+    \item En el segundo caso la segunda derivada será negativa en el
+      origen.
+    \item Entonces, para algún valor intermedio, la segunda derivada deberá ser
+      cero.
+    \item Argumenta por qué la primera y la tercera derivada son cero.
+    \item Por lo tanto, haciendo una expansión de Taylor, el campo es de la forma
+      $B_z(z)=B_z(0)+\mathrm{constante}\times z^4$.
+    \item Estas espiras se conocen como {\em bobinas de Helmholtz}.
+    \end{itemize}
+  \question A partir de la ley de Biot y Savart demuestra que la
+    fuerza $\bm f(\bm r)$ por unidad de volumen en una región en que
+    circula una corriente descrita por la densidad $\bm j(\bm r)$ es
+    $$
+    \bm f(\bm r)=\frac{1}{c}\bm j(\bm r)\times \bm B(\bm r).
+    $$
+
+    Pistas:
+    \begin{itemize}
+    \item Considera un fragmento muy pequeño de
+      longitud $d\bm l$ y de sección transversal $S$ tomado de un circuito $\mathcal
+      C$ conductor delgado. La fuerza total
+      sobre el circuito, de acuerdo a Biot-Savart,
+      $$
+      \bm F=\frac{I}{c}\oint_{\mathcal C} d\bm l\times\bm B(\bm r),
+      $$
+      es como una suma de términos de la forma
+      $d\bm F=(I/c)d\bm l\times \bm B(\bm r)$.
+    \item Pero la corriente $I$ y
+      la densidad de corriente están relacionadas $I=jS$. Luego
+      $d\bm F=(1/c)S j d\bm l\times \bm B(\bm r)=(1/c)S dl \bm j
+      \times \bm B(\bm r)$.
+    \item Nota el sutil truco $jd\bm l=dl\bm j$, pues $\bm j$ y $d\bm
+      l$ son paralelos.
+    \item Identificando $dlS$ con un elemento de volumen del conductor
+      llegamos al resultado.
+    \end{itemize}
+  \question Demuestra que la fuerza sobre una carga $q$ situada en
+    $\bm r$ que se mueve con velocidad $\bm v$ es
+    $$
+    \bm F=q\frac{\bm v}{c}\times\bm B(\bm r).
+    $$
+    Pista:
+    \begin{itemize}
+    \item En un problema previo obtuvimos la fuerza por unidad de
+      volumen $f=(1/c)\bm j\times B$,
+    \item y en otro problema anterior vimos que $\bm j=nq\bm v$ para
+      un sistema de $n$ partículas por unidad de volumen cada una con
+      carga $q$.
+    \item Dividiendo $f$ entre $n$ obtenemos la fuerza sobre una partícula.
+    \end{itemize}
+    Nota:
+    \begin{itemize}
+    \item Esta expresión se conoce como la {\em Fuerza de Lorentz}.
+    \item Si además hay campo eléctrico, la fuerza total sería $\bm
+      F=q(\bm E(\bm r)+\frac{\bm v}{c}\times\bm B(\bm r))$.
+    \end{itemize}
+
+  \question Una partícula se mueve al tiempo $t=0$ con velocidad $\bm v$ en presencia
+    de un campo magnético $\bm B=B\hat{\bm z}$.
+    \begin{parts}
+    \part Describe su movimiento subsecuente.
+    \part Calcula la velocidad angular $\omega_c$ de su giro.
+    \part Calcula el radio $r_c$ de su giro.
+    \end{parts}
+    Pista:
+    \begin{itemize}
+    \item Escribe la ecuación de movimiento.
+    \item Separa la ecuación a lo largo de $z$ y las ecuaciones en el
+      plano $xy$.
+    \item Muestra que $v_z$ es constante.
+    \item Desacopla las ecuaciones en el plano $xy$ sustituyendo una
+      en la derivada de la otra.
+    \item Resuelve la ecuación resultante para $v_x$.
+    \item Sustituye para obtener $v_y$.
+    \item Integra el resultado en el tiempo para obtener la
+      trayectoria $\bm r(t)$.
+    \item Identifica el movimiento como una hélice que avanza en $z$
+      mientras gira en $xy$.
+    \item Identifica la velocidad angular $\omega_c$.
+    \item Identifica el radio de giro $r_c$.
+    \end{itemize}
+    Nota:
+    \begin{itemize}
+    \item $\omega_c$ se conoce como {\em frecuencia de ciclotrón}.
+    \end{itemize}
+  \question Considera una partícula quieta en el origen al tiempo
+    $t=0$, en presencia de un campo eléctrico $\bm E=E\hat{\bm x}$ y
+    un campo magnético $\bm B=B\hat{\bm y}$ uniformes y constantes.
+    \begin{parts}
+    \part Obtén y describe el movimiento resultante $\bm r(t)$.
+    \part Muestra que la partícula se mueve en promedio con velocidad
+      constante $\bm v_d=(E/B)c\hat{\bm z}$.
+    \end{parts}
+    Notas:
+    \begin{itemize}
+    \item El movimiento es una cicloide, un desplazamiento a velocidad
+      constante sumado a una rotación.
+    \item El resultado anterior sólo vale cuando $B\gg E$, pero esa
+      limitación tiene que ver con la teoría de la relatividad.
+    \end{itemize}
+  \question Una corriente estacionaria se distribuye de acuerdo a una
+    densidad $\bm j(\bm r)$. A partir de la ley de Biot-Savart
+    demuestra que
+    $$
+    \bm B(\bm r)=\frac{1}{c}\int d^3r'\,\bm j(\bm r')\times\frac{\bm
+      r-\bm r'}{|\bm r-\bm r'|^3}.
+    $$
+    Pistas:
+    \begin{itemize}
+    \item Para el caso del campo producido por un circuito $\mathcal C$, interpreta
+      $$
+      \bm B(\bm r)=\frac{I}{c}\int_{\mathcal C}d\bm l'\times \frac{\bm
+        r-\bm r'}{|\bm r-\bm r'|^3}
+      $$
+      como una suma de términos de la forma
+      $$
+      d \bm B(\bm r)=\frac{I}{c} d\bm l'\times \frac{\bm
+        r-\bm r'}{|\bm r-\bm r'|^3}.
+      $$
+    \item Si el alambre en $\bm r'$tiene una sección transversal $S'$, escribe
+      $I=j(\bm r')S$.
+    \item Sustituye
+      $$
+      d \bm B(\bm r)=\frac{1}{c} S' j(\bm r') d\bm l'\times \frac{\bm
+        r-\bm r'}{|\bm r-\bm r'|^3}.
+      $$
+    \item Intercambia $j(\bm r') d\bm l'=dl'\bm j(\bm r')$
+    \item e identifica $S' dl'=dV'$ en términos de un elemento de
+      volumen del alambre,
+      $$
+      d \bm B(\bm r)=\frac{1}{c} d^3r' \bm j(\bm r') \times \frac{\bm
+        r-\bm r'}{|\bm r-\bm r'|^3}.
+      $$
+    \item Finalmente, integra sobre el volumen del alambre. Para
+      corrientes distribuidas sobre un volumen extendido, interpreta
+      este como la unión de muchos {\em tubos de flujo}, aplica el
+      resultado anterior para cada uno y suma para obtener una
+      integral sobre todo el espacio.
+    \end{itemize}
+  \question Demuestra que podemos escribir
+    $$ \bm B(\bm r)=\nabla\times \bm A(\bm r)$$
+    donde
+    $$ \bm A(\bm r)=\frac{1}{c}\int d^3r' \frac{\bm j(\bm r')}{|\bm
+      r-\bm r'|}.
+    $$
+    Pista:
+    \begin{itemize}
+    \item Reconoce a $(\bm r-\bm r')/|\bm r-\bm r'|^3$ en el problema
+      anterior como análogo a un campo Coulombiano.
+    \item Dicho campo se deriva de un potencial Coulombiano $1/|\bm
+      r-\bm r'|$, i.e.,
+      $(\bm r-\bm r')/|\bm r-\bm r'|^3=-\nabla 1/|\bm r-\bm r'|$.
+    \item Saca $\nabla$ de la integral del problema anterior, donde
+      $\bm j(\bm r')$ no depende de $\bm r$
+    \item Puedes usar la identidad $\nabla \times f(\bm r) \bm
+      F=(\nabla f(\bm r)\times \bm F$ donde $f$ es un campo escalar y
+      $\bm F$ un vector constante.
+    \end{itemize}
+  \question Demuestra la ley de Gauss magnética $\nabla\cdot \bm B(\bm r)=0$.
+
+    Pista:
+    \begin{itemize}
+    \item Usa el resultado del problema anterior.
+    \end{itemize}
+
+  \question Demuestra que para toda superficie cerrada orientable
+    $\partial V$
+    $$\int_{\partial V}d\bm a\cdot\bm B(\bm r)=0.$$
+
+    Pista:
+    \begin{itemize}
+    \item Usa el resultado del problema anterior
+    \item y el teorema de Gauss.
+    \end{itemize}
+  \question Demuestra que $\nabla\cdot\bm A(\bm r)=0$.
+
+    Pista:
+    \begin{itemize}
+    \item Toma la divergencia de la expresión anterior
+      $$ \nabla\cdot\bm A(\bm r)=\frac{1}{c}\int d^3r' \bm j(\bm r')\cdot\nabla\frac{1}{|\bm
+        r-\bm r'|}.
+      $$
+    \item Cambia la derivada sobre $\bm r$ por una derivada sobre $\bm
+      r'$ aprovechando que $1/|\bm r-\bm r'|$ sólo depende de la
+      diferencia $\bm r-\bm r'$.
+    \item Integra
+      $$ \nabla\cdot\bm A(\bm r)=-\frac{1}{c}\int d^3r' \bm j(\bm
+        r')\cdot\nabla'\frac{1}{|\bm r-\bm r'|}.
+      $$
+      por partes.
+    \item Usa el teorema de Gauss para escribir una parte
+      $$-\frac{1}{c}\int_V d^3r' \nabla'\cdot \frac{\bm j(\bm
+        r')}{|\bm r-\bm r'|}.
+      $$
+      como una integral de superficie. ¿Sobre qué volumen $V$ y sobre
+      qué superficie $\partial V$ se realiza dicha integral?
+    \item Argumenta por qué dicha interal es nula.
+    \item Para la otra parte usa la ecuación de continuidad.
+    \end{itemize}
+  \question Demuestra que
+    $$\nabla^2\bm A(\bm r)=-\frac{4\pi}{c}\bm j(\bm r).$$
+
+    Pistas:
+    \begin{itemize}
+    \item Usa la analogía con los resultados de electrostática
+      $\phi(\bm r)=\int d^3r'\,\rho(\bm r')/|\bm r-\bm r'|$ y
+      $\nabla\phi(\bm r)=-4\pi\rho(\bm r)$ y las ecuaciones que cumple
+      cada componente de $\bm A(\bm r)$.
+    \end{itemize}
+  \question Demuestra la {\em ley de Ampère} diferencial
+    $$\nabla\times\bm B(\bm r)=\frac{4\pi}{c}\bm j(\bm r)$$
+    Pistas:
+    \begin{itemize}
+    \item Escribe $\bm B$ en términos de $\bm A$ y toma el rotacional.
+    \item Usa la identidad $\nabla\times(\nabla\times \bm
+      A)=\nabla\nabla\cdot\bm A-\nabla^2\bm A$.
+    \item Sustituye los resultados de los problemas anteriores.
+    \end{itemize}
+  \question Demuestra la forma integral de la ley de Ampère
+    $$
+    \int_{\partial \mathcal A} d\bm l\cdot\bm B(\bm
+    r)=\frac{4\pi}{c}I_{\mathcal A},
+    $$
+    donde $\mathcal A$ es una superficie orientable, $\partial
+    \mathcal A$ es su frontera, una curva que se recorre en la
+    dirección que dicta la ley de la mano derecha, y
+    $$
+    I_{\mathcal A}=\int_{\mathcal A}d\bm a\cdot\bm j(\bm r)
+    $$
+    es la corriente que atraviesa la superficie $\mathcal A$.
+
+    Pistas:
+    \begin{itemize}
+    \item Integra $\nabla\times\bm B$ sobre la superficie $\mathcal A$
+      y usa el teorema de Stokes.
+    \end{itemize}
+  \question Considera un alambre recto delgado infinitamente largo que lleva
+    una corriente $I$. Encuentra el campo $\bm B(\bm r)$ que produce a su
+    alrededor.
+
+    Pistas:
+    \begin{itemize}
+    \item Usa argumentos de simetría para concluir que el campo rodea
+      al alambre de acuerdo a la ley de la mano derecha y su magnitud
+      no depende del ángulo.
+    \item Usa la ley de Ampère integral en un disco circular de radio
+      $r$ centrado en el alambre y en un plano perpendicular al mismo.
+    \item Concluye que $2\pi r B_\theta(a)=4\pi I/c$ y despeja.
+    \item Concluye que $B_\theta(r)=2\pi I/rc$.
+    \end{itemize}
+  \question Considera un alambre recto cilíndrico de radio $a$
+    infinitamente largo que lleva una corriente $I$ uniformemente
+    distribuida en su sección transversal. Encuentra el campo $\bm
+    B(\bm r)$ en todo el espacio.
+    Pistas:
+    \begin{itemize}
+    \item Sigue los pasos del problema anterior.
+    \item Si empleas un disco de radio $r>a$  nada cambia.
+    \item Si empleas un disco de radio $r<a$, la corriente que lo
+      atraviesa es una fracción $r^2/a^2$ de la corriente $I$.
+    \end{itemize}
+
+  \question Considera una bobina circular recta formada por un alambre
+    que se enrrolla uniformemente formando $N\ll1$
+    espiras alrededor de un cilindro de radio $a$ y altura $\ell\gg
+    a$. Despreciando efectos de borde, demuestra que el campo en su
+    interior es constante, apunta a lo largo del eje y su tamaño es
+    $B=4\pi N I/\ell c$. Su dirección está dada por la ley de la mano
+    derecha con el pulgar hacia el campo y los demas dedos girando con
+    la corriente.
+
+    Pistas:
+    \begin{itemize}
+    \item Argumenta por simetría, ley de Gauss magnética y ley de
+      Ampère sobre discos coaxiales que el campo debe ser axial.
+    \item Integra la ley de Ampère sobre pequeños rectángulos con dos
+      lados paralelos al eje y dos lados radiales.
+    \item Concluye que el campo axial en el exterior es constante y
+      por condiciones de contorno, nulo.
+    \item Concluye que el campo axial en el interior es constante.
+    \item Integrando sobre un rectángulo que tenga un lado dentro y un
+      lado fuera del cilindro, obtén el valor del campo dentro.
+    \end{itemize}
+
+
+
+  \end{questions}
+\end{document}
