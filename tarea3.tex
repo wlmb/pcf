@@ -11,8 +11,10 @@
 \begin{center}
 \bf\large Tarea 3\\
 Propedéutico Electrodinámica\\
-\date{2020-03-10}
-\today\\[20pt]
+\date{2020-04-03}
+% \today
+2020-04-03
+\\[20pt]
 \end{center}
 \hbox to \textwidth{Nombre: \enspace\hrulefill}
 Entregar el viernes 2020-04-10.
@@ -23,7 +25,7 @@ Entregar el viernes 2020-04-10.
   vector $\bm h=(h_x, h_y, h_z)$ suficientemente pequeño,
   podemos hacer la expansión de {\em Taylor}
   \begin{align*}
-    f(\bm + \bm h)=&f(\bm r)+\bm h\cdot\nabla f(\bm r)+\frac{1}{2}(\bm
+    f(\bm r + \bm h)=&f(\bm r)+\bm h\cdot\nabla f(\bm r)+\frac{1}{2}(\bm
                      h\cdot\nabla)^2 f(\bm r)+\ldots\\
     =&\sum_n \frac{1}{n!}(\bm h\cdot\nabla)^n  f(\bm r)\\
     =& \exp(\bm h\cdot\nabla)f(\bm r).
@@ -33,7 +35,7 @@ Entregar el viernes 2020-04-10.
   \begin{itemize}
   \item Considera la función $g(t)\equiv f(\bm r+t\bm h)$ escalar de
     una variable real $t$ y haz una expansión ordinaria de Taylor
-    respecto a $t$, usando la regla de la cadena.
+    de $g(t)$ respecto a $t$ alrededor de $t=0$, usando la regla de la cadena.
   \end{itemize}
   Nota:
   \begin{itemize}
@@ -81,11 +83,11 @@ Entregar el viernes 2020-04-10.
   \question Demuestra que el campo eléctrico producido por un dipolo
   $\bm p$ colocado en el origen es
   $$
-  \bm E(\bm r)=\frac{3\bm p.\bm r\bm r-\bm p r^2}{4^5}.
+  \bm E(\bm r)=\frac{3\bm p\cdot\bm r\bm r-\bm p r^2}{r^5}.
   $$
   Pista:
   \begin{itemize}
-  \item Usa $\bm = -\nabla\phi$.
+  \item Usa $\bm E= -\nabla\phi$.
   \end{itemize}
   Nota:
   \begin{itemize}
@@ -99,7 +101,7 @@ Entregar el viernes 2020-04-10.
   cada átomo se desplaza una distancia $a$ en la dirección $z$.
   \begin{parts}
     \part Demuestra que el número de electrones que atraviesan la cara
-    superior de abajo hacia arriba es $Q=Na/L=na/L^2$, donde $n=N/L^3$
+    superior de abajo hacia arriba es $Q=Na/L=naL^2$, donde $n=N/L^3$
     es la densidad de número de los átomos.
     \part Muestra que cada átomo adquiriría un momento dipolar $\bm
     p=-e\bm a=-ea\hat{\bm z}$.
@@ -153,10 +155,10 @@ Entregar el viernes 2020-04-10.
     $$
     \sigma(\bm r)=(\bm P(\bm r_1)-\bm P(\bm r_2))\cdot \hat{\bm n}(\bm r),
     $$
-    donde $\bm r$ está en la superficie, $\bm r_1=\bm r-\delta
+    donde $\bm r$ está en la superficie, $\bm r_1=\bm r-\zeta
     \hat{\bm n}$ es un vector pegado a $\bm r$ pero dentro del medio
-    1, $\bm r_2=\bm r+\delta \hat{\bm n}$ es un vector pegado a $\bm
-    r$ pero dentro del medio 2, tomamos el límite $\delta\to 0^+$ y
+    1, $\bm r_2=\bm r+\zeta \hat{\bm n}$ es un vector pegado a $\bm
+    r$ pero dentro del medio 2, tomamos el límite $\zeta\to 0^+$ y
     el vector normal a la superficie $\hat{\bm n}(\bm r)$ apunta
     desde el medio 1 hacia el medio 2.
   \end{parts}
@@ -165,14 +167,15 @@ Entregar el viernes 2020-04-10.
   eje. Calcula el momento dipolar total del cilindro $\bm p$
   \begin{parts}
     \part integrando su polarización sobre el volumen,
-    \part a partir de las cargas superficiales empleando la definición de momento dipolar.
+    \part calculando las cargas inducidas en su superficie y empleando
+      luego la definición de momento dipolar.
   \end{parts}
   \question Utiliza la ley de Gauss para demostrar la {\em ley de
     Gauss macroscópica}
   $$
   \nabla\cdot \bm D(\bm r)=4\pi\rho^e,
   $$
-  donde $\bm D=E+4\pi P$ es el {\em desplazamiento} y
+  donde $\bm D=\bm E+4\pi \bm P$ es el {\em desplazamiento} y
   $\rho^e$ es la densidad de carga externa.
 
   Pista:
@@ -188,9 +191,9 @@ Entregar el viernes 2020-04-10.
     cargas totales, externas e internas, pero muchas veces se olvidan
     dichas anotaciones, esperando que el lector adivine por el
     contexto a qué tipo de carga se refiere uno. Si en un texto leen
-    $\nabla\cdot \bm D=r\pi\rho$ deben entender que en este caso $\rho$
+    $\nabla\cdot \bm D=4\pi\rho$ deben entender que en este caso $\rho$
     se refiere a las cargas internas, mentras que si leen $\nabla
-    E=4\pi\rho$, entonces deberán entender que $\rho$ se refiere a las
+    \cdot\bm E=4\pi\rho$, entonces deberán entender que $\rho$ se refiere a las
     cargas totales.
   \end{itemize}
 
@@ -199,18 +202,25 @@ Entregar el viernes 2020-04-10.
   $$
   Q^e_V=\int d\bm a\cdot\bm D(\bm r).
   $$
+  Nota:
+  \begin{itemize}
+  \item {\em carga externa dentro del volumen} suena contradictorio, pero
+    en este contexto, {\em externa} no significa que está
+    geométricamente afuera, sino que no esta formada por las cargas
+    (electrones y protones) que conforman al material.
+  \end{itemize}
 
   \question Demuestra que en una superficie cualquiera que separa dos
   regiones 1 y 2 se cumple la condición
-  $\bm D(\bm r_2)-\bm D(\bm r_1)\cdot\hat{\bm n}(\bm
+  $(\bm D(\bm r_2)-\bm D(\bm r_1))\cdot\hat{\bm n}(\bm
   r)=4\pi\sigma^e(\bm r)$, donde $\bm r$ es una posición en la superficie, $\bm
-  r_2$ y $\bm r_1$ son posiciones pagadas a $\bm r$ del lado 2 y del
+  r_2$ y $\bm r_1$ son posiciones pegadas a $\bm r$ del lado 2 y del
   lado 1 de la superficie respectivamente, y donde $\sigma^e$ es la
-  densidad superficial de carga depositada justo en la superficie.
+  densidad superficial de carga {\em externa} depositada justo en la superficie.
 
   Pista:
   \begin{itemize}
-  \item Integra la ley de Gauss en un pequeño cilindro con tapas
+  \item Integra la ley de Gauss macroscópica en un pequeño cilindro con tapas
     paralelas a la superficie, una de cada lado, y toma el límite en
     que las paredes del cilindro se colapsan.
   \end{itemize}
@@ -219,8 +229,8 @@ Entregar el viernes 2020-04-10.
   \begin{itemize}
   \item En ausencia de una carga externa superficial podemos concluir
     que la componente normal del desplazamiento es contínua $\Delta
-    D_\perp(\bm r)=E_\perp(\bm r_2)-E_\perp(\bm 1)=(\bm E(\bm r_2)-\bm
-    E(\bm 1))\cdot\hat{\bm n}(\bm r)$.
+    D_\perp(\bm r)=E_\perp(\bm r_2)-E_\perp(\bm r_1)=(\bm E(\bm r_2)-\bm
+    E(\bm r_1))\cdot\hat{\bm n}(\bm r)$.
   \item La otra condición de contorno, la continuidad de $\bm E_\|$
     sigue sin cambio, así como las ecuaciones $\nabla\times\bm E=0$,
     $\int_{\partial A}d \bm l\cdot\bm E=0$, $\bm E=-\nabla\phi$ y la
@@ -238,8 +248,10 @@ Entregar el viernes 2020-04-10.
 
   Pistas:
   \begin{itemize}
-  \item Calcule las cargas de polarización y de ahí obtenga el campo
+  \item Calcula las cargas de polarización y de ahí obtén el campo
     eléctrico que producen.
+  \item Otra alternativa consiste en argumentar por qué en este caso
+    $\bm D=\bm 0$.
   \end{itemize}
 
   \question Considera un modelo atómico clásico (malísimo, pero no importa) en
@@ -256,10 +268,10 @@ Entregar el viernes 2020-04-10.
     $$
     $\omega_0^2=\kappa/m$ y $m$ es la masa del electrón.
     \part Si en cambio el campo dependiera del tiempo sinusoidalmente,
-    como $\bm E(t)=\mathrm{Re} \tilde{\bm E}(t)=\bm E_0 e^{-i\omega
+    como $\bm E(t)=\mathrm{Re} \tilde{\bm E}(t)=\mathrm{Re}\bm E_0 e^{-i\omega
       t}$ el dipolo sería
     $\bm p(t)=\mathrm{Re}\tilde{\bm p}(t)$, con $\tilde{\bm
-      p}(t)=alpha(\omega)\tilde{\bm E}(t)$ y la
+      p}(t)=\alpha(\omega)\tilde{\bm E}(t)$ y la
     polarizabilidad sería
     $$
     \alpha(\omega)=\frac{e^2/m}{\omega_0^2-\omega^2},
@@ -283,7 +295,7 @@ Entregar el viernes 2020-04-10.
   Nota:
     \begin{itemize}
     \item Curiosamente, el modelo no es tan malo. Para un átomo o
-      molécula real, en incluso para un sólido, el resultado es una suma de términos como los
+      molécula real, e incluso para un sólido, el resultado es una suma de términos como los
       anteriores, uno para cada posible transición electrónica del
       sistema de muchos electrones, con un peso fraccional conocido
       como {\em fuerza de oscilador}.
@@ -296,7 +308,7 @@ Entregar el viernes 2020-04-10.
     ciertas condiciones, donde $\chi=n\alpha$ es la susceptibilidad.
     \part Demuestra que podemos entonces escribir $\bm D=\epsilon \bm E$, donde
     $\epsilon=1+4\pi\chi$ es conocida como permitividad, constante
-    dieléctrica o función dieléctrica (pues puede depender de $\omega$).
+    dieléctrica o función dieléctrica ({\em función} pues puede depender de $\omega$).
   \end{parts}
 
   \question Considera un medio isotrópico, homogéneo e infinito. En el
@@ -313,7 +325,8 @@ Entregar el viernes 2020-04-10.
   \end{parts}
   Pista:
   \begin{itemize}
-  \item Puedes usar la versión integral de la ley de Gauss para
+  \item Puedes usar la versión integral de la ley de Gauss
+    macroscópica para
     obtener $\bm D$ y de ahí $\bm E$ y $\phi$.
   \end{itemize}
   Nota:
@@ -361,7 +374,7 @@ Entregar el viernes 2020-04-10.
   \end{itemize}
   \question Un cilindro metálico con radio exterior $a$ se coloca
   dentro de un cilindro metálico hueco coaxial con radio interior $b>a$. Ambos
-  tienen la misma altura $h>>b$. El espacio entre ellos se llena de un
+  tienen la misma altura $h\gg b$. El espacio entre ellos se llena de un
   dieléctrico con permitividad $\epsilon$. Encuentra la capacitancia del
   sistema.
 
@@ -381,7 +394,8 @@ Entregar el viernes 2020-04-10.
   \end{itemize}
 
   \question Considera un dieléctrico semiinfinito con permitividad
-  $\epsilon_1$ ocupando la región $z>0$ y otro ocupando la región
+  $\epsilon_1$ ocupando la región $z>0$ y otro con permitividad
+  $\epsilon_2$ ocupando la región
   $z<0$. Se coloca una carga puntual $q$ sobre el eje $z$ a una
   distancia $d>0$ del origen.
   \begin{parts}
@@ -411,7 +425,7 @@ Entregar el viernes 2020-04-10.
     en $z<0$.
   \item Propón como {\em anzatz} una solución en la región $z>0$ dada
     por el potencial que produciría la carga original $q$ en el eje z
-    en $z=d$ y una carga ficticia, {\em la carga imágen} colocada
+    en $z=d$ y una carga ficticia, {\em la carga imágen}, colocada
     también en el eje $z$ (dónde si no) y a una distancia $d'$ hacia
     abajo del origen, ambas en un medio ficticio homogeneo con
     permeabilidad $\epsilon_1$. La carga y la permeabilidad de este

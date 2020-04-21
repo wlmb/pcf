@@ -1,0 +1,607 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\cfoot[]{\thepage}
+\begin{document}
+\begin{center}
+  \bf\large Tarea 5\\
+  Propedéutico Electrodinámica\\
+  2020-04-19\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el viernes 2020-04-24.
+
+\begin{questions}
+\question Demuestra que
+  \begin{parts}
+    \part $$\int d^3 r\, \bm j(\bm r)=0,$$ y
+    \part $$\int d^3 r\, (j_i(\bm r)r_j+r_ij_j(\bm r))=0,$$
+  \end{parts}
+  para una distribución de corriente estacionaria $\bm j(\bm r)$
+  localizada en una región finita del espacio.
+
+  Pistas:
+  \begin{itemize}
+  \item Escribe $j_i=j_k\partial_k r_i$ y $j_j=j_k\partial_k r_j$, con
+    $\partial_k\equiv\partial/\partial r_k$.
+  \item Manipula los integrandos arriba para escribirlos en términos
+    de $j_i=\nabla\cdot(\bm j r_i)-(\nabla\cdot\bm j)r_i$, y
+    $j_i r_j+r_i j_j=\nabla\cdot(\bm j r_ir_j)-(\nabla\cdot\bm
+    j)r_ir_j$.
+  \item Integra los términos $\nabla\cdot(\ldots)$ usando el teorema de
+    Gauss.
+  \item Integra los términos $(\nabla\cdot\bm j)\ldots$ empleando la
+    ecuación de continuidad para sistemas estacionarios.
+  \end{itemize}
+
+\question Considera una distribución de corriente estacionaria $\bm
+  j(\bm r)$ localizada en el interior de una región de tamaño $\ell$ alrededor del
+  origen. Demuestra que el potencial vectorial $\bm A(\bm r)$ a una
+  distancia $r\gg \ell$ está dada aproximadamente por
+  $$
+  \bm A(\bm r)=\frac{\bm m\times\bm r}{r^3},
+  $$
+  donde
+  $$
+  \bm m=\frac{1}{2c}\int d^3r\, \bm r\times \bm j(\bm r)
+  $$
+  es el {\em momento dipolar magnético} del sistema
+
+  Pistas:
+  \begin{itemize}
+  \item Parte de la expresión
+    $$ \bm A(\bm r)=\frac{1}{c}\int d^3r' \frac{\bm j(\bm r')}{|\bm
+      r-\bm r'|}.
+    $$
+  \item Haz una expansión de Taylor para $\bm r'$ pequeña
+    $$
+    \frac{1}{|\bm r-\bm r'|}=\frac{1}{r}-\bm r'\cdot\nabla\frac{1}{r}+\ldots.
+    $$
+  \item El primer primer término lleva a
+    $$\bm A^{(0)}(\bm r)=\frac{1}{rc}\int d^3r'\,\bm j(\bm r')=0,$$
+    de acuerdo al problema anterior.
+  \item Separa la contribución del segundo término en en un término simétrico y uno
+    antisimétrico,
+    $$A_i^{(1)}(\bm r)=\frac{r_j}{cr^3}\int d^3r'\, j_i(\bm r')r'_j=A_i^s+A_i^a,$$
+    con
+    $$A_i^s(\bm r)=\frac{r_j}{2cr^3}\int d^3r'\, (j_i(\bm
+    r')r'_j+r'_i j_j(\bm r'))$$
+    y
+    $$A_i^a(\bm r)=\frac{r_j}{2cr^3}\int d^3r'\, (j_i(\bm
+    r')r'_j-r'_i j_j(\bm r')).$$
+  \item De acuerdo al problema anterior, la integral en el término
+    simétrico es cero, $\bm A^s=0$.
+  \item En el término antisimétrico identifica
+    $\bm j(\bm r')\bm r\cdot\bm r'-\bm r'\bm r\cdot\bm j(\bm r')=\bm r\times(\bm
+    j(\bm r')\times\bm r')$.
+  \item Identifica en la integral resultante al momento dipolar
+    magnético $\bm m$.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item El término monopolar, proporcional a $1/r$ es nulo. No hay
+    monopolos.
+  \item El término dominante es el dipolar, proporcional a $1/r^2$, a
+    menos que $\bm m=\bm 0$, en cuyo caso se deben explorar los
+    siguientes términos en la expansión (cuadrupolar, octopolar,
+    etc.).
+  \item El potencial vectorial {\em rodea} al dipolo magnético de
+    acuerdo a la regla de la mano derecha.
+  \end{itemize}
+
+\question Demuestra que el campo producido por un dipolo
+  magnético es
+  $$
+  \bm B(\bm r)=\frac{3\bm m\cdot\bm r\bm r-\bm m r^2}{r^5}.
+  $$
+  Pista:
+  \begin{itemize}
+  \item Calcula el rotacional del potencial vectorial arriba.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item El campo dipolar decae como $1/r^3$.
+  \item Hay un fuerte parecido entre el campo dipolar magnético y el
+    campo dipolar eléctrico, i.e., $\bm B$ es a $\bm m$ como $\bm E$ es
+    a $\bm p$ lejos del dipolo.
+  \end{itemize}
+
+\question Considera una corriente estacionaria $I$ que circula en un circuito
+  $\mathcal C$. Demuestra que el dipolo magnético es $\bm m=I\bm
+  {\mathcal S}/c$, donde $\bm {\mathcal S}$ es el área del circuito,
+  i.e. es un vector cuya componente $\mathcal S_x$ es el área de la
+  proyección del circuito sobre el plano $yz$, con contribuciones
+  positivas para recorridos de acuerdo a la regla de la mano derecha
+  con el pulgar a lo largo de $x$, i.e., contrario a las manecillas
+  del reloj visto desde $x>0$ hacia el origen, y contribuciones
+  negativas para circuitos que se recorran en la dirección
+  opuesta. Las otras componentes, $\mathcal S_y$ y $\mathcal S_z$ se
+  definen análogamente.
+
+  Pistas:
+  \begin{itemize}
+  \item El integrando que define $\bm m$ sólo es distinto de cero en
+    el alambre que lleva la corriente.
+  \item Considera un fragmento de alambre conductor, parte del
+    circuito, con sección transversal $s$, longitud $dl$ y dirección
+    $\hat{\bm t}$. Su contribución a la integral que define a $\bm m$
+    se puede obtener reemplazando $d^3r$ por $sdl$.
+  \item Reemplaza $sdl\bm j$ por $Id\bm l$, identificando $\bm
+    j=j\hat{\bm t}$, $d\bm l=dl\hat{\bm t}$ e $I=js$.
+  \item Identifica $d\bm a=\bm r\times d\bm l/2$ con el vector área de un triángulo
+    angosto con un vértice en el origen y uno de cuyos lados es $d\bm
+    l$.
+  \item Suma sobre todos los elementos de longitud del circuito.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item En un circuito plano, i.e., contenido en un plano,
+    $\bm{\mathcal S}=\mathcal S\hat{\bm  n}$ donde $\mathcal S$ es el área
+    de la región rodeada por el circuito y $\hat{\bm n}$ es un vector
+    unitario perpendicular al plano, cuya dirección se establece con
+    la regla de la mano derecha
+  \end{itemize}
+
+
+\question Considera un circuito circular de radio $a$ en el que
+  circula una corriente $I$ y que descansa en el plano $xy$ centrado
+  en el origen. Calcula el campo $\bm B(\bm r)$ a distancias $r\gg a$.
+
+  Pista:
+  \begin{itemize}
+  \item Usa los resultados de los últimos problemas.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item En la tarea anterior calculamos el resultado exacto a lo largo
+    del eje $z$. Verifiquen que es compatible con el resultado de la
+    aproximación dipolar.
+  \end{itemize}
+
+\question Considera una esfera de radio $a$ centrada en el origen
+  uniformemente cargada en su interior con carga $Q$ y
+  que gira con velocidad angular constante $\omega$ alrededor del eje
+  $z$. Calcula el campo $\bm B(\bm r)$ que produce a distancias $r\gg
+  a$.
+
+  Pista:
+  \begin{itemize}
+  \item Calcula la densidad de carga, la velocidad con que se mueve
+    cada elemento de volumen, su correspondiente densidad de corriente
+    eléctrica, su contribución al momento dipolar magnético y el
+    momento dipolar magnético total.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item El campo dipolar magnético en este caso coincide con la
+    solución exacta y vale en todo el exterior de la esfera.
+  \end{itemize}
+
+\question Considera un circuito en forma de cuadrado de lado $L$ que
+  descanza en el plano $xy$ centrado en el origen y con los lados
+  paralelos a los ejes cartesianos, en el que circula una corriente
+  $I$ en dirección opuesta a las manecillas del reloj visto desde el
+  eje $z$.
+  Se aplica un campo $\bm B$ homogéneo en el plano $yz$ formando
+  un ángulo $\theta$ con el eje $z$, i.e., $\bm B=B(0,-\sin\theta,
+  \cos\theta)$. Demuestra que el circuito es sujeto a una torca
+  $\tau=mB\sin\theta$ que apunta en la dirección $x$, i.e., $\bm
+  \tau=\bm m\times\bm B$.
+
+  Pistas:
+  \begin{itemize}
+  \item Calcula las fuerzas $\pm (IL/c)\hat{\bm x}\times \bm B$  y $\pm
+    (IL/c)\hat{\bm y}\times \bm B$ sobre cada uno de los cuatro lados
+    del circuito.
+  \item Nota que la fuerza total es nula.
+  \item Multiplica cada fuerza por su correspondiente brazo de
+    palanca y suma para obtener la torca total.
+  \end{itemize}
+
+
+\question Considera un dipolo magnético $\bm m$ centrado en el origen
+  sujeto a un campo externo $\bm B^e(\bm r)$ que varía lentamente en
+  el espacio. Demuestra que sobre el dipolo actua
+  \begin{parts}
+    \part una fuerza $\bm F=\nabla (\bm m\cdot\bm B(\bm r))|_{\bm
+        r=\bm 0}$ y
+    \part una torca $\bm \tau=\bm m\times \bm B(\bm 0)$.
+  \end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Considera la distribución de corriente $\bm j(\bm r)$. La
+    fuerza sobre un elemento de volumen es $d\bm f=d^3r\,\bm j(\bm
+    r)\times\bm B(\bm r)/c$.
+  \item Haz una aproximación de Taylor del campo,
+    $$
+    \bm B(\bm r)=\bm B(\bm 0)+\bm r\cdot\nabla\bm B(\bm 0).
+    $$
+  \item Integra sobre el volumen en que circula la corriente
+    $$
+    \bm F=\frac{1}{c}\left(\int d^3r\, \bm j(\bm r)\right)\times \bm
+    B(0)
+    + \frac{1}{c}\left(\int d^3r\, \bm j(\bm r) \times (\bm
+      r\cdot\nabla\bm B(0))\right).
+    $$
+  \item La integral en el primer término es cero, como en un problema
+    previo.
+  \item Para el segundo término podemos usar notación de índices,
+    $$
+    F_i=\frac{1}{c}\int d^3r\, \epsilon_{ijk} j_j(\bm r)r_l\partial_l
+    B_k(0),
+    $$
+    con $\epsilon_{ijk}$ el tensor de Levi-Civita.
+  \item El término $j_k r_l$ puede separarse en un término simétrico y
+    uno antisimétrico.
+  \item Como en un problema previo, el término simétrico integra a
+    cero.
+  \item El término antisimétrico se puede manipular de varias formas
+    para obtener $\bm F=(\bm m\times\nabla)\times \bm B$. Por ejemplo
+    \begin{eqnarray*}
+      F_i=&\frac{1}{2c}\epsilon_{ijk}\int d^3r\,
+            (j_jr_l-j_lr_j)\partial_l B_k(\bm 0)\\
+      =&\frac{1}{2c}\epsilon_{ijk}\epsilon_{jlm}\epsilon_{nom}\int d^3r\,
+         j_nr_o\
+         \partial_l B_k(\bm 0)\\
+      =&-\epsilon_{ijk}\epsilon_{jlm}m_m \partial_l B_k(\bm 0)\\
+      =&\epsilon_{ijk} (\bm m \times \nabla)_j B_k(\bm 0)\\
+      =&\left((\bm m \times \nabla) \times \bm B(\bm 0)\right)_i
+    \end{eqnarray*}
+  \item Finalmente, se pueden usar identidades y la ley de Gauss
+    $$\bm F=(\bm m\times\nabla)\times \bm B=\nabla(\bm m\cdot\bm
+    B)-\bm m\nabla\cdot\bm B=\nabla(\bm m\cdot\bm B).
+    $$
+  \item Para la torca integramos el elemento de torca
+    $$
+    d\bm\tau= \bm r\times d\bm f=d^3r\, \frac{1}{c}\bm r\times(\bm j\times\bm B(\bm 0))
+    $$
+    usando identidades vectoriales
+    $$
+    \bm \tau=\frac{1}{c}\int d^3r\, (\bm j(\bm r)\bm r\cdot\bm B(\bm 0)-\bm
+    r\cdot\bm j(\bm r) \bm B(\bm 0)).
+    $$
+  \item El segundo término tiene la integral de $\bm r\cdot\bm j(\bm
+    r)=\nabla\cdot (r^2\bm j(\bm r)/2)-r^2\nabla\cdot\bm j(\bm
+    r)/2=\nabla\cdot (r^2\bm j(\bm r)/2)$, donde se usa la ecuación de
+    continuidad, caso estacionario. Este término se puede integrar
+    usando el teorema de Gauss y da cero.
+  \item El primer término puede serpararse en una parte simétrica y
+    una antisimétrica,
+    $$
+    \bm \tau=\frac{1}{2c}\int d^3r\, (\bm j(\bm r)\bm r\cdot\bm B(\bm
+    0)+ \bm r\bm j(\bm r)\cdot\bm B(\bm 0)+\frac{1}{2c}\int d^3r\, (\bm j(\bm r)\bm r\cdot\bm B(\bm
+    0)- \bm r\bm j(\bm r)\cdot\bm B(\bm 0).
+    $$
+  \item La parte simétrica integra a cero, como en el primer problema
+    arriba.
+  \item En la parte antisimétrica podemos identificar el momento
+    dipolar magnético y llegar al resultado final.
+  \end{itemize}
+\question Muestra que los resultados de los últimos dos problemas son
+  compatibles con una energía potencial $U=-\bm m\cdot \bm B$ para un
+  dipolo magnético $\bm m$ en presencia de un campo $\bm B$.
+
+  Pistas:
+  \begin{itemize}
+  \item La fuerza y la torca se pueden derivar de la energía potencial
+    $U$ a partir de
+    $$
+    \bm F=-\nabla U,
+    $$
+    y
+    $$
+    \tau_{\hat{\bm n}}=\hat{\bm n}\cdot\bm \tau=-\partial U/\partial\theta,
+    $$
+    donde $\theta$ es un ángulo alrededor de un eje de giro que apunta
+    a lo largo de un vector unitario $\hat{\bm n}$ medido de acuerdo a
+    la regla de la mano derecha.
+  \end{itemize}
+
+
+\question Considera dos dipolos magnéticos $\bm m_1$ y $\bm m_2$
+  separados una distancia $d$. Calcula la fuerza entre ellos si
+  \begin{parts}
+  \part Ambos apuntan en la dirección $z$ y están separados a lo largo
+    de $z$.
+  \part Ambos apuntan en la dirección $z$ y están separados a lo largo
+    de $x$.
+  \part Uno apuntan en la dirección $z$ y el otro en la dirección
+    $-z$, y están separados a lo largo de $z$.
+  \part Uno apuntan en la dirección $z$ y el otro en la dirección
+    $-z$, y están separados a lo largo de $x$.
+  \end{parts}
+
+
+\question Considera un cilindro de radio $a$ y altura $L$
+  uniformemente magnetizado a lo largo de su eje con magnetización
+  $\bm M$. Demuestra que el dipolo magnético total del cilindro es
+  igual al que produciría una corriente superficial $K=cM$ recorriendo
+  las paredes del cilindro alrededor de la magnetización, siguiendo la
+  regla de la mano derecha.
+
+  Pistas:
+  \begin{itemize}
+  \item Se define la magnetización $\bm M$ como el momendo dipolar magnético
+    por unidad de volumen.
+  \item Calcula el momento dipolar magnético del cilindro $\bm m=\pi
+    a^2 L \bm M$ multiplicando magnetización por volumen.
+  \item Así como la densidad de corriente (volumétrica) es corriente
+    que atraviesa una superficia en su dirección normal por unidad de
+    área, la densidad de corriente superficial es corriente que
+    atraviesa de un lado a otro de una línea en la superficie por
+    unidad de longitud.
+  \item Una corriente superficial $K$ sobre la pared del cilindro
+    corresponde a una corriente total $I=KL$ circulando alrededor del
+    cilindro.
+  \item Dicha corriente produce un momento dipolar magnético
+    $I\mathcal S/c$, donde $\mathcal S=\pi a^2$ es el área del
+    circuito.
+  \item Luego $I\mathcal S/c=m$, $KL\pi a^2/c=\pi a^2 LM$, $K=cM$.
+  \end{itemize}
+
+
+\question Considera un material magnetizado a lo largo de $y$ con una
+  magnetización $\bm M(\bm r)=M_y(x)\hat{\bm y}$ que sólo depende de
+  $x$. Considera una superficie immersa en el material en forma de
+  rectángulo de lados $L_x$ y $L_y$ en el plano $xy$ y con aristas en
+  $x_0$, $x_1=x_0+L_x$, $y_0$ y $y_1=y_0+L_y$ Calcula la
+  corriente que atraviesa dicho rectángulo.
+
+  Pistas:
+  \begin{itemize}
+  \item Usa un modelo simple de magnetización, en que cada átomo tiene
+    un electrón (carga $-e$) que circula con periodo $T$ en una trayectoria que
+    encierra un área $\mathcal S$ con normal $\hat{\bm y}$. Hay $n$ de estas órbitas por unidad
+    de volumen. Luego, la magnetización es $M_y=-ne\mathcal
+    S/cT$. Permitimos que $n$, $\mathcal S$ y/o $T$ dependan de $x$.
+  \item Sólo contribuyen a la corriente aquellas átomos que
+    intersecten a la superficie rectangular. Y de éstas, las órbitas
+    que la intersecten dos veces (o cualquier número par de veces) no
+    contribuyen, pues cada vez que el electrón atraviesa en una
+    dirección, atraviesa en la dirección opuesta para cerrar su
+    circuito.
+  \item Entonces, sólo aquellas trayectorias que pasen en una
+    dirección a través de la superficie y regresen por fuera de la
+    superficie pueden contribuir a la corriente. Esto es, sólo las
+    trayectorias que encierran a la línea en $x_0$ y a la línea
+    $x_1$.
+  \item El número de trayectorias que encierran la línea $x_0$ es
+    igual al número de átomos en un volumen cilíndrico de sección
+    transversal $\mathcal S(x_0)$ y de longitud $L_y$, i.e.,
+    $n(x_0)L_y\mathcal S(x_0)$. Cada una de estas trayectorias
+    contribuye a la corriente $z$ con un electrón cada tiempo $T$
+    atravesando hacia abajo, por lo
+    que su contribución a la corriente es $n(x_0)L_y\mathcal S(x_0)
+    e/T=-cM_y(x_0)L_y$.
+  \item Análogamente, la contribución a la corriente en $x_1$ es $-n(x_1)L_y\mathcal S(x_1)
+    e/T=cM_y(x_1)L_y$.
+  \item Sumando, obtenemos la corriente total
+    $I=c(M_y(x_1)-M_y(x_0))L_y$.
+  \item Si hubiera muchos tipos de cargas y de órbitas, estas
+    contrinuirían tanto a $I$ como a $M_y$ por lo cual el resultado
+    seguiría siendo válido.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Podemos escribir entonces $I=\int_{x_0}^{x_1}
+    dx\int_{y_0}^{y_1} dy\, c(\partial/\partial x) M_y$.
+  \item Podemos interpretar este resultado en términos de una densidad
+    de corriente
+    $j_z=c(\partial/\partial x)M_y$.
+  \item Si además hubiera una magnetización apuntando en $x$ y que
+    dependiera de $y$ podríamos sumar su contribución a la corriente y
+    generalizar al resultado anterior a $j_z=c((\partial/\partial
+    x)M_y-(\partial/\partial y)M_x$.
+  \item Si la magnetización apuntara en $z$ no contribuiría a $j_z$.
+  \item Si $M_x$ dependiera de $x$ o $z$ o $M_y$ dependiera de de $y$
+    o $z$ tampoco contribuiría a $j_z$.
+  \item Si repitiéramos el cálculo anterior para otras superficies
+    obtendíamos la generalización
+    $\bm j=c\nabla\times \bm M$.
+  \end{itemize}
+
+\question Considera un material magnetizado finito. Demuestra que
+  sobre su frontera circula una corriente superficial $K=c\bm M\times
+  \hat{\bm n}$.
+
+  Pistas:
+  \begin{itemize}
+  \item Afuera del material la magnetización es nula, por lo que hay
+    una fuerte variación espacial de la magnetización al atravesar la
+    superficie.
+  \item Considera la vecindad de cierto punto en la superficie.
+  \item Sin perdida de generalidad, puedes transladar y orientar
+    el sistema coordenado para que dicho punto quede en el origen
+    y la normal a la superficie apunte en la dirección $z$. Cerca de
+    ese punto $(\partial_z)\bm M$ es muy grande pues $\bm M$
+    pasa de un valor finito en el interior a cero en el
+    exterior. Toma el límite en que dicha variación se hace
+    infinitamente abrupta pero en una región infinitamente delgada.
+  \item Entonces, cerca de la superficie hay corrientes muy grandes
+    $j_x=-c\partial_z M_y$ y $j_y=c\partial_z M_x$. Integrando desde
+    un punto inmediatamente dentro hasta un punto inmediatamente afuera
+    obtén la corriente superficial $K_x=cM_y$ y $K_y=-cM_x$ donde
+    $\bm M$ es la magnetización dentro del material.
+  \item Escribe el resultado anterior de manera vectorial $\bm
+    K=c \bm M\times\hat{\bm z}$.
+  \item Generaliza a cualquier punto de la superficie con cualquier
+    orientación,  $\bm K=c \bm M\times\hat{\bm n}$, donde $\hat{\bm
+      n}$ apunta hacia el exterior.
+  \end{itemize}
+
+\question Demuestra que en la interface entre dos materiales 1 y 2
+  magnetizados circula una corriente $\bm K=c\hat{\bm n}\times(\bm
+  M_2-\bm M_1)$ donde $\hat{\bm n}$ es un vector normal unitario que
+  apunta del medio 1 al 2.
+
+  Pista:
+  \begin{itemize}
+  \item Usa el problema anterior introduciendo una pequeña región
+    vacía entre los materiales y toma el límite en que su ancho se anula.
+  \end{itemize}
+
+
+\question Demuestra la ley de Ampère {\em macroscópica}
+  $$
+  \nabla\times\bm H=\frac{4\pi}{c}\bm j^e,
+  $$
+  donde $\bm B=\bm H+4\pi M$ y $\bm j^e$ es la corriente externa.
+
+  Pista:
+  \begin{itemize}
+  \item Escribe la corriente total $\bm j=\bm j^e+\bm j^i$ en la ecuación
+    de Ampère {\em microscópica}, donde $\bm j^i=c\nabla\times \bm M$ es la corriente
+    interna debido a la magnetización del material.
+  \end{itemize}
+
+
+\question Demuestra que en una superficie que separa dos regiones 1 y
+  2 con normal $\hat{\bm n}$ que apunta de 1 hacia 2 se cumple que:
+  \begin{parts}
+  \part La componente normal de la densidad de flujo magnético $\bm B$
+    es contínua, $\Delta B_\perp=0$, $B_\perp(2)=B_\perp(1)$.
+  \part La componente tangencial del campo magnético $\bm H$ es
+    continua en ausencia de corrientes superficiales externas, $\Delta
+    \bm H_\parallel=0$, $\bm H_\parallel(2)=\bm H_\parallel(1)$.
+  \part La componente tangencial del campo magnético $\bm H$ es
+    discontínua en presencia de una corriente externa superficial,
+    $\hat n\times (\bm H(2)-\bm H(1))=(4\pi/c)\bm K^e$.
+  \end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Integra la ley de Gauss magnética en pequeños cilindros
+    Gaussianos con una tapa en la región 2 y otra en la región 1 y toma el
+    límite en que ambas tapas aprisionan la superficie.
+  \item Integra la ley de Ampère macroscópica en pequeños rectángulos
+    con un lado en el medio 1 y otro en el medio 2 y toma el límite en
+    que dos lados aprisionan la superficie.
+  \item Otra alternativa es usar las condiciones de continuidad para
+    $\bm B_\parallel$ y escribir la corriente superficial total en
+    términos de la externa y de la discontinuidad de la magnetización.
+  \end{itemize}
+
+\question Una bobina está formada por $N\gg 1$ espiras de alambre
+  enrolladas uniformemente alrededor de un cilindro de altura $\ell$ y
+  radio $a\ll \ell$ lleno de un material con permeabilidad magnética
+  $\mu$. Ignorando efectos de borde, halla los campos $\bm H$ y $\bm
+  B$ en todo el espacio.
+
+  Pistas:
+  \begin{itemize}
+  \item El campo magnético $\bm H$ y la densidad de flujo magnético
+    $\bm B$ están ligados en muchos materiales a través de una
+    simple relación lineal $\bm B=\mu\bm H$, donde $\mu$ se conoce
+    como permeabilidad magnética y es un atributo de cada material.
+  \item Usa argumentos de simetría y la ley de Gauss magnética para
+    establecer que la dirección de los campos es axial.
+  \item Integra la ley de Ampère macroscópica en rectángulos con dos
+    lados axiales y dos lados radiales para demostrar que el campo es
+    constante en el exterior y constante en el interior y para hallar
+    la diferencia entre $H$ dentro y fuera de la bobina.
+  \item Usa condiciones de contorno lejos de la bobina y obtén $H$ en
+    todo el espacio.
+  \item Obtén $B$ en todo el espacio.
+  \end{itemize}
+
+\question Considera un material superconductor, un diamagneto
+  perfecto, llenando la región $z<0$ con vacío en la región $z>0$, y
+  un dipolo magnético $\bm m$ que apunta en la dirección $z$ y
+  colocado sobre el eje $z$ a una distancia $d$ del origen.
+  \begin{parts}
+  \part Demuestra que en $z>0$ el campo $\bm B$ es igual al campo
+    producido en el espacio vacío por el dipolo $\bm m$ en $z=d$ mas el campo que produciría un
+    dipolo ficticio $\bm m'=-\bm m$ colocado en $z=-d$.
+  \part Halla la fuerza que siente el dipolo real. ¿Se ve atraido o
+    repelido por la superficie?
+  \part ¿Cambiaría el resultado si rotamos el dipolo 180 grados?
+  \end{parts}
+
+  Pistas:
+  \begin{parts}
+  \part Un diamagneto es un material con $\mu<1$.
+  \part Un diamagneto {\em perfecto}, como lo son los
+    superconductores, tiene $\mu=0$.
+  \part Calcula $\bm B$ en el sistema real, en $z<0$.
+  \part Aplica condiciones de contorno para hallar $B_z(0^+)$.
+  \part Demuestra que estas se cumplen por la solución propuesta.
+  \part ¿Cuánto vale la densidad de corriente {\em externa} en la
+    superficie del superconductor?
+  \part Demuestra que la solución propuesta también cumple las condiciones de contorno
+    para $\bm H_\parallel$ en $z=0$.
+  \part La fuerza sobre un dipolo en términos del campo fue obtenida
+    en un problema previo.
+  \end{parts}
+
+\question Demuestra que en una región simplemente conexa en que no hay corrientes
+  eléctricas externas y hecha de un material homogéneo el campo
+  magnético se puede obtener de un potencial {\em escalar} $\phi_m$,  $\bm
+  H=-\nabla\phi_m$,y que satisface la ecuación de Laplace
+  $\nabla^2\phi_m=0$.
+
+  Pistas:
+  \begin{parts}
+  \part En dicha región se cumplen las ecuaciones $\nabla\cdot\bm B=0$ y
+    $\nabla\times\bm H=0$.
+  \part Usa la segunda para escribir $\bm H=-\nabla\phi_m$ en términos
+    de algún potencial escalar $\phi_m$.
+  \part Usa la relación constitutiva $\bm B=\mu \bm H$ y escribe la
+    primera como $-\nabla\cdot\mu\nabla\phi_m=0$.
+  \end{parts}
+  Nota:
+  \begin{itemize}
+  \item Si la región no es simplemente conexa el potencial escalar
+    podría resultar multivaluado. Hay que tener cuidado con estos casos.
+  \item Un ejemplo sería el de un alambre recto infinitamente largo en
+    que circula una corriente $I$. El campo $\bm B$ es tangencial,
+    $B_\theta=2I/rc$, y puede derivarse de un potencial escalar
+    $\phi_m(\bm r)=\phi_m(\theta)=-2I\theta/c$, pero este potencial
+    cambia de valor al dar una vuelta completa, i.e.,
+    $\phi_m(\theta+2\pi)\ne\phi_m(\theta)$.
+  \end{itemize}
+
+
+\question Considera una esfera aislante no magnetizable de radio $a$ centrada en el
+  origen en cuya superficie se deposita una carga con densidad
+  uniforme $\sigma$. La esfera se pone a girar alrededor del eje $z$
+  con velocidad angular $\omega$. Calcula el campo magnético producido
+  en todo el espacio.
+
+  Pistas;
+  \begin{itemize}
+  \item En el interior de la esfera el campo se puede describir por un
+    potencial escalar $\phi_<$ que obedece la ecuación de Laplace.
+  \item Lo mismo en el exterior, con otro potencial escalar $\phi_>$.
+  \item El sistema tiene un dipolo magnético no nulo.
+  \item Calcula la corriente superficial debida a la rotación de la
+    carga superficial en términos de $\sigma$ y $\omega$ en función de
+    $\theta$. Verifica que es proporcional a $\sin\theta$.
+  \item Prueba entonces como anzatz potenciales que van como
+    $\cos\theta$ y que satisfagan la ecuación de Laplace.
+  \item En el exterior prueba un potencial dipolar que decaiga en
+    $r\to\infty$: $\phi_>(r,\theta)=\alpha\cos\theta/r^3$.
+  \item En el interior prueba que no sea singular en el origen,
+    $\phi_<(r,\theta)=\beta r\cos\theta$.
+  \item Calcula $\bm B$ en el interior y el exterior.
+  \item Aplica condiciones de contorno sobre $B_\perp$ y $\bm
+    B_\parallel$ y determina las constantes $\alpha$ y $\beta$.
+  \item Calcula el momento dipolar magnético $\bm m$ de la esfera
+    rotante. Relacionalo con las constantes $\alpha$ y $\beta$.
+  \end{itemize}
+  Nota:
+  \begin{itemize}
+  \item Nota que el potencial no está definido en la región
+    superficial, donde sí hay corriente, y que no hay continuidad
+    entre sus valores fuera y dentro de la esfera ni hay por qué esperarla.
+  \end{itemize}
+
+
+
+\end{questions}
+\end{document}
