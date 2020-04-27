@@ -1,0 +1,645 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\cfoot[]{\thepage}
+\begin{document}
+\begin{center}
+  \bf\large Tarea 6\\
+  Propedéutico Electrodinámica\\
+  2020-04-26\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el viernes 2020-05-01.
+
+\begin{questions}
+  \question Considera un fragmento de un circuito consistente en un
+  conductor en forma de cilindro sólido
+  con longitud $L$ y sección transversal $A$. Demuestra que en el
+  mismo circula una corriente $I=V/R$ donde $V$ es el voltaje a través
+  de los extremos del alambre, $R=L/A\sigma$ la
+  resistencia del alambre y $\sigma$ la conductividad.
+
+  Pistas:
+  \begin{itemize}
+  \item En una tarea previa vimos que en un conductor la densidad de
+    corriente es $\bm j=\sigma\bm E$, y con un modelo simple obtuvimos
+    $\sigma=ne^2\tau/m$, con $n$ el número de electrones por unidad de
+    volumen, $e$ la carga del electrón, $\tau$ el tiempo que el
+    electrón se mueve antes de chocar y $m$ la masa electrónica.
+  \item La corriente $I$ se puede escribir en términos de $\bm j$ y la
+    sección transversal $A$.
+  \item El voltaje $V=\phi_a-\phi_b$ es la caida de potencial $\phi$
+    entre los extremos $a$ y $b$ del alambre.
+  \item El voltaje se puede escribir en términos del campo eléctrico
+    $\bm E$ en el interior del alambre.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item El campo eléctrico dentro de un conductor es cero en el caso
+    estático.
+  \item Argumenta por qué puede ser distinto de cero en el caso no
+    estático.
+  \item Argumenta por qué en este problema podemos considerar al campo
+    eléctrico como uniforme en el interior del cilindro.
+  \item La expresión $V=RI$ se conoce como la {\em Ley de Ohm}.
+  \item Para geometrías más complicadas se cumple la ley de Ohm, pues
+    la densidad de corriente es lineal en el campo y el voltaje
+    también, y $R\propto 1/\sigma$, pero la dependencia en los parámetros
+    geométricos puede ser más compleja.
+  \item Se conoce a $\rho=1/\sigma$ como la resistividad. (No confunda
+    estas $\rho$ y $\sigma$ con la densidad de carga volumetrica y
+    superficial, aunque se suelan denotar con las mismas letras).
+  \item Nota que a un material con una conductividad relativamente alta
+    corresponde  una resistencia relativamente baja.
+  \item Un resistor suele consistir de un matrial de baja
+    conductividad conectada a través de terminales metálicas de alta
+    conductividad.
+  \item Para efectos prácticos suele aproximarse a
+    las terminales metálicas, buenos conductores, por elementos con
+    resistencia nula, equipotenciales. Las caidas de potencial se dan,
+    sobre todo, a través de los materiales de baja conductividad.
+  \end{itemize}
+
+  \question Considera un sistema formado por un cilindro metálico de
+  radio $a$ en contacto con un cilindro coaxial
+  hueco de radio interior $a$ y radio exterior $b$ hecho de un
+  material con conductividad $\sigma$ en contacto con
+  otro cilindro coaxial metálico de radio interior $b$, todos de
+  altura $L\gg b$. Calcula la resistencia $R$ entre el conductor
+  interior y el exterior.
+
+  Pistas:
+  \begin{itemize}
+  \item Argumenta por qué podemos tomar a los dos cilindros metálicos
+    como equipotenciales, con potenciales $\phi(a)=\phi_a$ y
+    $\phi(b)=\phi_b$.
+  \item Argumenta por qué el potencial $\phi(\bm r)$ puede escribirse
+    como $\phi(r)$, i.e., sin depender de la coordenada axial ni la
+    coordenada angular.
+  \item Demuestra que $\nabla^2\phi=0$ en $a<r<b$.
+  \item Obtén el potencial $\phi(r)$ a partir de su ecuación
+    diferencial y sus condiciones de contorno.
+  \item Obtén el campo eléctrico $\bm E$.
+  \item Obtén la densidad de corriente $\bm j$.
+  \item Obtén la corriente total $I$.
+  \item Obtén la resistencia.
+  \end{itemize}
+
+  \question  Considera un circuito en el que varios conductores
+  confluyen sobre cierto nodo. Llama $I_n$ a la corriente que cada
+  conductor lleva {\em hacia} dicho nodo. Demuestra la Ley de Kirchoff
+  de los nodos, i.e., en el caso estacionario
+  $$
+  \sum_n I_n=0.
+  $$
+  Pistas:
+  \begin{itemize}
+  \item Encierra al nodo en el interior de una superficie cerrada
+    $\mathcal S$.
+  \item Argumenta por qué, en el caso estacionario,
+    $$
+    \int_{\mathcal S} d\bm a\cdot\bm j(\bm r)=0.
+    $$
+  \item Argumenta cómo se puede reescribir la integral anterior como
+    una suma de integrales sobre secciones transversales de cada
+    alambre que incide en dicho nodo.
+  \item Relaciona cada una de estas integrales con la corriente $I_n$
+    correspondiente.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Una corriente negativa {\em hacia} un nodo es una corriente
+    positiva {\em desde} dicho nodo.
+  \end{itemize}
+
+  \question Considera un circuito y considera un bucle cerrado con $N$
+  elementos $n=1\ldots N$ que van del nodos $n-1$ al nodo $n$,
+  identificando al nodo $N$ con el nodo $0$. Denota con $V_n$ la caida
+  de potencial a través del nodo $n$ yendo del nodo $n-1$ al $n$. Demuestra la ley de Kirchoff de
+  los bucles
+  $$
+  \sum_n V_n=0
+  $$
+  Pistas:
+  \begin{itemize}
+  \item Identifica $V_n=\phi_{n-1}-\phi_{n}=\int_{\mathcal C_n}d\bm
+    l\cdot\bm E(\bm r)$, donde $\mathcal C_n$ es una trayectoria que
+    va del nodo $n-1$ al nodo $n$.
+  \item Identifica $\sum_n V_n=\oint_{\mathcal C}d\bm l\cdot\bm E$ con
+    una integral cerrada sobre una
+    trayectoria cerrada $\mathcal C=\mathcal C_1$ seguida de $\mathcal C_2$  seguida de
+    $\mathcal C_3\ldots\mathcal C_N$.
+  \item El resultado se sigue de que el campo eléctrico es conservativo.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Una caida de potencial negativa es una subida de potencial.
+  \item Las dos leyes de Kirchoff pueden emplearse para plantear
+    sistemas lineales de ecuaciones que describen las corrientes y caidas
+    de potencial en circuitos arbitrarios formados por fuentes de
+    voltaje (subidas de potencial por cantidades dadas) y resistencias
+    (caidas de potenciales de acuerdo a las leyes de Ohm).
+  \item También se pueden usar para plantear ecuaciones diferenciales
+    que cumplen los voltajes y corrientes en circuitos con
+    capacitancias e inductancias.
+  \end{itemize}
+
+  \question Considera un circuito que contiene $N$
+  resistencias $R_n$, $n=1\ldots N$ conectadas en serie entre los
+  nodos $a$ y $b$, es decir, una detrás de
+  otra, con $R_n$ entre los nodos $n-1$ y $n$, identificando el nodo
+  $0$ con el nodo $a$ y el nodo $N$ con el nodo $b$ y sin nada
+  más conectado a los nodos intermedios $n=1\ldots N-1$. Demuestra que
+  este circuito es equivalente a otro circuito en el que las resistencias $R_n$
+  son reemplazadas por una sola resistencia efectiva $R_{\mathrm{ef}}$
+  conectada entre $a$ y $b$ y dada por
+  $$
+  R_{\mathrm{ef}}=\sum_n R_n.
+  $$
+  \question Considera un circuito que contiene $N$
+  resistencias $R_n$, $n=1\ldots N$ conectadas en paralelo entre los
+  nodos $a$ y $b$, es decir, todas con una terminal conectada al nodo
+  $a$ con y la otra terminal conectada al nodo $b$. Demuestra
+  que es equivalente a otro circuito en el que las resistencias $R_n$
+  son reemplazadas por una sola resistencia efectiva $R_{\mathrm{ef}}$
+  dada por
+  $$
+  \frac{1}{R_{\mathrm{ef}}}=\sum_n\frac{1}{R_n}.
+  $$
+
+  \question Considera un capacitor con capacitancia $C$ cuyas
+  terminales se conectan a las terminales de un resistor con resistencia $R$. Al
+  tiempo $t=0$ una placa (digamos $a$) del capacitor tiene carga $Q_0$ (y la
+  otra, digamos $b$, tiene carga $-Q_0$).
+  \begin{parts}
+    \part Calcula la carga $Q(t)$ en la placa $a$ del capacitor para tiempos
+    subsecuentes $t>0$.
+    \part Calcula la caida de potencial $V(t)$ a través del capacitor.
+    \part Calcula la corriente $I(t)$ a través de la resistencia.
+  \end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Argumenta por qué la caida de potencial $V=Q/C$ a través desde
+    la terminal $a$ a la terminal $b$ del capacitor es la misma que la
+    caida de potencial $V=RI$ a través de las terminales
+    correspondientes del resistor, donde convenimos que $I$ es la
+    corriente de $a$ a $b$ a través del resistor.
+  \item Argumenta por qué con las definiciones arriba, $I=-dQ/dt$.
+  \item Convierte la ley de Kirchoff en una ecuación diferencial.
+  \item Resuélvela.
+  \item Aplica condiciones iniciales.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item La carga y corriente decaen exponencialmente con un tiempo
+    característico $\tau=RC$, más largo mientras más capacitancia (más
+    carga almacenada para un voltaje dado) y más resistencia (menos
+    corriente para el mismo voltaje).
+  \end{itemize}
+
+  \question \label{l:a}Considera un campo magnético $\bm B(\bm r)=\alpha
+  x\hat{\bm z}$ que depende de $x$ y apunta en dirección $z$, con
+  $\alpha$ constante. Considera un circuito $\mathcal C$ formado
+  por un alambre en forma de espira cuadrada de lado $L$ con lados
+  paralelos a los ejes $x$ y $y$
+  y que se desplaza con velocidad $\bm v=v\hat{\bm x}$ constante en la
+  dirección $x$. Calcula la {\em fuerza electromotriz} $\mathcal E$
+  alrededor de este circuito.
+
+  Pistas:
+  \begin{itemize}
+  \item Se define la fuerza electromotriz como $\oint_{\mathcal C}d\bm
+    l\cdot \bm F/q$ donde $\bm  F$ es la fuerza que sentiría una carga $q$
+    en el circuito, i.e., es el trabajo virtual que el campo haría
+    sobre una carga al dar una vuelta al circuito, por unidad de carga.
+  \item En este caso la fuerza sería la fuerza de Lorentz producida
+    por el campo magnético $\bm F=q\bm v\times \bm B/c$.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Si el circuito tuviera una resistencia $R$, la fuerza
+    electromotriz establecería una corriente $I=\mathcal E/R$, como si
+    el circuito se cerrara a través de una fuenta de voltaje
+    $V=\mathcal E$.
+  \end{itemize}
+
+  \question Considera un campo magnético $\bm B(t)=\eta t\hat{\bm
+    z}$ que apunta en dirección $z$ y que depende del
+  tiempo, donde $\eta$ es constante. Considera un circuito $\mathcal C$ formado
+  por un alambre en forma de espira cuadrada de lado $L$ que descanza
+  sobre el plano $xy$ con lados paralelos a los ejes $x$ y
+  $y$. Calcula la fuerza electromotriz.
+
+  Pistas:
+  \begin{itemize}
+  \item De acuerdo a la {\em Ley de Inducción} de Faraday, alrededor
+    de un circuito que no se mueve
+    $$\mathcal E=-\frac{1}{c}\frac{d}{dt}\Phi_B,$$
+    donde
+    $$\mathcal E=\int_{\partial \mathcal A} d\bm l\cdot\bm E$$
+    es la fuerza electromotriz a lo largo de la frontera
+    $\partial\mathcal A$ de una superficie orientable $\mathcal A$, y
+    $$\Phi_B=\int_{\mathcal A}d\bm a\cdot\bm B$$
+    es el {\em flujo magnético} a través de dicha superficie.
+  \end{itemize}
+
+  Notas:
+  \begin{itemize}
+  \item Compara la solución de los dos problemas anteriores en el caso
+    $\eta=v\alpha$.
+  \item ¿Cómo se vería el problema \ref{l:a} en un sistema de
+    referencia en que el circuito estuviera fijo? (suponiendo
+    velocidades $v\ll c$ bajas).
+  \item Einstein notó que la respuesta a la nota anterior es general. La fuerza
+    electromotriz debida al movimiento de un circuito con fuentes
+    fijas es igual a la fuerza electromotriz sobre un circuito fijo
+    debida a una fuente en movimiento si la velocidad relativa es la
+    misma en ambos casos. Einstein observó que esto no
+    podía ser una coincidencia y por ello postuló el {\em Principio de
+      Relatividad}.
+  \item Es común resolver problemas que involucran a la fuerza de
+    Lorentz como si fueran problemas que involucran inducción. Aunque
+    no es del todo correcto, gracias al principio de
+    relatividad lleva a la solución correcta.
+  \item Un ejemplo puede ser el siguiente problema.
+  \end{itemize}
+
+  \question Considera dos barras $b_1$ y $b_2$ conductoras largas paralelas
+  unidas entre sí por una barra $b_3$ conductora corta de longitud $L$
+  formando una figura como la letra $U$. Se coloca $b_3$
+  horizontalmente y se inclinan las barras largas hasta que forman un
+  ángulo $\theta$ con la vertical. Se cierra el circuito
+  con una barra $b_4$ parcialmente conductora de longitud $L$, masa $M$ y
+  resistencia $R$ colocada horizontalmente sobre las barras $b_1$ y
+  $b_2$ con las que hace contacto eléctrico y sobre las que puede deslizar
+  libremente. Calcula la velocidad a la que se desliza la barra $b_4$
+  bajo la acción de la gravedad $g$ en presencia de un campo magnético
+  vertical $B$.
+
+  Pistas:
+  \begin{itemize}
+  \item Cuando la barra $b_4$ se mueve, disminuye su energía potencial
+    gravitacional y adquiere energía cinética.
+  \item Cuando la barra se desliza con una velocidad $v$ aparece una fuerza electromotriz
+    $\mathcal E$ que produce una corriente $I=\mathcal E/R$ en el
+    circuito $b_1$-$b_3$-$b_2$-$b_4$ proporcional a la $v$.
+  \item  Esta corriente disipa energía al atravesar la resistencia. La
+    potencia disipada es $\mathcal P=RI$ y es mayor mientras más
+    rápido baja la barra.
+  \item Cuando la energía disipada por unidad de tiempo iguala a la
+    energía potencial perdida por unidad de tiempo, la barra ya no
+    puede incrementar su energía cinética y llega a una velocidad
+    terminal.
+  \end{itemize}
+
+  \question \label{l:b} Considera una bobina formada por un alambre enrollado
+  uniformemente alrededor de un cilindro de radio $a$ y longitud $\ell\gg
+  a$ formado de un material con permeabilidad $\mu$ dando $N\gg 1$
+  vueltas. Se hace circular por el alambre una corriente
+  $I(t)$. Calcula la caida de potencial $V$ a través de las terminales
+  de la bobina.
+
+  Pistas:
+  \begin{itemize}
+  \item Utiliza la ley de Ampère para obtener el campo magnético $\bm H(t)$ en el
+    interior del cilindro ignorando efectos de borde.
+  \item Calcula la densidad de flujo magnético $\bm B$ en el interior
+    del cilindro.
+  \item Considera un circuito que va de un punto $a$ en una terminal
+    de la bobina a través del alambre y siguiendo a la corriente hasta
+    un punto $b$ en la terminal opuesta y regresa al punto $a$
+    cerrando el circuito a través del espacio vacío por fuera de la
+    bobina.
+  \item Calcula el flujo magnético $\Phi_B$ a través de este
+    circuito.
+  \item Calcula la fuerza electromotriz $\mathcal E$ a lo largo de este circuito.
+  \item Argumenta que el campo eléctrico en el interior del alambre es
+    nulo, por ser buen conductor.
+  \item Por tanto podemos identificar $\mathcal E=\int_b^a d\bm
+    l\cdot\bm E$ con la contribución a la integral cerrada del tramo
+    entre terminales, afuera de la bobina y afuera del
+    alambre.
+  \item Afuera de la bobina el campo magnético es (prácticamente)
+    nulo.
+  \item Por tanto, afuera de la bobina el campo eléctrico es
+    conservativo y
+  \item se puede definir un potencial.
+  \item Compara la integral anterior con la caida de potencial $V$.
+  \item Obtén $V$.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Podemos escribir $V=L d I/dt$ con
+    $$
+    L=\frac{4\pi^2}{c^2} \mu a^2\frac{N^2}{L}
+    $$
+    la {\em autoinductancia} de la bobina.
+  \item Para otras geometrías también tendríamos $V=L d I/dt$, pero
+    con otras expresiones para la inductancia.
+  \item Las unidades de la inductancia son aceleración inversa.
+  \end{itemize}
+
+
+  \question Considera un inductor con autoinductancia $L$ en el que
+  circula una corriente $I$. Demuestra que la energía que almacena es
+  $$
+  U=\frac{1}{2}LI^2.
+  $$
+
+  Pistas:
+  \begin{itemize}
+  \item Cuando una carga $\delta q$ pasa de una terminal $a$ a la otra
+    terminal $b$ de un inductor a través del cual hay una caida de
+    potencial $V$, pierde una energía $\delta U=V\delta q$. Esta
+    energía se almacena en la bobina como energía magnética.
+  \item La potencia transferida a la bobina es entonces $\mathcal
+    P=VI$ donde $I=\delta q/\delta t$ es la carga que circula por
+    unidad de tiempo.
+  \item Como $V=L dI/dt$, $\mathcal P=LIdI/dt$.
+  \item La energía almacenada es $U(t)=\int^t_{t_0} dt'\,\mathcal
+    P(t')$ inciando la integral cuando la
+    corriente es nula.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Para un sistema con muchos circuitos podemos generalizar los
+    resultados anteriores y escribir
+    $V_n=\sum_m L_{nm}dI_m/dt$ donde $L_{nm}$ es la autoinductancia
+    del circuito $n$ si $n=m$ y la inductancia mutua entre los
+    circuitos $n$ y $m$ si $n\ne m$.
+  \item La inductancia mutua se debe a que una corriente $I_m$ en el
+    circuito $m$ produce en general un campo $B_m$ que puede atravesar
+    al circuito $n$.
+  \item La energía total de un sistema de inductores es
+    $$U=\frac{1}{2}L_{nm}I_nI_m.$$
+  \item Podemos invertir nuestro razonamiento y emplear esta ecuación
+    para definir la autoinductancia y la inductancia mutua y de aquí
+    concluir que $V_n=\sum_m L_{nm}dI_m/dt$.
+  \end{itemize}
+
+  \question Muestra que la energía en el inductor del problema
+  \ref{l:b} puede escribirse como
+  $$
+  U=\int_V d^3r\, u(\bm r),
+  $$
+  donde $u(\bm r)$ es la densidad de energía magnética
+  $$
+  u=\frac{\bm B\cdot\bm H}{8\pi}.
+  $$
+
+  Pistas:
+  \begin{itemize}
+  \item Obtén $U$ en términos de la corriente $I$ empleando la
+    autoinductancia.
+  \item Escribe la corriente en términos de $B$.
+  \item Escribe la energía total en términos de $B$.
+  \item Divide entre el volumen de la bobina $\Omega=\ell\pi a^2$.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Esta demostración es muy limitada, pero el resultado es
+    totalmente general.
+  \item Una forma de calcular la inductancia de un circuito es primero
+    calcular la energía a partir de su densidad y después escribirla
+    en términos de la corriente.
+  \end{itemize}
+
+  \question Considera un cable coaxial de longitud $\ell$ formado por un cilindro hueco
+  de paredes delgadas y de radio $a\ll \ell$ en el que va una corriente
+  $I$ rodeado por otro cilindro delgado coaxial de radio $b>a$, $b\ll \ell$ por el
+  que va la corriente de retorno $-I$. Calcula la autoinductancia $L$
+  del sistema.
+
+  Pistas:
+  \begin{itemize}
+  \item Calcula el campo $\bm B(\bm r)$ entre ambos cilindros
+    ignorando efectos de borde.
+  \item Argumenta por qué se puede ignorar el campo en el resto del espacio.
+  \item Calcula la densidad de energía $u(\bm r)=u(r)$.
+  \item Integrala sobre el volumen entre los cilindros para obtener la
+    energía total $U$.
+  \item Identifica la autoinductancia $L$.
+  \end{itemize}
+
+  \question Considera un circuito formado por un capacitor con
+  capacitancia $C$ cuyas terminales $a$ y $b$ están conectadas a las
+  terminales de un inductor con autoinductancia $L$. Al tiempo $t=0$
+  la carga en el electrodo $a$ del capacitor es $Q(0)=Q_0$ (y en el
+  electrodo $b$ es $-Q_0$) y la corriente a través del inductor de $a$
+  hacia $b$ es $I(0)=I_0=0$.
+  \begin{parts}
+    \part Calcula la carga $Q(t)$ en el electrodo $a$.
+    \part Calcula la corriente $I(t)$ de $a$ a $b$ a través del
+    inductor.
+    \part Calcula la caida de potencial $V(t)$ de $a$ a $b$.
+  \end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Argumenta mediante la ley de Kirchoff que la caida de potencial $V(t)$ de
+    $a$ a $b$ a través del capacitor es la misma que a
+    través del inductor.
+  \item Relaciona dicha caida con la carga $Q(t)$ e $I(t)$.
+  \item Escribe $I(t)$ en términos de $Q(t)$ (ojo con los signos y la
+    dirección de la corriente).
+  \item Escribe una ecuación diferencial para $Q$.
+  \item Resuelvela imponiendo condiciones iniciales.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Este circuito es un oscilador. La energía electrica
+    almacenada en el capacitor cargado se convierte en energía
+    magnética almacenada en el inductor conforme la carga disminuye y
+    la corriente aumenta, y luego regresa al capacitor cuando se
+    vuelve a cargar con signo opuesto y disminuye la corriente.
+  \item La frecuencia de oscilación de la carga, corriente y voltaje
+    es $\omega=1/\sqrt{LC}$.
+  \item La frecuencia con que se intercambia la energía es el doble.
+  \end{itemize}
+
+  \question Demuestra que en un circuito en que todos los voltajes,
+  cargas y corrientes oscilan con una misma frecuencia $\omega$ podemos
+  reemplazar las resistencias $R$,  capacitancias $C$ e inductancias
+  $L$ por {\em impedancias} $Z$ que cumplen una ley de Ohm
+  generalizada $V=ZI$, donde
+  \begin{parts}
+    \part $Z_R=R$,
+    \part $Z_C=i/\omega C$,
+    \part $Z_L=-i\omega L$.
+  \end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Escribe el voltaje, carga y corriente como
+    $V(t)=\mathrm{Re}\,\tilde V(t)=\mathrm{Re}\,
+    V_0 \exp(-i\omega t)$, $Q(t)=\mathrm{Re}\,\tilde Q(t)=\mathrm{Re}\,
+    Q_0 \exp(-i\omega t)$, $I(t)=\mathrm{Re}\,\tilde I(t)=\mathrm{Re}\,I_0 \exp(-i\omega t)$.
+  \item La corriente $I(t)$ que {\em entra} a un capacitor se
+    relaciona con
+    la carga $Q$ almacenada en el electrodo correspondiente
+    $I=dQ/dt$.
+  \item Luego, $\tilde Q=i\tilde I/\omega=C \tilde V\Rightarrow \tilde
+    V=Z_C\tilde I$.
+  \item Similarmente, $V=Ld I/d t$ se puede escribir como $\tilde
+    V=Z_L\tilde I$.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item La solución estacionaria a las ecuaciones correspondientes a
+    un circuito con fuentes de poder oscilatorias con frecuencia
+    $\omega$, resistencias, capcitancias e inductancias se
+    puede obtener de un circuito con fuentes e impedancias.
+  \item Cada impedancia se puede tratar como si fuese una simple
+    resistencia, pero con valores complejos.
+  \item En particular, se pueden sumar impedancias en serie y en
+    paralelo.
+  \item Como resultado, se pueden obtener impedancias complejas.
+  \item La parte real de una impedancia es la parte disipativa y la
+    parte imaginaria es la parte reactiva; una produce disipación de
+    energía y la otra un defasamiento entre voltaje y corriente.
+  \end{itemize}
+
+  \question Demuestra que un conjunto de capacitores con impedancias
+  $C_n$, $n=1\ldots N$ se pueden cambiar,
+  \begin{parts}
+    \part si están conectadas en paralelo, por una capacitancia efectiva
+    $$C_{\mathrm{ef}} =\sum_n C_n;$$
+    \part si están conectadas en serie, por una capacitancia efectiva
+    $C_{\mathrm{ef}}$ donde
+    $$
+    \frac{1}{C_{\mathrm {ef}}}=\sum_n\frac{1}{C_n}.
+    $$
+  \end{parts}
+  Pistas:
+    \begin{itemize}
+    \item Suma las impedancias en serie y en paralelo como si fueran
+      resistencias.
+    \item Escribelas en términos de la capacitancia.
+    \end{itemize}
+
+    \question ¿Cómo se suman inductancias en serie y en paralelo?
+
+    \question Considera una fuente de voltaje $V_e(t)=V_0\cos\omega t$
+    conectada a través de una resistencia $R$ a un capacitor con
+    capacitancia $C$.
+    Encuentra el voltaje de salida $V_s(t)$ a través del capacitor a tiempos largos.
+
+    Pistas:
+    \begin{itemize}
+    \item Argumenta por qué a tiempo largos $t>RC$ la solución es una
+      simple oscilación con frecuencia $\omega$.
+    \item Reemplaza el circuito por un divisor de voltaje formado por
+      una fuente y dos impedancias $Z_R$ y $Z_C$.
+    \item Por tanto el voltaje {\em complejo} de salida es
+      $$\tilde V_s=\frac{Z_C}{Z_C+Z_R}\tilde V_e.$$
+    \end{itemize}
+
+    Notas:
+    \begin{itemize}
+    \item Nota que a frecuencias bajas $\omega\ll 1/RC$ el voltaje de
+      salida es igual al de entrada $V_s=V_e$.
+    \item Nota que a frecuencias altas el voltaje de salida es muy
+      pequeño y decae en proporción inversa a la frecuencia
+      $$\tilde V_s=\frac{i}{\omega RC} \tilde V_e.$$
+    \item Este circuito se conoce como {\em filtro pasabajos}.
+    \item Análogamente se pueden diseñar filtros pasabajos, pasaaltos
+      y pasabandas con redes de resistencias, capacitores  y/o inductores.
+    \end{itemize}
+
+    \question Considera un dipolo magnético $\bm m(t)=m(\cos\omega t,
+    \sin\omega t,0)$ que gira alrededor del eje $z$. Considera una
+    espira circular de radio $a$ colocada paralela al plano $yz$ y
+    centrada alrededor del eje $x$ a una distancia $x=d\gg a$ del origen.
+    \begin{parts}
+      \part Calcula la fuerza electromotriz $\mathcal E(t)$ alrededor
+      de la espira.
+      \part Supón que se abre la espira y se conectan sus extremos a través
+      de una resistencia $R$. Calcula, la corriente eléctrica a través
+      de la resistencia.
+      \part Calcula la potencia disipada en la resistencia.
+      \part Calcula la torca sobre el dipolo rotante.
+      \part Calcula la potencia que se le debe proporcionar para
+      mantener su rotación.
+    \end{parts}
+
+    Pistas:
+    \begin{itemize}
+    \item Usa la condición $a\ll d$ para simplificar el cálculo.
+    \item La corriente en la espira produce un dipolo inducido orientado en $x$
+      que varía en el tiempo.
+    \item Este dipolo genera un campo magnético que interacciona con
+      el dipolo rotatorio en el centro.
+    \end{itemize}
+    Notas:
+    \begin{itemize}
+    \item Este es una versión simplificada de un generador de voltaje
+      de {\em corriente alterna}.
+    \item Una variante es que sea la espira la que gira alrededor del
+      dipolo y que sus extremos se conmuten, para generar una
+      contribución de corriente directa.
+    \item La condición $a\ll d$ no es esencial, pero simplifica el
+      cálculo.
+    \item Se verifica la conservación de la energía, i.e., la energía
+      disipada en la resistencia iguala a la energía propocionada al
+      dipolo rotante mediante la torca que se le debe aplicar para
+      evitar que se frene.
+    \end{itemize}
+
+    \question Considera tres pares de bobinas de Helmholtz idénticas centradas
+    en el origen con ejes en el plano $xy$, formando ángulos
+    de $\theta_1=0^\circ$, $\theta_2=120^\circ$ y $\theta_3=240^\circ$
+    con respecto al eje $x$. Se excitan dichas bobinas con corrientes
+    $I_1=A\cos(\omega t)$, $I_2=A\cos(\omega t-2\pi/3)$ e $I_3=A\cos(\omega t+2\pi/3)$.
+    En el origen se coloca un pequeño imán con momento magnético $\bm
+    m$ en el plano $xy$ y libre de girar alrededor del eje $z$ sujeto
+    a un poco de fricción.
+    \begin{parts}
+      \part Muestra que cerca del origen el campo $\bm B(t)$ que producen las bobinas
+      en el origen tiene magnitud constante y rota con velocidad
+      angular constante $\omega$ alrededor del eje $z$.
+      \part Muestra que el dipolo giraría a tiempos largos con la misma velocidad
+      angular $\omega$ y alineado con el campo magnético.
+      \part Muestra que si aplicamos una torca externa $\bm\tau$
+      constante y no demasiado grande al dipolo para intentar frenar su rotación, este seguiría
+      rotando con la misma velocidad angular pero su dirección
+      formaría un ángulo de retraso con respecto a $\bm B$.
+      \part Para este caso, calcula la energía que el campo magnético
+      $\bm B(t)$ proporciona al dipolo para conservar su rotación.
+      \part Calcula la fuerza electromotriz que el campo producido por
+      el dipolo produce en las bobinas.
+      \part Calcula la potencia que es necesario proporcionar a las
+      bobinas para conservar la corriente eléctrica en ellas.
+    \end{parts}
+
+    Pistas:
+    \begin{itemize}
+    \item La torca sobre un dipolo fue calculada en una tarea previa.
+    \end{itemize}
+
+    Notas:
+    \begin{itemize}
+    \item Esta es una versión simplificada de un motor eléctrico
+      trifásico de velocidad constante.
+    \item La energía se conserva. La potencia eléctrica que se
+      transmite a las bobinas es igual a la potencia que se transmite
+      al dipolo rotatorio y es igual al trabajo mecánico que dicho
+      dipolo ejerce sobre los dispositivos sujetos al eje de giro.
+    \item La aproximación dipolar no es esencial, pero simplifica los
+      cálculos.
+    \item El generador (problema anterior) y el motor eléctrico (este problema)
+      forman la base de la enorme industria electromecánica en que
+      se ha sustentado el desarrollo industrial del último siglo.
+    \end{itemize}
+
+
+
+
+
+\end{questions}
+\end{document}
