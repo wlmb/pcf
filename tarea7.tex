@@ -1,0 +1,544 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+%\usepackage{showkeys}
+% \usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\cfoot[]{\thepage}
+\begin{document}
+\begin{center}
+  \bf\large Tarea 7\\
+  Propedéutico Electrodinámica\\
+  2020-05-03\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el viernes 2020-05-08.
+
+\begin{questions}
+\question\label{1} Encuentra la forma diferencial de la ley de inducción de
+Faraday.
+
+Pistas
+\begin{itemize}
+\item Escribe $\mathcal E=-(1/c)(d/dt)\Phi_B$ en términos de
+  integrales de $\bm E$ y $\bm B$.
+\item Usa el teorema de Stokes para llevarla a la forma de una
+  integral de superficie cuyo valor es nulo.
+\item Argumenta que esto sucede para cualquier superficie orientable,
+  y por tanto, demuestra que el integrando es cero.
+\end{itemize}
+\question\label{2} Considera un alambre recto que alimenta mediante una
+  corriente $I$ a un capacitor de placas paralelas formadas por discos
+  metálicos de radio $a$ separados una distancia $d$. Demuestra que de
+  acuerdo a la Ley de Ampère la circulación de $\bm B$ alrededor de
+  una trayectoria cerrada que rodea al alambre es
+  \begin{parts}
+  \part $\frac{4\pi}{c}I$ si interpretamos a $\mathcal C$ como la
+    frontera de una superficie $\mathcal S_1$ que cruza al alambre.
+  \part 0 si interpretamos a la misma trayectoria $\mathcal C$ como la
+    frontera de una superficie $\mathcal S_2$ que cruza por en medio de las placas
+    del capacitor.
+  \end{parts}
+  Notas:
+  \begin{itemize}
+  \item En realidad, la circulación de $\bm B$ no debería depender de
+    la elección de la superficie $\mathcal S_n$, sólo de la frontera
+    $\mathcal C$.
+  \item El problema se origina en que este sistema es {\em no
+      estacionario} pues hay acumulación de carga.
+  \item La Ley de Ampére no puede ser correcta para sistemas no estacionarios.
+  \end{itemize}
+
+\question\label{3} Considera una esfera de radio $a(t)$ cargada uniformemente en
+  todo su interior con una carga $Q$ y que se expande con velocidad
+  $v=da/dt=$cte. Calcula $\nabla\times B(\bm r,t)$ en un punto $r<a(t)$
+  dentro de la esfera de acuerdo a la ley de Ampère.
+
+  Pistas
+  \begin{itemize}
+  \item Calcula la densidad de corriente eléctrica en el interior de
+    la esfera.
+  \end{itemize}
+
+  Notas:
+  \begin{itemize}
+  \item De acuerdo a la ley de Ampère, en todo circuito sobre la
+    superficie de una esfera con $r<a$ hay circulación magnética.
+  \item Eso implica que habría un campo $\bm B$ con componentes
+    tangenciales.
+  \item Pero el problema es isotrópico,
+  \item y es imposible {\em peinar} a una esfera.
+  \item Por tanto, la Ley de Ampère debe estar mal.
+  \item De nuevo, este es un sistema no estacionario.
+  \end{itemize}
+
+\question\label{4} Usando la ecuación de continuidad demuestra que la ley de
+  Ampère no puede ser correcta en sistemas no estacionarios.
+
+  Pistas:
+  \begin{itemize}
+  \item La versión diferencial de la Ley de Ampére es $\nabla\times\bm
+    B=(4\pi/c)\bm j$.
+  \item Toma la divergencia de ambos lados.
+  \item Usa la ecuación de continuidad para llegar a
+    $0=\nabla\cdot\nabla\times\bm B=(4\pi/c)\nabla\cdot\bm
+    j=-(4\pi/c)(\partial/\partial t)\rho$.
+  \item Esta ecuación se puede violar en sistemas no estacionarios.
+  \end{itemize}
+
+\question\label{5} Generaliza la Ley de Ampère para que valga en sistemas no
+  estacionarios.
+
+  Pistas:
+  \begin{itemize}
+  \item Parte de la Ley de Gauss $\nabla\cdot\bm E=4\pi\rho$.
+  \item Toma su derivada, $\nabla\cdot(\partial/\partial t)\bm
+    E=4\pi(\partial/\partial t)\rho$.
+  \item Usa la ley de continuidad para escribir
+    $\nabla\cdot\left((\partial/\partial t)\bm E+4\pi\bm j\right)=0$.
+  \item Argumenta que el término entre paréntesis se puede escribir
+    como rotacional de {\em algo}.
+  \item Usa la Ley de Ampère para identificar dicho algo en el caso
+    estacionario es $c\bm B$.
+  \item Generaliza y concluye con la {\em Ley de Ampère-Maxwell}
+    $$
+    \nabla\times\bm B=\frac{1}{c}\frac{\partial}{\partial t}\bm
+    E+\frac{4\pi}{c}\bm j.
+    $$
+  \item El primer término de del lado derecho se conoce como {\em
+      corriente de desplazamiento}.
+  \end{itemize}
+\question\label{6} Demuestra que la ley
+  de Ampère-Maxwell resuelve los problemas encontrados en los
+  problemas \ref{2}-\ref{4}.
+
+  Pistas:
+  \begin{itemize}
+  \item Demuestra que la integral de la densidad de corriente en una
+    sección del alambre del problema \ref{2} es igual a la integral de
+    la corriente de desplazamiento entre las placas de un capacitor.
+  \item Demuestra que la corriente de desplazamiento es igual y
+    opuesta a la densidad de corriente eléctrica en el problema
+    \ref{3}.
+  \item El \ref{4} es trivial.
+  \end{itemize}
+\question\label{7} Demuestra que en el vacío el campo electromagnético cumple
+  con la ecuación de onda.
+
+  Pistas:
+  \begin{itemize}
+  \item Escribe las dos ecuaciones para los rotacionales de los campos
+    en ausencia de cargas y corrientes.
+  \item Toma el rotacional de una de éstas y sustituye la otra.
+  \item Usa la identidad
+    $\nabla\times\nabla\times(\ldots)=\nabla\nabla\cdot(\ldots)-\nabla^2(\ldots)$.
+  \item Sustituye las ecuaciones para las divergencias.
+  \end{itemize}
+
+
+\question \label{21} Demuestra que la ecuación de onda tiene
+  soluciones de la forma $\bm E(\bm r,t)=\bm E_0 F(x-ct)$ donde $F$ es
+  una función arbitraria de un solo argumento.
+
+  Pista:
+  \begin{itemize}
+  \item Sustituye en la ec. de onda.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Este tipo de solución se conoce como {\em ondas planas}, pues el
+    campo es constante en los planos $x=$cte. Hay otros tipos de soluciones.
+  \item La onda se propaga sin deformarse en la dirección $x$ con
+    velocidad $c$.
+  \item Podemos rotar la solución a cualquier otra dirección, generalizando la
+    solución a $\bm E(\bm r,t)=\bm E_0 F(\hat {\bm n}\cdot\bm r-ct)$.
+  \item Esta representa una onda plana que se mueve a velocidad $c$ en
+    la dirección del vector unitario $\hat{\bm n}$.
+  \item Los planos de campo constante son ortogonales a $\hat{\bm n}$,
+    de la forma $\hat{\bm n}\cdot\bm r=$cte.
+  \item El principio de superposición nos permite sumar ondas viajando
+    en distintas direcciones.
+  \item Si la onda depende sinusoidalmente del tiempo y de la
+    posición, como en $\bm E(\bm r,t)=\bm E_0 \cos(\bm k\cdot\bm
+    r-\omega t)$ se le conoce como onda plana {\em monocromática}.
+  \item $\omega$ es la frecuencia, $\bm k=k\hat{\bm n}$ es el vector
+    de onda y $k=\omega/c$ el número de onda. El periodo es
+    $T=2\pi/\omega$ y la longitud de onda es $\lambda=2\pi/k$.
+  \end{itemize}
+
+\question \label{22} Demuestra que las ecuaciones de Maxwell en el
+  vacío tienen solución en forma de ondas planas
+  monocromáticas. Encuentra las relaciones entre el campo magnético y
+  el campo eléctrico y la dirección de propagación.
+
+  Pistas:
+  \begin{itemize}
+  \item Conviene emplear una notación compleja y proponer ondas del
+    tipo $\bm E(\bm r,t)=\text{Re}\, \bm E_0 e^{i(\bm k.\cdot\bm
+      r-\omega t)}$ y $\bm B(\bm r,t)=\text{Re}\, \bm B_0 e^{i(\bm k.\cdot\bm
+      r-\omega t)}$.
+  \item Sustituyendo en las ecuaciones de Maxwell para los
+    rotacionales obtenemos las siguientes ecuaciones algebráicas
+    $\bm k\times \bm E=(\omega/c)\bm B$ y
+    $\bm k\times \bm B=-(\omega/c)\bm E$.
+  \item Luego, $\bm k$, $\bm E$ y $\bm B$ son mutuamente
+    perpendiculares y forman una triada ordenada derecha.
+  \item Tomando el producto de una de las ecuaciones previas por $\bm
+    k$ y sustituyendo en la otra, y empleando la identidad del álgebra
+    vectorial $\bm k\times\bm k\times(\ldots)=\bm k\bm
+    k\cdot(\ldots)-k^2(\ldots)$ y usando el inciso previo, obtenemos la
+    relación de dispersión $k^2=(\omega/c)^2$.
+  \item Por tanto $|E|=|B|$.
+  \end{itemize}
+
+ Notas:
+ \begin{itemize}
+ \item La ecuación de onda se deriva de las ecuaciones de Maxwell en
+   el vacío, toda solución de las ecuaciones de Maxwell en el vacío
+   satisfacen la ecuación de onda, pero no toda solución de la
+   ecuación de onda satisface las ecuaciones de Maxwell.
+ \end{itemize}
+
+\question\label{23} Considera una onda electromagnética, plana,
+  monocromática, propagándose
+  en la dirección $z$, $\bm E(\bm r,t)=\text{Re}\,\bm E_0 e^{i(kz-\omega t)}$.
+  \begin{parts}
+  \part Demuestra que $\bm E_0=E_0\hat{\bm e}$ donde el vector de
+    {\em polarización} unitario $\hat{\bm e}$ yace en el plano $xy$.
+  \part Describe el movimiento de $\bm E(\bm 0,t)$ conforme transcurre
+    el tiempo si $\hat{\bm e}=(1,0,0)$,
+  \part $\hat{\bm e}=(\cos\theta,\sin\theta,0)$ para un ángulo
+    $\theta$,
+  \part $\hat{\bm e}=(1,i,0)/\sqrt2$,
+  \part $\hat{\bm e}=(1,-i,0)/\sqrt2$.
+  \part $\hat{\bm e}=(a,b i,0)/\sqrt{a^2+b^2}$,
+  \end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Expresa $e^{-i\omega t}=\cos\omega t-i\sin\omega t$, haz los
+    productos y toma la parte real del resultado.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item La polarización puede ser lineal en cualquier dirección,
+    circular con cualquier helicidad o elíptica con cualquier
+    dirección de giro, excentricidad y semieje mayor.
+  \end{itemize}
+
+
+\question\label{8} Demuestra que los campos electromagnéticos se pueden
+  escribir en términos de un potencial escalar y un potencial
+  vectorial como
+  $$
+  \bm B=\nabla\times \bm A,
+  $$
+  $$
+  \bm E=-\nabla\phi-\frac{1}{c}\frac{\partial}{\partial t}\bm A.
+  $$
+
+  Pistas:
+  \begin{itemize}
+  \item Resuelve la ley de Gauss magnética escribiendo a $\bm B$ como
+    un rotacional.
+  \item Sustituyelo en la ley de inducción de Faraday.
+  \item Demuestra que $\nabla\times\left((\bm E+(1/c)(\partial/\partial
+    t)\bm A\right)=0$,
+  \item y por tanto el término entre paréntesis se puede escribir como
+    un gradiente
+  \end{itemize}
+
+  Notas:
+  \begin{itemize}
+  \item Estos potenciales no necesariamente coinciden con el potencial
+    Coulombiano que apareció en electrostática ni con el potencial
+    vectorial que apareció en magnetostática.
+  \item $\nabla\cdot\bm A$ es arbitraria.
+  \end{itemize}
+
+
+\question \label{9} Demuestra que un {\em cambio de norma} de la forma
+  $$
+  \bm A\to \bm \tilde{\bm A}=\bm A+\nabla\Lambda,
+  $$
+  $$
+  \phi \to \tilde\phi=\phi-\frac{1}{c}\frac{\partial}{\partial t}\Lambda,
+  $$
+  con $\Lambda(\bm r,t)$ un campo escalar arbitrario, deja invariante
+  al campo electromagnético: $\bm E=\tilde{\bm E}$ y $\bm
+  B=\tilde{\bm E}$.
+
+\question\label{10} Encuentra la ecuación que cumplen los potenciales $\phi$ y
+  $\bm A$.
+
+
+  Pistas:
+  \begin{itemize}
+  \item Sustituye los campos del problema \ref{8} en las ecuaciones de
+    Maxwell inhomogéneas (ley de Gauss y ley de Ampère-Maxwell).
+  \end{itemize}
+\question \label{11}  Demuestra que $\phi$ y $\bm A$ cumplen ecuaciones de onda
+  con fuentes $\rho$ y $\bm j/c$ respectivamente, en la {\em norma de
+    Lorentz}
+  $$\nabla\cdot\bm A+\frac{1}{c}\frac{\partial}{\partial t}\phi=0.$$
+
+  Pistas:
+  \begin{itemize}
+  \item Sustituye la norma en las ecuaciones del problema \ref{10}.
+  \end{itemize}
+
+
+\question\label{12} Calcula el potencial vectorial $\bm A(\bm r)$ en una región
+  permeada por un campo magnético uniforme y constante $\bm
+  B=B\hat{\bm z}$ en la {\em norma de Landau} $A_x=0$.
+
+
+\question\label{13} Demuestra que la circulación del potencial
+  vectorial a lo largo de un circuito es igual al flujo magnético
+  encerrado,
+  $$
+  \int_{\partial\mathcal S} d\bm l\cdot\bm A=\int_{\mathcal S}d\bm
+  a\cdot\bm B,
+  $$
+  para toda superficie orientable $\mathcal S$.
+
+  Pistas:
+  \begin{itemize}
+  \item Usa el teorema de Stokes.
+  \end{itemize}
+\question\label{14} Considera una bobina recta cilíndrica de longitud
+  $\ell$ y radio $a\ll \ell$ con $N\gg 1$ espiras uniformemente
+  enrolladas, en la que circula una corriente $I$. Calcula el
+  potencial vectorial $\bm A$ que produce en todo el espacio.
+
+  Pistas:
+  \begin{itemize}
+  \item El campo $\bm B$ ya fue calculado en un problema anterior.
+  \item Utiliza el problema \ref{13}.
+  \end{itemize}
+
+
+\question\label{15} Demuestra que el campo electromagnético cumple la
+  ley (local) de conservación de la energía.
+
+  Pistas:
+  \begin{itemize}
+  \item La forma genérica de las leyes locales de conservación (todas
+    las leyes de conservación, de acuerdo a la teoría de la
+    relatividad) es
+    $$
+    \frac{d}{d t}(\text{cantidad})_V+(\text{flujo})_{\partial V}=(\text{fuente})_V
+    $$
+    donde
+    $$
+    (\text{cantidad})_V=\int_V d^3r\, \text{densidad},
+    $$
+    $$
+    (\text{flujo})_{\partial V}=\int_{\partial V} d\bm
+    a\cdot\text{densidad de flujo},
+    $$
+    $$
+    (\text{fuente})_V=\int_V d^3r\, \text{densidad de fuentes},
+    $$
+    $V$ es un volumen cualquiera y $\partial V$ su frontera.
+  \item Usando el teorema de Gauss, se puede escribir como
+    $$\frac{\partial}{\partial
+      t}\text{densidad}+\nabla\cdot\text{densidad de
+      flujo}=\text{densidad de fuentes}.
+    $$
+  \item Para la energía, la densidad de fuentes (la energía
+    que la materia da al campo por unidad de tiempo y por unidad de
+y    volumen) es (-) el trabajo que el campo ejerce sobre la materia
+    por unidad de tiempo por unidad de volumen.
+  \item La densidad de energía se suele denotar por la letra $u$
+  \item y la densidad de flujo de energía por la letra $\bm S$,
+    conocida como el {\em vector de Poynting}.
+  \item La fuerza por unidad de volumen es $f=\rho\bm E+(1/c)\bm
+    j\times\bm B$.
+  \item Luego, la potencia por unidad de volumen es $\bm E\cdot\bm j$.
+  \item El ejercicio consiste entonces en hallar expresiones para $\bm S$ y $u$
+    en términos del campo electromagnético $\bm E$ y $\bm B$ y que
+    cumplan
+    $$
+    \frac{\partial}{\partial t}u+\nabla\cdot\bm S=-\bm E\cdot\bm j.
+    $$
+  \item Puedes empezar por el lado derecho, sustituir $\bm j$ en
+    términos de $\bm B$ y $\bm E$ usando la ley de Ampère-Maxwell y
+    llevar el resultado a la forma de arriba empleando identidades del
+    cálculo vectorial.
+  \item La densidad de energía resultante es
+    $$
+    u=\frac{E^2+B^2}{8\pi}.
+    $$
+  \item El vector de Poynting resultante es
+    $$
+    \bm S=\frac{c}{4\pi}\bm E\times \bm B.
+    $$
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item Nota que el resultado es consistente con la expresión
+    tentativa hallada en tareas previas para la energía electrostática
+    y magnetostática.
+  \item La ley de conservación de la energía electromagnética se
+    conoce como {\em teorema de Poynting}.
+  \end{itemize}
+
+
+\question\label{16} Un resistor con resistencia $R$ consta de un
+  cilindro de longitud $\ell$ y radio $a$ relleno de un material con
+  conductividad $\sigma$. En el resistor fluye una corriente
+  $I$. Calcula el flujo de energía electromagnética alrededor del
+  resistor y compárala con la energía disipada en su interior.
+
+  Pistas:
+  \begin{itemize}
+  \item A través del resistor hay una caida de potencial $V$.
+  \item Luego, en su superficie hay un campo eléctrico $\bm E$
+    paralelo al eje del resistor.
+  \item Alrededor de la corriente $I$ circula un campo magnético $\bm
+    B$.
+  \item Calcula $\bm S$ e intégralo sobre las paredes del resistor.
+  \end{itemize}
+  Notas:
+  \begin{itemize}
+  \item La energía que disipa el resistor es proporcionada por el
+    campo electromagnético,
+  \item pero no llega al resistor a través de los conectores, sino
+    viajando por el espacio vacío en dirección perpendicular a la corriente, a través de
+    las paredes.
+  \end{itemize}
+
+\question\label{17} Un capacitor está formado por dos discos metálicos
+  de radio $a$ separados una distancia $d\ll a$. Se conectan ambos
+  discos por un resistor de resistencia $R$ en forma de alambre recto
+  que conecta los centros de ambos discos. Al tiempo $t=0$ se colocan
+  cargas $\pm Q_0$ en los discos y se deja que el sistema se descargue
+  a través del resistor.  Verifica la forma integral de ley de
+  conservación de energía en todo cilindro de radio $r<a$ coaxial con
+  el capacitor.
+
+  Pistas:
+  \begin{itemize}
+  \item Calcula la energía almacenada en un cilindro coaxial de radio
+    $r$ integrando la densidad de energía.
+  \item Calcula la potencia disipada por el resistor en el eje.
+  \item Calcula el cambio en la energía almacenada conforme transcurre
+    el tiempo.
+  \item Calcula el flujo de energía en las paredes del cilindro.
+  \item Verifica el balance entre los términos anteriores.
+  \end{itemize}
+
+\question\label{18} Demuestra que el campo electromagnético cumple con
+  la Ley de Conservación del Ímpetu.
+
+  Pistas:
+  \begin{itemize}
+  \item Análogamente al teorema de Poynting, la ley de conservación
+    del ímpetu se puede escribir como
+    $$
+    \frac{\partial}{\partial t} \bm g +\nabla\cdot(-\bm T)=-\bm f,
+    $$
+    donde $\bm g$ es la densidad de ímpetu electromagnético, $-\bm T$
+    es el flujo de ímpetu electromagnético y $-\bm f$ es la fuente de
+    ímpetu para el campo, por unidad de tiempo y de volumen.
+  \item $\bm f$ es entonces el ímpetu que el campo le proporciona a la
+    materia por unidad de tiempo por unidad de volumen, es decir, la
+    densidad de fuerza $\bm f=\rho\bm E+(1/c)\bm j\times\bm B$.
+  \item Como el ímpetu es un vector, su flujo tiene dos direcciones
+    (la dirección del ímpetu y la dirección en que fluye). Más
+    precisamente, $-\bm T$ es un tensor de rango dos (una matriz)
+    cuyas componentes son $-T_{ij}=$flujo de la componente $i$ del
+    ímpetu que atraviesa una superficie normal a la dirección $j$ por
+    unidad de área y unidad de tiempo.
+  \item En una situación estacionaria, $\bm T$ nos da la fuerza
+    electromagnética sobre un sistema,
+    $$
+    \bm F_V=\int_v d^3r\, f=\int da_j T_{ij}.
+    $$
+  \item $\bm T$ se conoce como el {\em tensor de esfuerzos}
+    electromagnético.
+  \item Se puede empezar eliminando $\rho$ y $\bm j$ de la expresión
+    para $-\bm f$ usando la ley de Gauss y la ley de Ampère Maxwell y
+    llevarla a la forma de ley de conservación empleando identidades
+    del cálculo vectorial y las otras dos ecuaciones de Maxwell.
+  \item El resultado es
+    $$
+    \bm g=\frac{1}{4\pi c}\bm E\times\bm B=\frac{1}{c^2}\bm S
+    $$
+    y
+    $$
+    T_{ij}=\frac{1}{4\pi}\left(E_iE_j+B_iB_j-\frac{1}{2}(E^2+B^2)\delta_{ij}\right).
+    $$
+  \end{itemize}
+
+\question\label{19} Considera una carga $\pm Q$ depositada sobre las
+  placas de un capacitor formado por dos discos metálicos de radio $a$
+  separados una distancia $d\ll a$. Calcula la fuerza entre los
+  discos.
+
+  Pista:
+  \begin{itemize}
+  \item El resultado {\em no} es simplemente $\bm E Q$ con $\bm E$ el
+    campo en el capacitor. Esto se debe a que el campo es discontinuo
+    en la superficie donde se acumula la carga.
+  \item Calcula la fuerza integrando el tensor de esfuerzos en una
+    superficie que rodee la cara interna de uno de los discos, i.e.,
+    un cilindro con una tapa en el espacio entre las placas y la otra
+    tapa en el interior de la placa metálica.
+  \item El resultado es consistente con un estado de {\em tensión} (lo
+    opuesto a una presión) a lo largo de las líneas de campo
+    $(1/8\pi)E^2$.
+  \end{itemize}
+
+
+\question\label{20} Considera una bobina en forma de cilindro de longitud $\ell$
+  y radio $a\ll\ell$ en el que se enrollan uniformemente $N\gg1$
+  vueltas de alambre que lleva una corriente $I$. Considera un pequeño
+  pedazo de bobina contenida en un pequeño cilindro gaussiano de
+  sección transversal {$\mathcal S$}
+  con eje normal a la pared de la bobina, con una tapa en su interior
+  y otra en el exterior. Demuestra que la fuerza sobre dicho pedazo de
+  bobina es $P\mathcal S$ donde $P=(1/8\pi)B^2$ juega el papel de una
+  presión, como si las líneas de campo estuvieran en un estado de
+  compresión en su dirección normal.
+
+  Nota:
+  \begin{itemize}
+  \item Si la corriente oscila 60 veces por segundo, esta presión
+    sobre las paredes de la bobina oscila 120 veces por segundo. Esta
+    presión variable es el origen del zumbido que se escucha en la
+    cercanía de transformadores de potencia en la red eléctrica.
+  \end{itemize}
+
+\question \label{24} Considera una onda plana monocromática
+  linealmente polarizada viajando en la dirección $z$ con amplitud
+  $E_0$ la cual es totalmente absorbida por una placa fija de cierto material
+  que ocupa la región $z>0$. Calcula
+  \begin{parts}
+  \part la potencia transmitida a la placa por unidad de área y
+  \part la presión de radiación ejercida sobre la placa,
+    promediadas sobre un ciclo de oscilación del campo.
+  \part ¿Cómo cambiarían los resultados previos si la placa fuera un
+    reflector perfecto en lugar de un absorbedor perfecto?
+\end{parts}
+
+  Pistas:
+  \begin{itemize}
+  \item Calcula el vector de Poynting y el tensor de esfuerzos.
+  \item Promedialos en el tiempo.
+  \item Si usas la notación compleja hay que tener cuidado, pues si
+    $a(t)=\text{Re}\, a_0 e^{-i\omega t}$
+    y $b(t)=\text{Re}\, b_0 e^{-i\omega t}$, entonces $a(t)b(t)\ne
+    \text{Re}\, a_0 b_0 e^{-2i\omega t}$. Sin embargo, $\langle a(t)
+    b(t)\rangle = \frac{1}{2}\text{Re}\, a_0 b_0^*=\frac{1}{2}\text{Re}\, a_0^* b_0$.
+
+  \end{itemize}
+
+
+
+\end{questions}
+\end{document}
