@@ -1,0 +1,644 @@
+\documentclass{exam}
+\usepackage{espanhol}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{braket}
+%\usepackage{showkeys}
+% \usepackage{pstricks}
+\decimalpoint
+\pointname{\ puntos}
+\cfoot[]{\thepage}
+\newenvironment{pistas}{\par\noindent Pistas:\begin{enumerate}} {\end{enumerate}}
+\newenvironment{notas}{\par\noindent Notas:\begin{enumerate}} {\end{enumerate}}
+
+\begin{document}
+\begin{center}
+  \bf\large Tarea 8\\
+  Propedéutico Electrodinámica\\
+  2020-05-10\\[20pt]
+\end{center}
+\hbox to \textwidth{Nombre: \enspace\hrulefill}
+Entregar el viernes 2020-05-15.
+
+\begin{questions}
+\question\label{a} Deduce las ecuaciones de Maxwell {\em
+    macroscópicas} en materiales
+  polarizables y magnetizables.
+  \begin{pistas}
+  \item Parte de las ecuaciones inhomogéneas de Maxwell en términos de
+    $\bm E$ y $\bm B$ y las fuentes totales $\rho^{\text{tot}}$ y
+    $\bm j^{\text{tot}}$ (las llamadas, ecuaciones de Maxwell {\em microscópicas}).
+  \item Escribe separa las fuentes en fuentes externas (no
+    pertenecientes al material) e internas (pertenecientes al
+    material), $\rho^{\text{tot}}=\rho^{\text{ext}}+\rho^{\text{int}}$,
+    $\bm j^{\text{tot}}=\bm j^{\text{ext}}+\bm j^{\text{int}}$.
+  \item Escribe las fuentes internas en términos de la polarización y
+    la magnetización, $$\rho^{\text{int}}=-\nabla\cdot\bm P$$ y $$\bm
+    j^{\text{int}}=\frac{\partial}{\partial t}\bm P+c\nabla\times\bm
+    M$$.
+  \item Identifica en las ecuaciones resultantes a $\bm D$ y $\bm H$.
+  \item Las ecuaciones homogéneas no se ven modificadas por la
+    presencia de materiales.
+  \item La solución es $\nabla\cdot\bm D=4\pi\rho^{\text{ext}}$,
+      $\nabla\times\bm H=(4\pi/c)\bm j^{\text{ext}}+(1/c)\partial\bm
+      D/\partial t$, $\nabla\cdot\bm B=\bm 0$, $\nabla\times\bm
+      E=-(1/c)\partial\bm B/\partial t$.
+  \end{pistas}
+  \begin{notas}
+  \item Como las ecuaciones homogéneas no se modifican, la existencia
+    de potenciales electromagnéticos $\phi$, $\bm A$ y su relación con
+    $\bm E$ y $\bm B$ tampoco.
+  \end{notas}
+
+\question\label{b} Encuentra las condiciones de contorno que cumplen los campos
+  electromagnéticos $\bm E$, $\bm B$, $\bm D$ y $\bm H$, así como $\bm
+  P$ y $\bm M$ en una superficie cualquiera.
+  \begin{pistas}
+  \item Este problema no es más que un repaso de problemas resueltos
+    en las tareas 3 y 5. Simplemente, hemos de verificar que los
+    resultados son válidos en el caso general y no solo en el estático
+    o el estacionario.
+  \item Se llega a la solución integrando las ecuaciones para las
+    divergencias en un pequeño cilindro que atrapa a la superficie
+    entre sus tapas o integrando las ecuaciones para los rotacionales
+    sobre pequeños rectángulos que atrapan la superficie entre dos de
+    sus lados.
+  \item La solución es $\Delta B_\perp=0$, $\Delta \bm E_\parallel=0$,
+    $\Delta\bm D_\perp=4\pi\sigma^{\text{ext}}$, $\Delta
+    \bm H_\|=(4\pi/c)\bm K^{\text{ext}}\times\hat{\bm n}$, $\Delta
+    P_\perp=-\sigma^{\text{int}}$, $\Delta\bm M_\|=\bm
+    K^{\text{int}}\times\hat{\bm n}/c$. En ausencia de una densidad de
+    carga externa singulare sobre la superficie, $\sigma^{\text{ext}}=0$, la
+    componente normal a la superficie del desplazamiento es continua
+    en la superficie, $\Delta
+    D_\perp=0$, y en ausencia de una densidad corriente externa
+    singular en la superficie, $\bm K^{\text{ext}}=0$, la proyección
+    tangencial a la superficie del campo magnético es continua en la superficie,
+    $\Delta\bm H_\|=0$.
+  \end{pistas}
+\question\label{c} Transforma las ecuaciones de Maxwell sin fuentes en ecuaciones
+  algebraicas para el caso de una onda plana monocromática con vector de onda $\bm
+  k$ y frecuencia $\omega$ propagandose en un material polarizable y
+  magnetizable
+  \begin{pistas}
+  \item Considera campos de la forma $\bm F(\bm r,t)=\bm F_0 e^{i(\bm
+      k\cdot\bm r-\omega t)}$ donde $\bm F$ representa a cualquiera de
+    $\bm E$,   $\bm D$,   $\bm B$ y  $\bm H$, y donde se sobreentiende
+    que debemos tomar la parte real al terminar el cálculo.
+  \item Argumenta que podemos hacer los siguientes reemplazos:
+    $\nabla\to i\bm k$, $\partial/\partial t\to -i\omega$.
+  \item Concluye que
+    $\bm k\cdot\bm B=0$, $\bm k\times\bm
+    E=(\omega/c)\bm B$, y $\bm k\cdot\bm D=0$ y $\bm k\times\bm H=-(\omega/c)\bm D$.
+  \end{pistas}
+  \begin{notas}
+  \item $\bm k$ es ortogonal a $\bm D$ y $\bm B$, $\bm B$ es ortogonal
+    a $\bm E$ y $\bm D$ es ortogonal a $\bm H$
+  \item Nota que $\bm k$, $\bm E$ y $\bm B$ forman una terna ordenada
+    derecha.
+  \item Nota que $\bm k$, $\bm D$ y $\bm H$ también.
+  \item En materiales isotrópicos $\bm D\|\bm E$ y $\bm B\|\bm H$ y
+    todos los vectores de las ternas previas son mutuamente ortogonales.
+  \end{notas}
+\question\label{d} Encuentra la relación de dispersión para una onda
+  electromagnética propagándose libremente en un medio polarizable y magnetizable
+  lineal e isotrópico, caracterizado por una permitividad
+ $\epsilon$ y una permeabilidad $\mu$.
+ \begin{pistas}
+     \item Sustituye las ecuaciones materiales $\bm D=\epsilon\bm E$ y
+       $\bm B=\mu \bm H$ en las ecuaciones {\em algebráicas de Maxwell} del
+       problema anterior.
+     \item Toma el producto vectorial con $\bm k$ de las ecuaciones
+       que incluyen productos vectoriales.
+     \item Usa la identidad $\bm k\times(\bm k\times\ldots)=\bm k\bm
+       k.\ldots-k^2\ldots$
+     \item Usa las ecuaciones de Maxwell para el producto punto para
+       eliminar los términos de la forma $\bm k\bm k\cdot\ldots$
+     \item Llega a $k^2\bm E=\epsilon\mu(\omega^2/c^2)\bm E$ y  $k^2\bm
+       H=\epsilon\mu(\omega^2/c^2)\bm H$.
+     \item Por tanto, $k=n\omega/c$ donde $n=\sqrt{\epsilon\mu}$ es el
+       índice de refracción.
+ \end{pistas}
+ \begin{notas}
+ \item Nota que el campo electromagnético es {\em transversal}, i.e.,
+   $\bm E$, $\bm B$, $\bm D$ y $\bm H$ son perpendiculares al vector
+   de onda $\bm k$, i.e., a la dirección
+   de propagación.
+ \item La velocidad de propagación de la onda es
+   $v_f=\omega/k=c/n$, donde el subíndice $f$ denota que ésta es la
+   {\em velocidad de fase}.
+ \item Típicamente, la permeabilidad a altas frecuencias es $\mu=1$,
+   por lo que $n=\sqrt\epsilon$.
+ \item Si $\epsilon\mu<0$, $n$ es imaginario, el vector de onda se
+   vuelve complejo y la onda no se propaga en el medio, sino que decae
+   exponencialmente. El medio se vuelve opaco. El medio también es
+   opaco si $\epsilon$ o $\mu$ no son reales, i.e., si hay absorción.
+ \item Para $n$ real, $B=nE$.
+ \end{notas}
+\question\label{e} Encuentra el teorema de Poynting en el interior de un
+  material lineal isotrópico caracterizado por $\epsilon$ y $\mu$.
+  \begin{pistas}
+  \item El teorema de Poynting de la tarea 7 es correcto, pero
+    describe el intercambio de energía con todas las cargas.
+  \item La potencia que pierda el campo por unidad de volumen debido a
+    su interacción con las cargas {\em externas}, en lugar de su
+    interacción con todas las cargas, es $-\bm j^{\text{ext}}\cdot\bm
+    E$.
+  \item En analogía con la tarea 7, la ley de conservación de la
+    energía es $\partial u/\partial t+\nabla\cdot\bm S=-\bm
+    j^{\text{ext}}\cdot\bm E$.
+  \item Aquí, $u$ y $\bm S$ incluyen la energía asociada a las cargas
+    internas y su movimiento.
+  \item Sustituyendo $\bm j^{\text{ext}}$ de la ley de Ampère-Maxwell
+    en materiales y haciendo las mismas manipulaciones que en la tarea
+    7, obtén $u=(1/8\pi)(\bm E\cdot\bm D+\bm H\cdot\bm B)$ y $\bm
+    S=(c/4\pi)\bm E\times\bm H$.
+  \end{pistas}
+\question\label{f} Una onda electromagnética plana monocromática, como
+  en el problema \ref{c}, con frecuencia $\omega$, vector de onda $\bm
+  k$, campo eléctrico $\bm E$ con amplitud $\bm E_0$, se propaga en un
+  medio transparente caracterizado por $\epsilon$ y $\mu$. Calcula su flujo y su
+  densidad de energía.
+  \begin{pistas}
+  \item Dado $\bm E_0$ podemos calcular los campos
+    $\bm E$, $\bm D$, $\bm B$ y $\bm H$ usando las ecuaciones
+    materiales y las ecuaciones de Maxwell para ondas planas (problema
+    \ref{c}).
+  \item No podemos directamente reemplazar campos complejos de la
+    forma $\bm F=\bm F_0 e^{i(\bm k\cdot\bm r-\omega t)}$ en las
+    expresiones para $u$ y $\bm S$ pues antes es necesario tomar las
+    partes reales, como fue discutido en el problema 24 de la tarea 7.
+  \item Podemos, siguiendo dicho problema, emplear las expresiones
+    para el promedio temporal de la densidad de energía y del flujo de
+    energía $\braket{u}=\text Re({\bm E\cdot\bm D^*+\bm H\cdot\bm
+      B^*})/16\pi$ y $\braket{\bm S}=(c/8\pi)\text{Re}(\bm E\times
+    H^*)$.
+  \item El resultado es $\braket{u}=\epsilon |E|^2/(8\pi)$ y
+    $\braket{\bm S}=(c/8\pi) \sqrt{\epsilon/\mu}|E|^2\hat{\bm k}$ con
+    $\hat{\bm k}$ un vector unitario en la dirección de propagación.
+  \end{pistas}
+  \begin{notas}
+  \item Podemos escribir $\bm S=u v_f\hat{\bm k}$, i.e., el flujo es
+    densidad por velocidad, como el gasto en un fluido o la corriente
+    eléctrica.  En este caso, la velocidad es la velocidad de fase y
+    la densidad es la densidad de energía.
+  \item Se define la intensidad $I$ de una onda mediante $\braket{\bm
+      S}=I\hat{\bm k}$.
+  \item Podemos reescribir el resultado como
+    $I=(c/8\pi)\sqrt{\epsilon/\mu}|E|^2$.
+  \item Hay sutilezas que considerar cuando $\epsilon$ y $\mu$
+    dependen de la frecuencia.
+  \item Un cálculo más cuidadoso emplearía un grupo de ondas, no ondas
+    planas, para las cuales $\nabla\cdot\braket{\bm S}=0$ y $\partial
+    \braket{u}/\partial t=0$.
+  \end{notas}
+\question\label{g} Considera un material $a$ semiinfinito ocupando la región
+  $z<0$ en contacto con un material $b$ semiinfinito ocupando la
+  región $z>0$. Los materiales tienen permitividades $\epsilon_a$ y
+  $\epsilon_b$ y son no magnéticos, $\mu_a=\mu_b=1$. Una onda plana
+  monocromática con frecuencia $\omega$ linealmente polarizada incide
+  de abajo hacia arriba sobre la interfaz $z=0$ moviéndose en la
+  dirección $z$ . Calcula la reflectancia y la transmitancia.
+  \begin{pistas}
+  \item La reflectancia $R$ y transmitancia $T$ se definen como los
+    cocientes
+    entre las componentes normales a la superficie de los flujos de
+    energía en las ondas reflejada y transmitida. En este caso,
+    $R\equiv -\braket{S_r^z}/\braket{S_i^z}$ y
+    $T=\braket{S_t^z}/\braket{S_i^z}$, donde $i$, $r$ y $t$
+    denotan a las ondas incidente, reflejada y transmitida,
+    respectivamente.
+  \item Argumenta por qué la onda reflejada y la transmitida tienen la
+    misma frecuencia $\omega$ que la onda incidente y se propagan a lo
+    largo del eje $z$.
+  \item Sin pérdida de generalidad, podemos tomar al campo eléctrico
+    de la onda incidente a lo largo del eje $x$.
+  \item Argumenta por qué en este caso, los campos eléctricos de todas
+    las ondas apuntan a lo largo de $x$ y todos los campos magnéticos
+    van a lo largo de $y$.
+  \item Toma $E_i^x(z,t)=E_0 e^{i(k_az-\omega t)}$.
+  \item ¿Cuánto vale $k_a$?
+  \item ¿Cuanto vale $B_i^y(z,t)$?
+  \item ¿Cuánto vale $\braket{S_i^z}$?
+  \item Escribe el campo eléctrico reflejado como $E_r^x(z,t)=r E_0
+    e^{-i(k_az+\omega t)}$.
+  \item $r$ es la {\em amplitud de reflexión} por ser determinada.
+  \item ¿Cuánto vale $B_r^y(z,t)$? (Cuidado con los signos)
+  \item Escribe el campo eléctrico transmitido como $E_t^x(z,t)=t E_0
+    e^{i(k_bz-\omega t)}$.
+  \item $t$ es la {\em apmlitud de transmisión} por ser determinada.
+  \item ¿Cuánto vale $k_b$?
+  \item ¿Cuánto vale $B_t^y(z,t)$?
+  \item Plantea las condiciones de contorno independientes que obedece
+    el campo electromagnético en $z=0$. Verifica que hay cuatro
+    condiciones de contorno, pero en este caso sólo dos son independientes.
+  \item Resuelve las ecuaciones subsecuentes para obtener las dos incógnitas $r$ y $t$.
+  \item Encuentra $\braket{S_r^z}$ y  $\braket{S_t^z}$.
+  \item Calcula $R$ y $T$.
+  \item El resultado es $R=|(n_a-n_b)/(n_a+n_b)|^2$ y $T=4n_an_b/|n_a+n_b|^2$.
+  \end{pistas}
+
+  \begin{notas}
+  \item La polarización es irrelevante. Escogí polarización lineal por
+    simplicidad.
+  \item Se puede generalizar el problema anterior a otros ángulos de
+    incidencia.
+  \item Para ello, primero hay que establecer la ley de la reflexión y
+    la ley de Snell.
+  \item También hay que separar los casos de polarización transversal
+    eléctrica TE y transversal magnética TM.
+  \end{notas}
+\question\label{h} Considera dos ondas planas monocromáticas con la
+  misma polarización lineal que se propagan en un medio caracterizado
+  por $\epsilon$ y $\mu$ con la misma amplitud, frecuencia y dirección
+  de propagación, pero difiriendo por una fase $\psi$. Calcula la
+  intensidad $I$ de la onda resultante.
+  \begin{pistas}
+  \item Calcula el campo total y úsalo para calcular la intensidad.
+  \end{pistas}
+  \begin{notas}
+  \item Dependiendo de su fase relativa, la intensidad de la suma de
+    dos campos iguales copropaantes puede variar desde 4 veces la de
+    una onda sola hasta 0.
+  \item Si la fase es 0 tenemos {\em interferencia constructiva}.
+  \item Si la fase es $\pi$ tenemos {\em interferencia destructuva}.
+  \end{notas}
+
+\question\label{i} Considerea dos ondas planas monocromáticas de
+  frecuencia $\omega$ con polarización lineal a lo largo de $x$ con la
+  misma amplitud $E_0$ y que se propagan una en la dirección $z$ y otra en
+  la dirección $-z$ en un medio no magnético con permitividad
+  $\epsilon$ y permeabilidad $\mu$.
+  \begin{parts}
+  \part Calcula el campo eléctrico $E_x(z,t)$.
+  \part Calcula el campo magnético $B_y(z,t)$.
+  \part Calcula la densidad de energía $\braket{u(z,t)}$.
+  \part Calcula el flujo de energía $\braket{S_z(z,t)}$.
+  \end{parts}
+  \begin{notas}
+  \item Esta es una onda estacionaria.
+  \item La distancia entre nodos sucesivos o entre antinodos sucesivos
+    es media longitud de onda.
+  \end{notas}
+\question\label{j} Considera dos ondas planas monocromáticas de
+  frecuencias $\omega_1=\omega_0+\delta\omega$ y
+  $\omega_2=\omega_0-\delta\omega$ moviéndose en la dirección $z$ con
+  polarización lineal a lo largo de $x$ y con amplitudes $E_{10}$ y
+  $E_{20}$ en un medio con permitividad $\epsilon(\omega)$ {\em
+    dependiente} de la frecuencia y con permeabilidad
+  $\mu=1$. Suponiendo que $\delta\omega$ es muy pequeño:
+  \begin{parts}
+  \part Calcula el campo resultante $E_x(z,t)$.
+  \part Demuestra que $E_x(z,t)$ se puede escribir como el producto de
+    una onda portadora monocromática de frecuencia $\omega_0$
+    multiplicada por una envolvente.
+  \part ¿Cuál es la velocidad de la onda portadora?
+  \part ¿De qué frecuencia es la envolvente?
+  \part ¿Cual es la velocidad de la envolvente?
+  \end{parts}
+  \begin{pistas}
+  \item Aproxima
+    $\epsilon(\omega_0\pm\delta\omega)\approx\epsilon(\omega_0)\pm\delta\omega
+    d\epsilon/d\omega$.
+  \item Realiza las aproximaciones correspondientes para calcular los
+    números de onda $k(\omega_0\pm\delta\omega)$.
+  \end{pistas}
+  \begin{notas}
+  \item La velocidad de la envolvente se conoce como {\em velocidad de
+      grupo} $v_g$.
+  \item Cuando $\epsilon$ no depende de $\omega$, la velocidad de
+    grupo es igual a la de fase.
+  \item Si $\epsilon$ es creciente, la velocidad de grupo es menor que
+    la de fase. Este caso se conoce como {\em dispersión normal}.
+  \item En el caso opuesto, tenemos {\em dispersión anómala}.
+  \end{notas}
+\question\label{k} Una onda plana monocromática de frecuencia $\omega$ se
+  propaga en el espacio vacío e incide normalmente sobre una pantalla opaca
+  delgada en la que se han cortado dos ventanas delgadas largas idénticas
+  separadas una distancia $d$. A una distancia $L\gg d$ se coloca una
+  pantalla.
+  \begin{parts}
+  \part Calcula la intensidad normalizada
+    $I(\theta)/I(0)$ como función del ángulo $\theta$ respecto a la
+    dirección de propagación original (para ángulos pequeños).
+  \part ¿Cual es la distancia angular $\Delta\theta$ entre máximos de
+    intensidad?
+  \end{parts}
+  \begin{pistas}
+  \item De acuerdo al principio de Kirchoff, cada punto en un frente
+    de onda se comporta como un emisor de ondículas secundarias esféricas que se
+    propagan en todas las direcciones.
+  \item Similarmente, una línea recta en un frente de onda con
+    amplitud constante a lo largo de la línea se comporta como la
+    fuente de ondículas cilíndricas que se propagan en todas las
+    direcciones normales a la línea. Proyectando sobre un plano normal
+    a la línea, tendríamos ondas circulares.
+  \item El decaimiento de la onda con la distancia se puede ignorar,
+    pues a largas distancias es más rápido su cambio de fase.
+  \item Además, se pide el resultado {\em normalizado} a la intensidad
+    central.
+  \item Entonces, hay que sumar dos campos cuya fase difiere por haber
+    recorrido distancias distintas, y de ahí obtener la intensidad.
+  \end{pistas}
+  \begin{notas}
+  \item El fenómeno en que un haz luminoso se separa en varios haces
+    con distintas direcciones en al pasar por obstáculos se conoce
+    como {\em difracción}.
+  \item La difracción por una {\em doble rejilla} fue un experimento
+    clave para establecer el caracter ondulatorio de la luz.
+  \end{notas}
+\question\label{l} Una onda plana monocromática de frecuencia $\omega$ se
+  propaga en el espacio vacío e incide normalmente sobre una pantalla opaca
+  delgada en la que se ha cortado una ventana larga de ancho $d$. A
+  una distancia $L\gg d$ se coloca una
+  pantalla. Calcula la intensidad la intensidad normalizada
+  $I(\theta)/I(0)$ como función del ángulo $\theta$ respecto a la
+  dirección de propagación original (para ángulos pequeños).
+  \begin{pistas}
+  \item Divide la ventana rectangular en un gran número de rectángulos
+    largos muy delgados, de ancho $\delta x$.
+  \item Aplica el principio de Kirchoff a cada rectángulo.
+  \item Suma los campos resultantes.
+  \item Convierte la suma en una integral tomando el límite $\delta
+    x\to 0$.
+  \end{pistas}
+  \begin{notas}
+  \item Así como hay un principio de incertidumbre $\Delta p\Delta
+    x>\hbar$ en mecánica cuántica, hay análogos clásicos que
+    relacionan, por ejemplo $\Delta\omega$ con $\Delta t$ para un
+    paquete de onda. Este problema ilustra un principio de
+    incertidumbre que relaciona $\Delta x$ con $\Delta
+    \theta$. Mientras mejor sabemos por dónde está confinada una onda
+    (en el interior de la ventana), menos sabemos qué dirección
+    tiene. Sólo las ondas planas tienen una dirección bien
+    definida. ¿Puedes estimar en este problema $\Delta x\Delta\theta$?
+  \end{notas}
+\question \label{m} Demuestra que la ecuación de onda para un campo
+  $\phi(\bm r,t)$ con fuentes dadas $f(\bm r,t)$,
+  $(\nabla^2-(1/c^2)\partial^2/\partial t^2)\phi(\bm r, t)=-4\pi f(\bm
+  r,t)$, se convierte en la {\em ecuación de Helmholtz}
+  $(\nabla^2+k^2)\phi_\omega(\bm r)=-4\pi f_\omega(\bm r)$ cuando las
+  fuentes son monocromáticas con frecuencia $\omega$, donde $k=\omega/c$.
+  \begin{pistas}
+  \item Sustituye $f(\bm r,t)=f_\omega(\bm r) e^{-i\omega t}$, propón
+    el {\em ansatz} estacionario $\phi(\bm r,t)=\phi_\omega(\bm r)
+    e^{-i\omega t}$ y evalua las derivadas temporales.
+  \end{pistas}
+\question \label{n} Demuestra que una solución particular de la
+  ecuación de Helmholtz con fuentes es
+  $$
+  \phi_\omega(\bm r)=\int d^3r'\, G_\omega(\bm r-\bm r') f_\omega(\bm r'),
+  $$
+  donde $G_\omega(\bm r)$ obedece la ecuación de Helmholtz con una
+  fuente puntual unitaria colocada en el origen,
+  $$
+  (\nabla^2+k^2) G_\omega(\bm r)=-4\pi\delta(\bm r),
+  $$
+  $k=\omega/c$ y $\delta(\bm r)$ es la delta de Dirac.
+  \begin{pistas}
+  \item Por simplicidad, tomemos a la delta como una {\em función} que
+    vale cero en todo el espacio excepto en el origen, y cuya integral
+    en cualquier región que incluya al origen es 1,
+    $\int_Vd^3r\delta(\bm r)=1$ si $\bm 0\in V$.
+  \item Si no estás familiarizado con ella, considera una función que
+    vale cero en todo el espacio excepto en una pequeña región de
+    tamaño despreciable sobre la cual la integral vale 1.
+  \item En todo caso, si la región es suficientemente chica,
+    $\int d^3r'\,\delta(\bm r-\bm r')f_\omega(\bm r')=f_\omega(\bm r)$. De hecho,
+    ésta esta está relacionada con una mejor {\em definición} de la
+    delta de Dirac, cono {\em funcional}.
+  \item Aplica el operador de Helmholtz a la solución propuesta e
+    intercambialo con la integral para encontrar
+    $$
+    (\nabla^2+k^2)\int d^3r'\, G_\omega(\bm r-\bm r') f_\omega(\bm
+    r')=-4\pi\int d^3r'\, \delta(\bm r-\bm r') f_\omega(\bm r')=-4\pi f_\omega(\bm r).
+    $$
+
+  \end{pistas}
+\question \label{o} Demuestra que
+  $$
+  G_\omega(\bm r)=\frac{e^{\pm ikr}}{r}.
+  $$
+  es una función de Green isotrópica saliente para la ecuación de Helmholtz.
+  \begin{pistas}
+  \item Demuestra que para $r\ne 0$ cumple la ecuación de Helmholtz.
+  \item Argumenta por qué a distancias chicas $r\ll 1/k$ se puede
+    aproximar por $1/r$, la función de Green electrostática, el
+    potencial coulombiano.
+  \item Argumenta por qué a distancias chicas se puede ignorar el
+    factor $k^2$ en la ecuación de Helmholtz.
+  \item Por tanto $(\nabla^2+k^2)(e^{ikr}/r)=\nabla^2 1/r$ a
+    distancias chicas, y eso es como la densidad de carga
+    correspondiente a una carga puntual unitaria en el origen, i.e.,
+    una delta de Dirac.
+  \item Al introducir la dependencia temporal, multiplicando por
+    $e^{-i\omega t}$, y alejarnos a grandes distancias $r\gg 1/k$ en
+    cualquier dirección, obtenemos una onda que se aleja del
+    origen. Por eso ésta solución se llama saliente.
+  \item La solución {\em entrante} es $e^{-ikr}/r$.
+  \end{pistas}
+\question \label{p} Considera una distribución de corriente $\bm
+  j(\bm r,t)=\bm j(\bm r)e^{-i\omega t}$ que oscila con frecuencia
+  $\omega$ bien definida. Demuestra que los potenciales
+  electromagnéticos en la {\em norma de Lorentz} están dados por
+  $\phi(\bm r,t)=\phi(\bm r)e^{-i\omega t}$ y   $\bm A(\bm r,t)=\bm
+  A(\bm r)e^{-i\omega t}$ con
+  $$
+  \phi(\bm r)=\int d^3r'\, \frac{e^{ik|\bm r-\bm r'|}}{|\bm r-\bm r'|}
+  \rho(\bm r')
+  $$
+  y
+  $$
+  \bm A(\bm r)=\frac{1}{c}\int d^3r'\, \frac{e^{ik|\bm r-\bm r'|}}{|\bm r-\bm r'|}
+  \bm j(\bm r')
+  $$
+  \begin{pistas}
+  \item En la norma de Coulomb $\phi$ y $\bm A$ obedecen la ecuación
+    de onda con fuentes $\rho$ y $\bm j/c$ respectivamente.
+  \item Para fuentes monocromáticas, podemos reemplazarla por la
+    ecuación de Helmholtz.
+  \item Podemos usar la función de Green del problema \ref{o}.
+  \end{pistas}
+\question \label{q} Considera un sistema como el del inciso \ref{p},
+  pero en el cual las fuentes están totalmente contenidas en una
+  pequeña región de radio $R\ll\lambda$, donde $\lambda=2\pi/k$ es la
+  longitud de onda y $k=\omega/c$. Demuestra que a distancias muy
+  grandes $r\ll\lambda$ el potencial vectorial está dado
+  aproximadamente por
+  $$
+  \bm A(\bm r)=\frac{e^{ikr}}{rc}\int d^3r'\, \bm j(\bm r').
+  $$
+  \begin{pistas}
+  \item Haz una expansión de Taylor en $r'$ y conserva el término más
+    grande cuando $r'\ll r$ y $kr'\ll 1$.
+  \end{pistas}
+  \begin{notas}
+  \item Este es el término dominante del potencial en la {\em zona de radiación}
+    ($r\gg\lambda$) en la {\em aproximación de longitud de onda larga}
+    $r'<R\ll\lambda$.
+  \end{notas}
+\question \label{r} Evalúa la integral del problema \ref{q} en
+  términos del momento dipolar eléctrico del sistema.
+  \begin{pistas}
+  \item Queremos evaluar $\int d^3r'\, \bm j(\bm r')=\int d^3r\, \bm j(\bm r)$.
+  \item Escribe cada componente del integrando $j_i(\bm r)$ como
+    $$
+    j_i(\bm r)=j_k(\bm r)\delta_{ik}=j_k(\bm r)\frac{\partial
+      r_i}{\partial r_k}
+    $$
+    donde $\delta_{ik}$ es la {\em delta de Kronecker} y empleamos la
+    notación de Einstein (suma implícita sobre índices repetidos, en
+    este caso $k$).
+  \item Manipula las derivadas para obtener
+    $$
+    \int d^3r\, j_i(\bm r)= \int d^3r\, \nabla\cdot(\bm j(\bm r)
+    r_i)-\int d^3r\, (\nabla\cdot\bm j(\bm r)) r_i.
+    $$
+  \item Usa el teorema de Gauss y el hecho de que la carga está cerca
+    del origen para argumentar que la primera integral vale cero.
+  \item En la segunda integral usa la ecuación de continuidad
+    $\nabla\cdot\bm j(\bm r,t)=-\partial\rho(\bm r,t)/\partial
+    t=i\omega\rho(\bm r,t)$.
+  \item Finalmente $\int d^3r\, j_i(\bm r)= -i\omega p_i$, donde
+    $\bm p=\int d^3r\, \rho(\bm r)\bm r$ y $\bm p(t)=\bm p e^{-i\omega
+      t}$ es el momento dipolar de la distribución de cargas.
+  \end{pistas}
+\question \label{s} Calcula la contribución dipolar al potencial
+  vectorial $\bm A$, el campo magnético $\bm B$ y el campo eléctrico
+  $\bm E$ en la zona de radiación en la aproximación de longitud de
+  onda larga.
+  \begin{pistas}
+  \item Sustituye la solución del problema \ref{r} en la del problema
+    \ref{q} para obtener $\bm A(\bm r)$.
+  \item El campo magnético $\bm B(\bm r)$ se puede obtener calculando
+    $\nabla\times\bm A$.
+  \item Argumenta por qué en la zona de radiación podemos aproximar
+    $\nabla\approx ik\hat{\bm n}$, donde $\hat{\bm n}=\bm r/r$ es un
+    vector unitario en la dirección de observación.
+  \item Utiliza esta aproximación para evaluar el campo magnético $\bm
+    B(\bm r)$.
+  \item El campo eléctrico se puede obtener a partir de la Ley de
+    Ampère-Maxwell $\nabla\times\bm B(\bm r,t)=(1/c)(\partial/\partial
+    t)\bm E(\bm r,t)=-ik\bm E(\bm r,t)$.
+  \item Aproxima el rotacional en la zona de radiación.
+  \item Los resultados son $\bm A(\bm r)=-ik\bm p e^{ikr}/r$, $\bm
+    B(\bm r)=k^2 \hat{\bm n}\times\bm p e^{ikr}/r$ y $E(\bm r)=-k^2
+    \hat{\bm n}\times(\hat{\bm n}\times\bm p) e^{ikr}/r$.
+  \end{pistas}
+\question \label{t} Calcula la potencia radiada por unidad de ángulo
+  sólido en el caso de la radiación dipolar.
+  \begin{pistas}
+  \item El flujo de energía está dado por el vector de Poynting
+    $\braket{\bm S}=\frac{c}{8\pi}\text Re\, \bm E\times \bm B^*$.
+  \item Sustituyendo los resultados para radiación dipolar se obtiene
+    $\braket{\bm S}=\frac{c}{8\pi}|\hat{\bm n}\times\bm p|^2\hat{\bm
+      n}/r^2$.
+  \item Considera una esfera de radio $r\ll\lambda$ centrada en el
+    origen. Considera un cono angosto con vértice en el origen y que
+    cubre un ángulo sólido $d\Omega$. La intersección del cono con la
+    esfera es un área $da=r^2d\Omega$.
+  \item La potencia que atraviesa dicha área es $d\mathcal P=
+    \bm S\cdot\hat{\bm n}da=\bm S\cdot\hat{\bm n}r^s d\Omega$.
+  \item De aquí, obtén la potencia por unidad de ángulo sólido.
+  \item Sustituye el vector de Poynting calculado arriba.
+  \item El resultado es $d\mathcal P/d\Omega=(ck^4/8\pi) |\hat{\bm n}\times\bm p|^2$
+  \end{pistas}
+  \begin{notas}
+  \item Nota que esta potencia no depende de la distancia en la zona
+    de radiación y que siempre es positiva.
+  \item Esto significa que un dipolo oscilante radía y pierde energía
+    irreversiblemente.
+  \item Las oscilaciones dipolares son entonces una fuente de energía luminosa.
+  \end{notas}
+\question \label{u} Calcula y dibuja el patrón de radiación de energía
+  para un momento dipolar
+  \begin{parts}
+  \part que oscila con frecuencia $\omega$ a lo largo del eje $z$;
+  \part que gira en el plano $xy$ siguiendo un círculo con radio
+    $p_0$.
+  \end{parts}
+  \begin{pistas}
+  \item En ambos casos escribe el momento dipolar $\bm p(t)$ como
+    $\text Re\, \bm p_0 e^{-i\omega t}$, encuentra la amplitud
+    (compleja) $\bm p_0$ de la oscilación y sustitúyela en el
+    resultado de los problemas previos.
+  \end{pistas}
+\question \label{v} Calcula la potencia total radiada por un dipolo
+  que oscila con frecuencia $\omega$.
+  \begin{pistas}
+  \item Integra $d\mathcal P/d\Omega$ sobre el ángulo sólido.
+  \end{pistas}
+  \begin{notas}
+  \item El resultado, $\mathcal P=c k^4|\bm p|^2/3$ se conoce como la
+    {\em fórmula de Larmor}.
+  \end{notas}
+\question \label{w}Considera un modelo clásico para el átomo de
+  hidrógeno consistente en un electrón que gira alrededor de un protón
+  en una órbita circular de radio $a_B$ (el radio de Bohr). Calcula
+  qué la energía que pierde por radiación durante cada vuelta.
+  \begin{pistas}
+  \item Calcula clásicamente el momento dipolar instantáneo, la
+    amplitud del dipolo giratorio, la frecuencia de giro y sustituye en la
+    fórmula de Larmor.
+  \end{pistas}
+  \begin{notas}
+  \item Este problema demuestra que un átomo clásico sería inestable
+    frente a pérdidas de energía radiativas.
+  \item Un cálculo completo muestra que el electrón colapsaría al
+    nucleo en un tiempo finito pequeñito. Calcúlalo o estímalo
+  \item La predicción clásica de que la materia colapsaría rápidamente
+    por las pérdidas radiativas de energía es uno de los motivos que
+    llevaron al surgimiento de la mecánica cuántica.
+  \end{notas}
+\question\label{w} Considera una molécula con una polarizabilidad
+  $\alpha$ iluminada por una onda plana monocromática con frecuencia
+  $\omega$. Calcula su sección transversal de esparcimiento (dispersión).
+  \begin{pistas}
+  \item El campo eléctrico oscilante $\bm E$ de la onda plana induce
+    un momento dipolar oscilante $\bm p=\alpha\bm E$.
+  \item Por tanto, la molécula radiaría energía electromagnética en
+    todas direcciones, esparciendo una potencia dada por la fórmula de
+    Larmor.
+  \item La sección transversal de esparcimiento $\sigma$ (no es
+    conductividad ni carga superficial, aunque use la misma letra) se
+    define como $\sigma=\mathcal P/I$, donde $I$ es la intensidad,
+   potencia por unidad de área de la onda incidente.
+  \item Verifica que $\sigma$ tiene las unidades correctas.
+  \item Como $\mathcal P$ y $I$ son ambos proporcionales a $E^2$, el
+    campo se cancela y $\sigma$ depende sólo de las propiedades de la molécula.
+  \end{pistas}
+  \begin{notas}
+  \item La interpretación de $\sigma$ es como el área efectiva de la
+    molécula. Como si toda la energía de la onda incidente que cayera sobre el
+    área $\sigma$ fuese esparcida, mientras que el resto seguiera su camino.
+  \item Nota que $\sigma$ es inversamente proporcional a
+    $\lambda^4$. Por tanto, la luz roja es mucho menos esparcida que
+    la luz azul.
+  \item Cualquier relación de este resultado con el color del cielo y con el de
+    los atardeceres, ¡no es coincidencia!
+  \end{notas}
+
+
+\question\label{x} Considera una partícula puntual cargada que se mueve a lo
+  largo de una trayectoria $\bm r(t)$. Calcula la potencia instantánea
+  que radía.
+  \begin{pistas}
+  \item Calcula el momento dipolar $\bm p(t)=q\bm r(t)$.
+  \item Escríbelo como una superposición de Fourier
+    $$\bm p(t)=\int \frac{d\omega}{2\pi}p_\omega e^{-i\omega t}.$$
+  \item Para cada $p_\omega$ usa los resultados de los problemas
+    anteriores.
+  \item El resultado es
+    $$\mathcal P(t)=\frac{2}{3}\frac{q^2 a(t)^2}{c^3},$$
+    donde $\bm a$ es la aceleración de la partícula
+  \item Una forma rápida, no muy formal, de llegar a este resultado es identificar
+     $\bm p$ con $q\bm r$, $\omega^2\bm  p$ con $-d^2\bm
+    p/dt^2=-q\bm a$ y por tanto $\omega^4 p^2$ es como $q^2 a^2$. El
+    factor de 2/3 en lugar de 1/3 viene de que en los problemas
+    anteriores calculamos la potencia promedio, y aquí, la potencia
+    instantánea.
+  \end{pistas}
+
+\end{questions}
+\end{document}
